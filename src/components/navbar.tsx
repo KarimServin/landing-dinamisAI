@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Sparkles, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
 import { useSegment } from "@/components/segment-context";
 
 export function Navbar() {
-  const { segment, setSegment } = useSegment();
+  const { segment, setSegment, openGate } = useSegment();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -54,10 +55,10 @@ export function Navbar() {
           </Link>
 
           {/* Audience Switcher & Desktop Navigation Links */}
-          <div className="hidden xl:flex items-center gap-2 px-1 py-0.5 bg-white rounded-xl border border-[#f1dfd3] shadow-sm">
+          <div className="hidden xl:flex items-center gap-1.5 p-1 bg-white rounded-xl border border-[#f1dfd3] shadow-sm">
             <button
               onClick={() => setSegment("empresa")}
-              className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
+              className={`px-3 py-1 text-xs font-bold rounded-lg transition-all cursor-pointer ${
                 segment === "empresa"
                   ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-sm"
                   : "text-[#6b625b] hover:text-[#111111]"
@@ -67,13 +68,28 @@ export function Navbar() {
             </button>
             <button
               onClick={() => setSegment("persona")}
-              className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
+              className={`px-3 py-1 text-xs font-bold rounded-lg transition-all cursor-pointer ${
                 segment === "persona"
                   ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-sm"
                   : "text-[#6b625b] hover:text-[#111111]"
               }`}
             >
               🚀 Soy Persona
+            </button>
+            <button
+              onClick={openGate}
+              title="Abrir Asistente Robot 3D"
+              className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold rounded-lg text-[#61100d] bg-[#fff8f3] hover:bg-[#ffdfc5] border border-[#ffdfc5] transition-all cursor-pointer shadow-xs ml-1"
+            >
+              <Image
+                src="/images/dinamis-bot.png"
+                alt="Robot Dinamis"
+                width={16}
+                height={16}
+                className="animate-bounce"
+                style={{ animationDuration: "2.5s" }}
+              />
+              <span>Robot 3D</span>
             </button>
           </div>
 
@@ -191,6 +207,21 @@ export function Navbar() {
             >
               <span>🚀</span>
               <span>Persona</span>
+            </button>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openGate();
+              }}
+              className="col-span-2 py-2 px-3 text-xs font-bold rounded-lg transition-all text-center flex items-center justify-center gap-2 bg-[#fff8f3] text-[#61100d] border border-[#ffdfc5] hover:bg-[#ffdfc5] cursor-pointer mt-0.5"
+            >
+              <Image
+                src="/images/dinamis-bot.png"
+                alt="Robot Dinamis"
+                width={16}
+                height={16}
+              />
+              <span>Abrir Asistente Robot 3D</span>
             </button>
           </div>
 
