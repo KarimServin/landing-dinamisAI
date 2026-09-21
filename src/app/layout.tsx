@@ -26,6 +26,11 @@ export const metadata: Metadata = {
     "metodologia star ia",
     "software recursos humanos ia",
     "entrenamiento liderazgo ejecutivo",
+    "practicar entrevistas laborales",
+    "superar entrevistas de trabajo",
+    "triunfo laboral",
+    "conseguir empleo con ia",
+    "preguntas metodo star",
     "dinamis ai",
     "grupo dinamis",
     "feedback de entrevistas automatizado",
@@ -124,6 +129,14 @@ const jsonLdData = {
           acceptedAnswer: {
             "@type": "Answer",
             text: "Dinamis AI no es un modelo genérico sin contexto. Está entrenado y parametrizado con los más de 15 años de metodología en Recursos Humanos, evaluación por competencias (STAR) y desarrollo organizacional de Grupo Dinamis. Ofrece métricas cuantitativas, informes comparativos para selectores y simulaciones realistas de liderazgo corporativo.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Cómo me ayuda Dinamis AI a superar entrevistas laborales y conseguir un mejor empleo?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Dinamis AI te permite practicar tantas entrevistas como necesites ante un evaluador con inteligencia artificial entrenado con la metodología de Grupo Dinamis. Te enseña a responder bajo la técnica STAR (Situación, Tarea, Acción y Resultado), elimina muletillas y te otorga feedback objetivo inmediato para ganar confianza y triunfar en procesos de selección exigentes.",
           },
         },
         {

@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { Check, ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
+import { useSegment } from "@/components/segment-context";
 
 export function Pricing() {
+  const { segment } = useSegment();
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("annual");
 
   const plans = [
@@ -21,9 +23,10 @@ export function Pricing() {
         "Acceso a 5 escenarios clave de liderazgo",
         "Historial individual de sesiones y calificaciones",
       ],
-      ctaText: "Comenzar Gratis",
+      ctaText: segment === "persona" ? "Comenzar Gratis Ahora" : "Comenzar Gratis",
       ctaUrl: "https://app.grupodinamis.com",
-      isPopular: false,
+      isPopular: segment === "persona",
+      popularBadge: "Recomendado para Candidatos",
     },
     {
       name: "Equipos & RRHH",
@@ -41,7 +44,8 @@ export function Pricing() {
       ],
       ctaText: "Probar 14 Días Gratis",
       ctaUrl: "https://app.grupodinamis.com",
-      isPopular: true,
+      isPopular: segment === "empresa",
+      popularBadge: "Recomendado para Empresas",
     },
     {
       name: "Enterprise",
@@ -60,6 +64,7 @@ export function Pricing() {
       ctaText: "Agendar con un Consultor",
       ctaUrl: "https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20cotizar%20el%20plan%20Enterprise%20de%20Dinamis%20AI",
       isPopular: false,
+      popularBadge: "",
     },
   ];
 
@@ -72,13 +77,26 @@ export function Pricing() {
             Inversión Transparente
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
-            Planes Diseñados para{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-              Crecer con tu Empresa
-            </span>
+            {segment === "persona" ? (
+              <>
+                Planes Diseñados para{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
+                  Impulsar tu Carrera
+                </span>
+              </>
+            ) : (
+              <>
+                Planes Diseñados para{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
+                  Crecer con tu Empresa
+                </span>
+              </>
+            )}
           </h2>
           <p className="text-[#4a423d] text-base sm:text-lg leading-relaxed">
-            Empieza con una prueba gratuita y escala a medida que incorporas más candidatos y líderes a la plataforma.
+            {segment === "persona"
+              ? "Empezá con una prueba gratuita para preparar tu próxima entrevista y acelerar tu inserción o ascenso laboral."
+              : "Empieza con una prueba gratuita y escala a medida que incorporas más candidatos y líderes a la plataforma."}
           </p>
 
           {/* Billing Switch */}
@@ -116,14 +134,14 @@ export function Pricing() {
               key={index}
               className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-200 ${
                 plan.isPopular
-                  ? "bg-white border-2 border-[#ff8b1e] shadow-[0_12px_40px_rgba(255,139,30,0.15)] lg:-translate-y-2"
+                  ? "bg-white border-2 border-[#ff8b1e] shadow-[0_12px_40px_rgba(255,139,30,0.15)] lg:-translate-y-2 ring-2 ring-[#ff8b1e]/20"
                   : "bento-card"
               }`}
             >
               {plan.isPopular && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md flex items-center gap-1.5">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md flex items-center gap-1.5 whitespace-nowrap">
                   <Sparkles className="w-3.5 h-3.5 text-[#ffdfc5]" />
-                  Recomendado para Empresas
+                  {plan.popularBadge}
                 </div>
               )}
 

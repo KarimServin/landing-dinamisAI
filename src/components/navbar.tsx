@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Sparkles, Menu, X, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
+import { useSegment } from "@/components/segment-context";
 
 export function Navbar() {
+  const { segment, setSegment } = useSegment();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -51,25 +53,49 @@ export function Navbar() {
             </div>
           </Link>
 
+          {/* Audience Switcher & Desktop Navigation Links */}
+          <div className="hidden xl:flex items-center gap-2 px-1 py-0.5 bg-white rounded-xl border border-[#f1dfd3] shadow-sm">
+            <button
+              onClick={() => setSegment("empresa")}
+              className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
+                segment === "empresa"
+                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-sm"
+                  : "text-[#6b625b] hover:text-[#111111]"
+              }`}
+            >
+              🏢 Soy Empresa
+            </button>
+            <button
+              onClick={() => setSegment("persona")}
+              className={`px-3 py-1 text-xs font-bold rounded-lg transition-all ${
+                segment === "persona"
+                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-sm"
+                  : "text-[#6b625b] hover:text-[#111111]"
+              }`}
+            >
+              🚀 Soy Persona
+            </button>
+          </div>
+
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#4a423d]">
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-[#4a423d]">
             <a
               href="#simulador"
               className="hover:text-[#ff8b1e] transition-colors py-1"
             >
-              Simulador STAR
+              {segment === "empresa" ? "Filtros STAR" : "Simulador de Entrevista"}
             </a>
             <a
               href="#coaching"
               className="hover:text-[#ff8b1e] transition-colors py-1"
             >
-              Coaching de Líderes
+              {segment === "empresa" ? "Coaching de Líderes" : "Coaching de Carrera"}
             </a>
             <a
               href="#calculadora"
               className="hover:text-[#ff8b1e] transition-colors py-1"
             >
-              Impacto & ROI
+              {segment === "empresa" ? "Impacto & ROI" : "Estimador"}
             </a>
             <a
               href="#metodologia"
@@ -138,33 +164,63 @@ export function Navbar() {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#fffbf9] border-b border-[#f1dfd3] px-5 pt-4 pb-6 mt-3 space-y-3 shadow-xl animate-in fade-in slide-in-from-top-2">
+          {/* Mobile Audience Switcher */}
+          <div className="p-1 bg-white rounded-xl border border-[#f1dfd3] grid grid-cols-2 gap-1 mb-2">
+            <button
+              onClick={() => {
+                setSegment("empresa");
+              }}
+              className={`py-2 px-3 text-xs font-bold rounded-lg transition-all text-center flex items-center justify-center gap-1.5 ${
+                segment === "empresa"
+                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-sm"
+                  : "text-[#6b625b]"
+              }`}
+            >
+              <span>🏢</span>
+              <span>Empresa</span>
+            </button>
+            <button
+              onClick={() => {
+                setSegment("persona");
+              }}
+              className={`py-2 px-3 text-xs font-bold rounded-lg transition-all text-center flex items-center justify-center gap-1.5 ${
+                segment === "persona"
+                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-sm"
+                  : "text-[#6b625b]"
+              }`}
+            >
+              <span>🚀</span>
+              <span>Persona</span>
+            </button>
+          </div>
+
           <a
             href="#simulador"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-sm font-semibold text-[#111111] hover:text-[#ff8b1e] hover:bg-[#fff8f3] rounded-lg"
           >
-            Simulador STAR
+            {segment === "empresa" ? "Filtros STAR" : "Simulador de Entrevistas"}
           </a>
           <a
             href="#coaching"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-sm font-semibold text-[#111111] hover:text-[#ff8b1e] hover:bg-[#fff8f3] rounded-lg"
           >
-            Coaching de Líderes
+            {segment === "empresa" ? "Coaching de Líderes" : "Coaching de Carrera"}
           </a>
           <a
             href="#calculadora"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-sm font-semibold text-[#111111] hover:text-[#ff8b1e] hover:bg-[#fff8f3] rounded-lg"
           >
-            Impacto & ROI
+            {segment === "empresa" ? "Impacto & ROI" : "Calculadora de Ahorro"}
           </a>
           <a
             href="#metodologia"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-sm font-semibold text-[#111111] hover:text-[#ff8b1e] hover:bg-[#fff8f3] rounded-lg"
           >
-            Metodología
+            Metodología Dinamis
           </a>
           <a
             href="#precios"

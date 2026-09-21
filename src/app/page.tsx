@@ -9,10 +9,12 @@ import { Pricing } from "@/components/pricing";
 import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
 import { Footer } from "@/components/footer";
+import { SegmentProvider } from "@/components/segment-context";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#fffbf9] text-[#171412] selection:bg-[#ff8b1e] selection:text-white">
+    <SegmentProvider>
+      <div className="flex flex-col min-h-screen bg-[#fffbf9] text-[#171412] selection:bg-[#ff8b1e] selection:text-white">
       {/* Sticky Navigation Bar */}
       <Navbar />
 
@@ -49,5 +51,6 @@ export default function Home() {
       {/* Corporate B2B Footer */}
       <Footer />
     </div>
+    </SegmentProvider>
   );
 }

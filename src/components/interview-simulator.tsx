@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   FileText,
   Target,
@@ -11,9 +11,15 @@ import {
   Sparkles,
 } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
+import { useSegment } from "@/components/segment-context";
 
 export function InterviewSimulator() {
+  const { segment } = useSegment();
   const [activeAudience, setActiveAudience] = useState<"empresas" | "candidatos">("empresas");
+
+  useEffect(() => {
+    setActiveAudience(segment === "persona" ? "candidatos" : "empresas");
+  }, [segment]);
 
   const companyFeatures = [
     {

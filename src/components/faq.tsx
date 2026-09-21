@@ -8,24 +8,24 @@ export function Faq() {
 
   const faqs = [
     {
-      q: "¿Cuál es el objetivo principal de Dinamis AI?",
-      a: "Es una herramienta desarrollada para brindar un espacio de práctica riguroso a mandos medios y postulantes, así como criterios objetivos a las áreas de selección. No reemplaza la entrevista humana ni las decisiones de contratación, sino que ordena los filtros preliminares y permite a los líderes ensayar situaciones de gestión con antelación.",
+      q: "¿Cómo me ayuda Dinamis AI si busco empleo o quiero dar un salto profesional?",
+      a: "Dinamis AI te permite entrenar tantas entrevistas como necesites antes de presentarte ante el reclutador real. La IA te evalúa con preguntas situacionales por competencias (método STAR), detecta muletillas, analiza tu fluidez comunicacional y te brinda devoluciones pedagógicas para que adquieras máxima seguridad y logres el trabajo que merecés.",
     },
     {
       q: "¿En qué consiste la evaluación bajo modelo STAR?",
-      a: "El modelo STAR (Situación, Tarea, Acción y Resultado) es un estándar de selección por competencias que indaga sobre hechos observables del pasado del candidato. La plataforma guía al postulante para que estructure sus respuestas con foco en evidencias y resultados tangibles.",
+      a: "El modelo STAR (Situación, Tarea, Acción y Resultado) es el estándar global más utilizado en selección por competencias. La plataforma guía al postulante para que estruture sus respuestas con foco en evidencias concretas y resultados demostrables en lugar de respuestas teóricas abstractas.",
     },
     {
-      q: "¿Cómo ayuda la plataforma al desarrollo de los mandos medios?",
-      a: "Los líderes suelen enfrentar dificultades en conversaciones humanas del día a día (dar feedback a tiempo, delegar o abordar diferencias internas). La herramienta les permite preparar sus intervenciones en privado, reflexionando sobre cómo plantear los temas con claridad y asertividad.",
+      q: "¿Cómo ayuda la plataforma a las empresas, áreas de RRHH y mandos medios?",
+      a: "Automatiza y estandariza los primeros filtros de selección con informes ejecutivos comparativos, reduciendo un 70% los tiempos operativos. Para los líderes en funciones, actúa como un AI Leadership Coach 24/7 para ensayar conversaciones críticas (dar feedback, delegar, resolver tensiones internas) en un entorno 100% privado con la metodología de Grupo Dinamis.",
     },
     {
       q: "¿Cómo se gestiona la privacidad y confidencialidad de los datos?",
-      a: "Tratamos la información con estricto rigor ético y reserva corporativa. Las respuestas, transcripciones y evaluaciones son privadas, no se comparten con terceros ni se utilizan para alimentar modelos públicos.",
+      a: "Tratamos la información con estricto rigor ético y reserva corporativa. Las respuestas, transcripciones y evaluaciones son privadas, no se comparten con terceros ni se utilizan para alimentar modelos públicos de IA.",
     },
     {
       q: "¿Cómo se complementa con los servicios de Grupo Dinamis?",
-      a: "Dinamis AI es parte del ecosistema de servicios de Grupo Dinamis. Las empresas pueden utilizar la plataforma de forma autónoma o integrarla en programas más amplios de Desarrollo de Líderes, Dirección Externa o Búsqueda y Selección acompañados por nuestros consultores.",
+      a: "Dinamis AI es parte del ecosistema de servicios de Grupo Dinamis. Las empresas pueden utilizar la plataforma de forma autónoma o integrarla en programas más amplios de Desarrollo de Líderes, Dirección Externa o Búsqueda y Selección acompañados por nuestros consultores sénior.",
     },
   ];
 
