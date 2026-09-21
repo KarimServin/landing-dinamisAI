@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Compass,
-  MessageCircleQuestion,
-  TrendingUp,
-  Brain,
-  Shield,
-  Layers,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight, ShieldCheck, CheckCircle2, MessageSquare } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
 
 export function LeadershipCoach() {
@@ -17,150 +9,127 @@ export function LeadershipCoach() {
 
   const scenarios = [
     {
-      title: "Feedback Correctivo y Empático",
-      tag: "Gestión del Desempeño",
+      title: "Retroalimentación sobre desempeño",
+      tag: "Gestión de Equipo",
       description:
-        "Entrena cómo abordar la baja de rendimiento de un colaborador clave sin desmotivarlo, equilibrando firmeza y empatía para fijar compromisos claros.",
-      aiTip:
-        "La IA te orienta a separar los hechos objetivos de las interpretaciones, usando preguntas poderosas en lugar de sermones.",
+        "Cómo abordar desvíos en el rendimiento o incumplimiento de plazos de un colaborador de manera oportuna, fundamentando con hechos concretos y fijando compromisos viables.",
+      methodologicalNote:
+        "La metodología de Grupo Dinamis propone separar las conductas observables de las suposiciones personales, promoviendo preguntas que inviten al colaborador a reflexionar.",
     },
     {
-      title: "Resolución de Conflictos en el Equipo",
-      tag: "Clima Organizacional",
+      title: "Gestión de diferencias internas",
+      tag: "Alineación y Clima",
       description:
-        "Simula una mediación entre dos miembros enfrentados por recursos o responsabilidades cruzadas, restaurando la confianza y la sinergia.",
-      aiTip:
-        "Aprende a desactivar la defensividad y centrar el diálogo en los objetivos estratégicos compartidos.",
+        "Práctica de mediación entre miembros del equipo frente a fricciones operativas o desacuerdos de prioridades, cuidando el vínculo y orientando el foco al objetivo común.",
+      methodologicalNote:
+        "Se enfatiza la escucha neutral y la búsqueda de acuerdos basados en las responsabilidades del rol, evitando tomar partido prematuramente.",
     },
     {
-      title: "Delegación Efectiva y Seguimiento",
-      tag: "Eficiencia Operativa",
+      title: "Delegación responsable y seguimiento",
+      tag: "Desarrollo de Personas",
       description:
-        "Supera el síndrome del 'lo hago yo más rápido'. Practica cómo delegar proyectos complejos transfiriendo autonomía con controles clave.",
-      aiTip:
-        "La IA evalúa si defines el nivel de autoridad exacto y si estableces checkpoints claros sin caer en micromanagement.",
+        "Cómo transferir tareas críticas brindando el nivel adecuado de autonomía, sin desentenderse de los resultados ni incurrir en control excesivo.",
+      methodologicalNote:
+        "Se evalúa la claridad al definir el alcance de la tarea, los criterios de éxito esperados y los momentos formales de revisión.",
     },
     {
-      title: "Comunicación de Cambios y Crisis",
-      tag: "Liderazgo Situacional",
+      title: "Comunicación de cambios y prioridades",
+      tag: "Liderazgo y Cultura",
       description:
-        "Prepara la comunicación de cambios organizacionales, reestructuraciones o momentos de alta incertidumbre con serenidad y claridad.",
-      aiTip:
-        "Entrena la capacidad de transmitir convicción, validar las emociones del equipo y marcar el rumbo inmediato.",
+        "Preparación de mensajes ante modificaciones en procesos, objetivos o reestructuraciones de equipo, respondiendo inquietudes con serenidad.",
+      methodologicalNote:
+        "Se prioriza la coherencia del mensaje, la transparencia en lo que está definido y la contención de las dudas lógicas del equipo.",
     },
   ];
 
   return (
-    <section id="coaching" className="py-24 bg-[#fff8f3] border-y border-[#f1dfd3] relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute bottom-10 right-0 w-[500px] h-[500px] glow-orange pointer-events-none -z-10 blur-3xl opacity-20"></div>
-
+    <section id="coaching" className="py-20 bg-white border-b border-[#f1dfd3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5]/60 border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
-            Pilar 02 • Desarrollo de Líderes
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#171412] tracking-tight mb-4">
-            AI Leadership Coach:{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#c22722]">
-              Coaching Ejecutivo 24/7
-            </span>
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-semibold text-[#da551d] uppercase tracking-wider block mb-2">
+            Desarrollo de Mandos Medios y Directivos
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#171412] tracking-tight mb-4">
+            Entrenamiento en conversaciones de liderazgo
           </h2>
-          <p className="text-base sm:text-lg text-[#4a423d]">
-            Los líderes no fallan por falta de capacidad técnica, sino por desafíos en conversaciones humanas complejas. Democratiza el entrenamiento de liderazgo para todos tus mandos medios.
+          <p className="text-base text-[#4a423d] leading-relaxed">
+            La efectividad de un líder se construye en el día a día. Esta herramienta ofrece un espacio seguro para ejercitar y madurar conversaciones complejas antes de llevarlas a cabo en la organización.
           </p>
         </div>
 
-        {/* Interactive Scenario Showcase */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left Column: Scenario Selectors */}
-          <div className="lg:col-span-5 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#6b625b] px-1 block mb-2">
-              Escenarios de Roleplay Disponibles:
+        {/* Workspace Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          {/* Left Column: Scenarios List */}
+          <div className="lg:col-span-5 space-y-2.5">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#6b625b] px-1 block mb-1">
+              Situaciones frecuentes de gestión:
             </span>
             {scenarios.map((sc, index) => (
               <button
                 key={index}
                 onClick={() => setActiveScenario(index)}
-                className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 ${
+                className={`w-full text-left p-4 rounded-xl border transition-all ${
                   activeScenario === index
-                    ? "bg-white border-2 border-[#ff8b1e] shadow-lg shadow-[#ff8b1e]/10"
-                    : "bg-white/70 border-[#f1dfd3] hover:border-[#ff8b1e]/50 text-[#4a423d]"
+                    ? "bg-[#fffbf9] border-[#da551d] shadow-sm"
+                    : "bg-white border-[#f1dfd3] hover:border-[#da551d]/40"
                 }`}
               >
-                <div className="flex items-center justify-between mb-1.5">
-                  <span
-                    className={`text-xs font-bold px-2.5 py-0.5 rounded-md ${
-                      activeScenario === index
-                        ? "bg-[#ffdfc5] text-[#61100d]"
-                        : "bg-[#fff8f3] text-[#6b625b]"
-                    }`}
-                  >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[11px] font-medium text-[#da551d]">
                     {sc.tag}
                   </span>
-                  <span className="text-xs font-mono text-[#808285]">
-                    Modo #{index + 1}
+                  <span className="text-[11px] text-[#808285]">
+                    Caso #{index + 1}
                   </span>
                 </div>
-                <h3
-                  className={`text-base font-bold ${
-                    activeScenario === index ? "text-[#171412]" : "text-[#4a423d]"
-                  }`}
-                >
+                <h3 className="text-sm font-semibold text-[#171412]">
                   {sc.title}
                 </h3>
               </button>
             ))}
           </div>
 
-          {/* Right Column: Scenario Detail Card */}
-          <div className="lg:col-span-7 rounded-2xl bg-white border border-[#f1dfd3] p-6 sm:p-8 shadow-xl relative overflow-hidden">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-[#ffdfc5] border border-[#ff8b1e]/30 flex items-center justify-center">
-                <Brain className="w-6 h-6 text-[#da551d]" />
-              </div>
-              <div>
-                <span className="text-xs font-bold text-[#da551d] uppercase tracking-wider block">
-                  Simulación Activa
-                </span>
-                <h4 className="text-xl sm:text-2xl font-bold text-[#171412]">
-                  {scenarios[activeScenario].title}
-                </h4>
-              </div>
+          {/* Right Column: Scenario Detail */}
+          <div className="lg:col-span-7 rounded-xl bg-[#fffbf9] border border-[#f1dfd3] p-6 sm:p-8">
+            <div className="border-b border-[#f1dfd3] pb-4 mb-5">
+              <span className="text-xs font-medium text-[#da551d] uppercase tracking-wider block mb-1">
+                Situación seleccionada
+              </span>
+              <h4 className="text-lg sm:text-xl font-bold text-[#171412]">
+                {scenarios[activeScenario].title}
+              </h4>
             </div>
 
-            <p className="text-[#4a423d] text-base leading-relaxed mb-6">
+            <p className="text-sm text-[#4a423d] leading-relaxed mb-6">
               {scenarios[activeScenario].description}
             </p>
 
-            <div className="p-4 rounded-xl bg-[#fff8f3] border border-[#ffdfc5] space-y-2 mb-6">
-              <div className="flex items-center gap-2 text-[#61100d] text-xs font-bold uppercase tracking-wider">
-                <Compass className="w-4 h-4 text-[#ff8b1e]" />
-                <span>Metodología Grupo Dinamis incorporada:</span>
-              </div>
-              <p className="text-sm text-[#171412] leading-relaxed">
-                {scenarios[activeScenario].aiTip}
+            <div className="p-4 rounded-lg bg-white border border-[#f1dfd3] space-y-1.5 mb-6">
+              <span className="text-xs font-semibold text-[#171412] block">
+                Criterio metodológico de Grupo Dinamis:
+              </span>
+              <p className="text-xs sm:text-sm text-[#6b625b] leading-relaxed">
+                {scenarios[activeScenario].methodologicalNote}
               </p>
             </div>
 
-            {/* Value checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-[#4a423d]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-[#4a423d] mb-7">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-[#ff8b1e] shrink-0" />
-                <span>100% Confidencial y privado</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#da551d] shrink-0" />
+                <span>Espacio privado de aprendizaje</span>
               </div>
               <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-[#ff8b1e] shrink-0" />
-                <span>Métricas de evolución mensual</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#da551d] shrink-0" />
+                <span>Foco en conductas observables</span>
               </div>
               <div className="flex items-center gap-2">
-                <Layers className="w-4 h-4 text-[#ff8b1e] shrink-0" />
-                <span>Alineado a la cultura de tu empresa</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#da551d] shrink-0" />
+                <span>Práctica flexible a ritmo propio</span>
               </div>
               <div className="flex items-center gap-2">
-                <MessageCircleQuestion className="w-4 h-4 text-[#ff8b1e] shrink-0" />
-                <span>Feedback en lenguaje natural</span>
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#da551d] shrink-0" />
+                <span>Complementable con consultoría humana</span>
               </div>
             </div>
 
@@ -170,19 +139,19 @@ export function LeadershipCoach() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("leadership_start_sim")}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:brightness-105 text-white font-semibold text-sm shadow-lg shadow-[#ff8b1e]/25 transition-all flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-[#da551d] hover:bg-[#c24614] text-white font-medium text-xs sm:text-sm transition-colors flex items-center justify-center gap-2"
               >
-                <span>Entrenar este escenario en la App</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                <span>Probar este caso en la plataforma</span>
+                <ArrowRight className="w-4 h-4" />
               </a>
 
               <a
-                href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quisiera%20consultar%20por%20el%20programa%20de%20Coaching%20de%20Lideres%20con%20IA"
+                href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quisiera%20consultar%20por%20programas%20de%20desarrollo%20de%20lideres"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs sm:text-sm text-[#6b625b] hover:text-[#da551d] transition-colors underline"
+                className="text-xs text-[#6b625b] hover:text-[#171412] underline"
               >
-                Consultar por programas híbridos (IA + Consultores)
+                Consultar por programas con consultores sénior
               </a>
             </div>
           </div>

@@ -24,22 +24,14 @@
 body {
   background-color: var(--brand-bg);
   color: var(--brand-text-main);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-family: var(--font-poppins), "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
 }
 
-/* Custom warm glow and subtle dot grid patterns */
-.bg-warm-grid {
-  background-image: radial-gradient(rgba(218, 85, 29, 0.08) 1px, transparent 1px);
-  background-size: 24px 24px;
-}
-
-.glow-orange {
-  background: radial-gradient(circle, rgba(255, 139, 30, 0.18) 0%, rgba(255, 139, 30, 0) 70%);
-}
-
-.glow-terracotta {
-  background: radial-gradient(circle, rgba(218, 85, 29, 0.14) 0%, rgba(218, 85, 29, 0) 70%);
+/* Subtle pattern for texture without visual clutter */
+.bg-warm-texture {
+  background-image: radial-gradient(rgba(218, 85, 29, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 /* Brand Bento Card */

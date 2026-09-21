@@ -1,35 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle, MessageSquare } from "lucide-react";
+import { ChevronDown, MessageSquare } from "lucide-react";
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
-      q: "¿Qué es Dinamis AI y en qué se diferencia de un ChatGPT convencional?",
-      a: "Dinamis AI no es un chatbot genérico sin contexto. Está entrenado y parametrizado con los más de 15 años de metodología en Recursos Humanos, evaluación por competencias (STAR) y desarrollo organizacional de Grupo Dinamis. Ofrece métricas cuantitativas, reportes ejecutivos comparativos y simulaciones de rol diseñadas específicamente para el mundo corporativo.",
+      q: "¿Cuál es el objetivo principal de Dinamis AI?",
+      a: "Es una herramienta desarrollada para brindar un espacio de práctica riguroso a mandos medios y postulantes, así como criterios objetivos a las áreas de selección. No reemplaza la entrevista humana ni las decisiones de contratación, sino que ordena los filtros preliminares y permite a los líderes ensayar situaciones de gestión con antelación.",
     },
     {
-      q: "¿Cómo funciona la simulación de entrevistas laborales?",
-      a: "El usuario o candidato inicia una sesión interactiva donde la IA asume el rol de selector senior según la vacante seleccionada. Al finalizar, el sistema genera de inmediato un diagnóstico que analiza la estructura de respuestas (STAR), claridad de oratoria, asertividad, coherencia y áreas concretas de mejora.",
+      q: "¿En qué consiste la evaluación bajo modelo STAR?",
+      a: "El modelo STAR (Situación, Tarea, Acción y Resultado) es un estándar de selección por competencias que indaga sobre hechos observables del pasado del candidato. La plataforma guía al postulante para que estructure sus respuestas con foco en evidencias y resultados tangibles.",
     },
     {
-      q: "¿Cómo ayuda el AI Leadership Coach a los mandos medios?",
-      a: "Permite a supervisores, gerentes y coordinadores practicar conversaciones difíciles (feedback correctivo, despidos, mediación de conflictos o crisis de equipo) en un entorno 100% seguro y confidencial las 24 horas del día, recibiendo sugerencias metodológicas basadas en psicología organizacional antes de tener la conversación real.",
+      q: "¿Cómo ayuda la plataforma al desarrollo de los mandos medios?",
+      a: "Los líderes suelen enfrentar dificultades en conversaciones humanas del día a día (dar feedback a tiempo, delegar o abordar diferencias internas). La herramienta les permite preparar sus intervenciones en privado, reflexionando sobre cómo plantear los temas con claridad y asertividad.",
     },
     {
-      q: "¿Es segura y confidencial la información de mi empresa?",
-      a: "Totalmente. Cumplimos con estrictos estándares de privacidad. Los audios, transcripciones y evaluaciones de tus colaboradores o candidatos no se utilizan bajo ninguna circunstancia para entrenar modelos públicos y permanecen encriptados en reposo y en tránsito.",
+      q: "¿Cómo se gestiona la privacidad y confidencialidad de los datos?",
+      a: "Tratamos la información con estricto rigor ético y reserva corporativa. Las respuestas, transcripciones y evaluaciones son privadas, no se comparten con terceros ni se utilizan para alimentar modelos públicos.",
     },
     {
-      q: "¿Puedo probar la plataforma antes de contratar un plan de empresa?",
-      a: "Sí. Puedes registrarte y realizar simulaciones gratuitas de prueba directamente en app.grupodinamis.com. Además, para planes de equipos y corporativos ofrecemos un piloto de 14 días y demostraciones guiadas por nuestros consultores.",
-    },
-    {
-      q: "¿Cómo se integra con los servicios de consultoría de Grupo Dinamis?",
-      a: "Dinamis AI es el brazo tecnológico de Grupo Dinamis. Las empresas pueden combinar la plataforma SaaS con programas de consultoría presencial o remota en Dirección Externa, Hunting Ejecutivo, Evaluaciones de Desempeño y Transformación Cultural liderados por los socios fundadores.",
+      q: "¿Cómo se complementa con los servicios de Grupo Dinamis?",
+      a: "Dinamis AI es parte del ecosistema de servicios de Grupo Dinamis. Las empresas pueden utilizar la plataforma de forma autónoma o integrarla en programas más amplios de Desarrollo de Líderes, Dirección Externa o Búsqueda y Selección acompañados por nuestros consultores.",
     },
   ];
 
@@ -38,50 +34,46 @@ export function Faq() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-[#fff8f3] border-t border-[#f1dfd3] relative overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-20 bg-white border-b border-[#f1dfd3]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5]/60 border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Respuestas Clave</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#171412] tracking-tight mb-4">
-            Preguntas Frecuentes sobre{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#c22722]">
-              Dinamis AI
-            </span>
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="text-xs font-semibold text-[#da551d] uppercase tracking-wider block mb-2">
+            Preguntas Frecuentes
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#171412] tracking-tight mb-3">
+            Consultas habituales sobre la herramienta
           </h2>
-          <p className="text-[#4a423d] text-base sm:text-lg">
-            Todo lo que necesitas saber sobre la tecnología, la metodología y la implementación en tu organización.
+          <p className="text-sm text-[#4a423d]">
+            Detalles sobre el funcionamiento, la metodología y la implementación en las organizaciones.
           </p>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="rounded-2xl bg-white border border-[#f1dfd3] shadow-sm transition-all overflow-hidden"
+                className="rounded-xl bg-[#fffbf9] border border-[#f1dfd3] transition-all overflow-hidden"
               >
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+                  className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-bold text-[#171412] pr-4">
+                  <span className="text-sm sm:text-base font-semibold text-[#171412] pr-4">
                     {faq.q}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[#ff8b1e] shrink-0 transition-transform duration-200 ${
+                    className={`w-4 h-4 text-[#da551d] shrink-0 transition-transform duration-200 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-[#4a423d] text-sm sm:text-base leading-relaxed border-t border-[#f1dfd3] animate-in fade-in">
+                  <div className="px-5 pb-5 pt-1 text-[#6b625b] text-xs sm:text-sm leading-relaxed border-t border-[#f1dfd3]">
                     {faq.a}
                   </div>
                 )}
@@ -90,24 +82,24 @@ export function Faq() {
           })}
         </div>
 
-        {/* Support Callout */}
-        <div className="mt-12 text-center p-6 rounded-2xl bg-white border border-[#f1dfd3] shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-left">
-            <p className="text-sm font-bold text-[#171412]">
-              ¿Tienes una consulta específica para tu empresa?
+        {/* Consultation box */}
+        <div className="mt-10 p-5 rounded-xl bg-[#fff8f3] border border-[#f1dfd3] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <p className="text-sm font-semibold text-[#171412]">
+              ¿Tenés dudas sobre cómo aplicarlo en tu empresa?
             </p>
             <p className="text-xs text-[#6b625b]">
-              Nuestro equipo de consultoría en RRHH te responde en el día.
+              Podés conversar directamente con el equipo de consultoría de Grupo Dinamis.
             </p>
           </div>
           <a
-            href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20tengo%20una%20consulta%20sobre%20Dinamis%20AI"
+            href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20tengo%20una%20consulta%20sobre%20la%20herramienta%20Dinamis%20AI"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-md transition-colors"
+            className="px-4 py-2 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white font-medium text-xs sm:text-sm flex items-center gap-2 transition-colors shrink-0"
           >
             <MessageSquare className="w-4 h-4" />
-            <span>Hablar por WhatsApp (+54 9 342 5200959)</span>
+            <span>Consultar por WhatsApp</span>
           </a>
         </div>
       </div>

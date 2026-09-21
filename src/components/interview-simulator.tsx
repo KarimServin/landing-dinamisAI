@@ -4,11 +4,11 @@ import { useState } from "react";
 import {
   FileText,
   Target,
-  Sparkles,
   ShieldCheck,
-  CheckCircle,
+  CheckCircle2,
   Clock,
   ArrowRight,
+  Sparkles,
 } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
 
@@ -18,99 +18,93 @@ export function InterviewSimulator() {
   const companyFeatures = [
     {
       icon: Target,
-      title: "Evaluación por Competencias (STAR)",
+      title: "Estandarización por competencias",
       description:
-        "Estandariza los filtros de selección. La IA formula preguntas situacionales y valida si el postulante responde con Situación, Tarea, Acción y Resultado.",
+        "Preguntas estructuradas bajo el modelo STAR (Situación, Tarea, Acción y Resultado) para evaluar comportamientos reales y demostrables.",
     },
     {
       icon: Clock,
-      title: "-70% Tiempo de Reclutamiento",
+      title: "Optimización del tiempo de selección",
       description:
-        "Los candidatos realizan la primera entrevista con la IA según tu perfil de búsqueda. Tu equipo solo entrevista a los perfiles con mejor match cultural y técnico.",
+        "Permite ordenar los filtros iniciales de postulantes para que el equipo de RRHH dedique tiempo presencial a los perfiles más adecuados.",
     },
     {
       icon: ShieldCheck,
-      title: "Selección Ciega sin Sesgos",
+      title: "Criterios claros y consistentes",
       description:
-        "Decisiones basadas en datos y desempeño demostrable. Evaluaciones objetivas que garantizan igualdad de oportunidades y mejor fit cultural.",
+        "Evaluaciones objetivas orientadas a reducir sesgos y asegurar que cada candidato sea medido bajo los mismos parámetros del perfil.",
     },
     {
       icon: FileText,
-      title: "Informes Comparativos Ejecutivos",
+      title: "Informes de síntesis por candidato",
       description:
-        "Generación automática de un reporte con puntajes de oratoria, asertividad, resolución de problemas y fortalezas detectadas.",
+        "Resúmenes ejecutivos con las fortalezas comunicacionales observadas, consistencia en los ejemplos y aspectos a profundizar.",
     },
   ];
 
   const candidateFeatures = [
     {
-      icon: Sparkles,
-      title: "Simula el Rol que Quieras",
+      icon: Target,
+      title: "Preparación para roles reales",
       description:
-        "Desde analistas junior hasta directores de área y posiciones técnicas. Personaliza el nivel de exigencia y las preguntas de la entrevista.",
+        "Ensayá preguntas y situaciones adaptadas al nivel de responsabilidad y al área funcional de tu interés profesional.",
     },
     {
-      icon: Target,
-      title: "Feedback Predictivo Inmediato",
+      icon: CheckCircle2,
+      title: "Estructuración de logros (STAR)",
       description:
-        "Descubre en segundos si tus respuestas transmiten solvencia, si tus ejemplos son claros y cómo estructurar mejor tus logros pasados.",
+        "Aprendé a relatar tus experiencias con precisión, destacando tus acciones individuales y los resultados concretos alcanzados.",
     },
     {
       icon: ShieldCheck,
-      title: "Espacio Seguro y Confidencial",
+      title: "Espacio confidencial de práctica",
       description:
-        "Equivócate, repite y perfecciona tu discurso tantas veces como necesites antes de estar frente al reclutador real.",
+        "Un entorno privado donde podés ensayar, corregir tu oratoria y ganar serenidad antes de una entrevista real.",
     },
     {
       icon: FileText,
-      title: "Análisis de Muletillas y Tono",
+      title: "Observaciones de mejora",
       description:
-        "Detección de claridad vocal, ritmo, precisión verbal y coherencia argumental para proyectar máxima seguridad.",
+        "Indicaciones constructivas sobre claridad argumental, precisión del mensaje y cómo comunicar tu valor con naturalidad.",
     },
   ];
 
   return (
-    <section id="simulador" className="py-24 bg-[#fffbf9] relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] glow-orange pointer-events-none -z-10 blur-3xl opacity-25"></div>
-
+    <section id="simulador" className="py-20 bg-[#fffbf9] border-b border-[#f1dfd3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5]/60 border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
-            Pilar 01 • Selección & Talento
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#171412] tracking-tight mb-4">
-            Simulador de Entrevistas con{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] to-[#da551d]">
-              Metodología STAR
-            </span>
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-semibold text-[#da551d] uppercase tracking-wider block mb-2">
+            Metodología de Selección
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#171412] tracking-tight mb-4">
+            Simulación de entrevistas basada en competencias
           </h2>
-          <p className="text-base sm:text-lg text-[#4a423d]">
-            Diseñado para que las empresas identifiquen al mejor talento en una fracción de tiempo, y para que los profesionales ganen la confianza necesaria para superar cualquier proceso.
+          <p className="text-base text-[#4a423d] leading-relaxed">
+            Una herramienta pensada para brindar rigurosidad a los procesos de búsqueda y permitir a los profesionales preparar sus entrevistas con criterio y seguridad.
           </p>
 
-          {/* Toggle between Company and Candidate view */}
-          <div className="mt-8 inline-flex p-1.5 bg-white rounded-2xl border border-[#f1dfd3] shadow-sm">
+          {/* Toggle Button */}
+          <div className="mt-7 inline-flex p-1 bg-white rounded-lg border border-[#f1dfd3]">
             <button
               onClick={() => setActiveAudience("empresas")}
-              className={`px-5 py-2 text-sm font-semibold rounded-xl transition-all ${
+              className={`px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors ${
                 activeAudience === "empresas"
-                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-md"
+                  ? "bg-[#171412] text-white"
                   : "text-[#6b625b] hover:text-[#171412]"
               }`}
             >
-              Para Equipos de Selección & RRHH
+              Para equipos de Recursos Humanos
             </button>
             <button
               onClick={() => setActiveAudience("candidatos")}
-              className={`px-5 py-2 text-sm font-semibold rounded-xl transition-all ${
+              className={`px-4 py-2 text-xs sm:text-sm font-medium rounded-md transition-colors ${
                 activeAudience === "candidatos"
-                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-md"
+                  ? "bg-[#171412] text-white"
                   : "text-[#6b625b] hover:text-[#171412]"
               }`}
             >
-              Para Candidatos & Profesionales
+              Para postulantes y profesionales
             </button>
           </div>
         </div>
@@ -123,22 +117,18 @@ export function InterviewSimulator() {
               return (
                 <div
                   key={index}
-                  className="p-6 rounded-2xl bg-white border border-[#f1dfd3] hover:border-[#ff8b1e]/60 shadow-sm hover:shadow-xl hover:shadow-[#61100d]/5 transition-all duration-300 hover:-translate-y-1 group flex flex-col justify-between"
+                  className="p-6 rounded-xl bg-white border border-[#f1dfd3] flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-[#fff8f3] border border-[#ffdfc5] flex items-center justify-center mb-5 group-hover:bg-[#ffdfc5] group-hover:border-[#ff8b1e]/50 transition-colors">
-                      <Icon className="w-6 h-6 text-[#da551d]" />
+                    <div className="w-10 h-10 rounded-lg bg-[#fff8f3] border border-[#f1dfd3] flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-[#da551d]" />
                     </div>
-                    <h3 className="text-lg font-bold text-[#171412] mb-2 group-hover:text-[#ff8b1e] transition-colors">
+                    <h3 className="text-base font-bold text-[#171412] mb-2">
                       {feat.title}
                     </h3>
-                    <p className="text-sm text-[#4a423d] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#6b625b] leading-relaxed">
                       {feat.description}
                     </p>
-                  </div>
-                  <div className="mt-6 pt-4 border-t border-[#f1dfd3] flex items-center text-xs text-[#6b625b] gap-1.5 font-medium">
-                    <CheckCircle className="w-3.5 h-3.5 text-[#ff8b1e]" />
-                    <span>Algoritmo entrenado por psicólogos de RRHH</span>
                   </div>
                 </div>
               );
@@ -146,17 +136,14 @@ export function InterviewSimulator() {
           )}
         </div>
 
-        {/* Highlight Callout Box */}
-        <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#fff8f3] via-[#ffdfc5]/30 to-[#fff8f3] border border-[#ffdfc5] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
-          <div className="space-y-1 text-center md:text-left">
-            <span className="text-xs font-bold text-[#61100d] uppercase tracking-widest">
-              Experiencia Inmersiva
-            </span>
-            <h4 className="text-xl font-bold text-[#171412]">
-              ¿Quieres probar cómo evalúa una entrevista Dinamis AI?
+        {/* Bottom invitation */}
+        <div className="mt-12 rounded-xl bg-[#fff8f3] border border-[#f1dfd3] p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="space-y-1 text-center sm:text-left">
+            <h4 className="text-base font-semibold text-[#171412]">
+              ¿Querés conocer la dinámica de evaluación?
             </h4>
-            <p className="text-sm text-[#4a423d]">
-              Inicia una simulación de 3 minutos ahora mismo sin costo de alta.
+            <p className="text-xs sm:text-sm text-[#6b625b]">
+              Podés realizar una práctica inicial en la plataforma para evaluar su pertinencia en tu organización.
             </p>
           </div>
           <a
@@ -164,10 +151,10 @@ export function InterviewSimulator() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackEvent("simulator_callout_click")}
-            className="shrink-0 px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:brightness-105 text-white font-semibold text-sm shadow-lg shadow-[#ff8b1e]/25 transition-all flex items-center gap-2 group"
+            className="shrink-0 px-5 py-2.5 rounded-lg bg-[#da551d] hover:bg-[#c24614] text-white font-medium text-xs sm:text-sm transition-colors flex items-center gap-2"
           >
-            <span>Iniciar Simulación Gratis</span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <span>Ingresar a la plataforma</span>
+            <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </div>
