@@ -49,8 +49,18 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
+                <Link href="/empresas" className="text-white hover:text-[#ff8b1e] font-semibold transition-colors flex items-center gap-1">
+                  <span>🏢 Dinamis AI Empresas</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/personas" className="text-white hover:text-[#ff8b1e] font-semibold transition-colors flex items-center gap-1">
+                  <span>🚀 Dinamis AI Personas</span>
+                </Link>
+              </li>
+              <li>
                 <a href="#simulador" className="hover:text-[#ff8b1e] transition-colors">
-                  Simulador de Entrevistas (STAR)
+                  Simulador STAR
                 </a>
               </li>
               <li>

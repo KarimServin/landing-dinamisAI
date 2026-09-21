@@ -36,14 +36,6 @@ function SegmentProviderInner({ children }: { children: React.ReactNode }) {
       setSegment("empresa");
       return;
     }
-
-    // 2. If no direct URL parameter, check if user has already made a selection in this session
-    if (typeof window !== "undefined") {
-      const alreadySeen = sessionStorage.getItem("dinamis_segment_gate_seen");
-      if (!alreadySeen) {
-        setIsGateOpen(true);
-      }
-    }
   }, [searchParams]);
 
   const updateSegment = (newSeg: AudienceSegment) => {

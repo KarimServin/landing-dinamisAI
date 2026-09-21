@@ -14,13 +14,14 @@ import {
   Award,
   Rocket,
   ShieldCheck,
+  Building2,
 } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
 import { useSegment } from "@/components/segment-context";
-import { AudienceSegmenter } from "@/components/audience-segmenter";
+import { RobotCompanion } from "@/components/robot-companion";
 
 export function Hero() {
-  const { segment } = useSegment();
+  const { segment, setSegment } = useSegment();
   const [activeTab, setActiveTab] = useState<"entrevistas" | "coaching">("entrevistas");
 
   // Keep mockup tab aligned when segment changes
@@ -40,146 +41,185 @@ export function Hero() {
       <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[600px] h-[350px] md:w-[850px] md:h-[450px] bg-gradient-to-b from-[#ffdfc5]/40 via-[#ff8b1e]/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ffdfc5] border border-[#ff8b1e]/30 text-[#61100d] text-xs sm:text-sm font-semibold mb-6 shadow-sm transition-all duration-300">
-            <span className="w-2 h-2 rounded-full bg-[#ff8b1e] animate-pulse"></span>
-            <span>
-              {segment === "persona"
-                ? "Simulador de Entrevistas & Salto de Carrera"
-                : "Inteligencia Artificial para Capital Humano"}
-            </span>
-            <span className="text-[#da551d]/40">|</span>
-            <span className="text-[#111111] font-bold">Grupo Dinamis</span>
+        {/* Audience Switcher at top of Hero */}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex p-1 bg-white rounded-2xl border border-[#f1dfd3] shadow-sm">
+            <button
+              type="button"
+              onClick={() => setSegment("empresa")}
+              className={`px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-2 ${
+                segment === "empresa"
+                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-sm scale-102"
+                  : "text-[#6b625b] hover:text-[#111111]"
+              }`}
+            >
+              <Building2 className="w-4 h-4" />
+              <span>🏢 Soy Empresa (Liderazgo & Selección)</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setSegment("persona")}
+              className={`px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-2 ${
+                segment === "persona"
+                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-sm scale-102"
+                  : "text-[#6b625b] hover:text-[#111111]"
+              }`}
+            >
+              <Rocket className="w-4 h-4" />
+              <span>🚀 Soy Persona (Búsqueda de Empleo & STAR)</span>
+            </button>
+          </div>
+        </div>
+
+        {/* 2-Column Split: Value Prop + 3D Robot Companion */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+          {/* Left Column (7 cols): Copy, CTAs, Social Proof */}
+          <div className="lg:col-span-7 text-left space-y-6">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ffdfc5] border border-[#ff8b1e]/30 text-[#61100d] text-xs sm:text-sm font-semibold shadow-xs transition-all duration-300">
+              <span className="w-2 h-2 rounded-full bg-[#ff8b1e] animate-pulse"></span>
+              <span>
+                {segment === "persona"
+                  ? "Simulador de Entrevistas & Salto de Carrera"
+                  : "Inteligencia Artificial para Capital Humano"}
+              </span>
+              <span className="text-[#da551d]/40">|</span>
+              <span className="text-[#111111] font-bold">Grupo Dinamis</span>
+            </div>
+
+            {/* Punchy SaaS Marketing H1 */}
+            <div>
+              {segment === "persona" ? (
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight leading-[1.14] animate-in fade-in duration-300">
+                  Superá tus entrevistas laborales y da el{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
+                    salto al trabajo que merecés
+                  </span>{" "}
+                  con Dinamis AI.
+                </h1>
+              ) : (
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight leading-[1.14] animate-in fade-in duration-300">
+                  Multiplica el talento de tu empresa con{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
+                    simulación de entrevistas
+                  </span>{" "}
+                  y coaching de líderes.
+                </h1>
+              )}
+            </div>
+
+            {/* Subtitle */}
+            <div>
+              {segment === "persona" ? (
+                <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed font-normal animate-in fade-in duration-300">
+                  Vencé los nervios, aprendé a estructurar tus logros bajo el{" "}
+                  <strong className="text-[#111111] font-semibold">método STAR</strong> y recibí feedback diagnóstico al instante antes de estar frente al reclutador real. Diseñado con los más de 15 años de experiencia selectiva de{" "}
+                  <span className="text-[#da551d] font-semibold">Grupo Dinamis</span>.
+                </p>
+              ) : (
+                <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed font-normal animate-in fade-in duration-300">
+                  Digitaliza más de 15 años de metodología experta en Recursos Humanos.{" "}
+                  <strong className="text-[#111111] font-semibold">Dinamis AI</strong> evalúa competencias bajo modelo STAR con diagnósticos inmediatos y brinda a tus mandos medios un{" "}
+                  <span className="text-[#da551d] font-semibold">coach ejecutivo 24/7</span> para entrenar conversaciones difíciles con total confianza.
+                </p>
+              )}
+            </div>
+
+            {/* Dynamic Dual Conversion CTAs */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+              {segment === "persona" ? (
+                <>
+                  <a
+                    href="https://app.grupodinamis.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => handleCtaClick("start_candidate_practice")}
+                    className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff8b1e] hover:to-[#c24614] text-white font-bold text-sm sm:text-base shadow-[0_6px_24px_rgba(255,139,30,0.3)] hover:shadow-[0_8px_30px_rgba(218,85,29,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer"
+                  >
+                    <Rocket className="w-5 h-5 text-[#ffdfc5] group-hover:-translate-y-0.5 transition-transform" />
+                    <span>Entrenar Mi Entrevista Gratis</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+
+                  <a
+                    href="#simulador"
+                    onClick={() => handleCtaClick("view_simulator_details")}
+                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-[#fff8f3] text-[#111111] border border-[#f1dfd3] hover:border-[#ff8b1e]/50 font-bold text-sm sm:text-base shadow-xs transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <Play className="w-4 h-4 text-[#ff8b1e] fill-[#ff8b1e]" />
+                    <span>Ver Cómo Funciona</span>
+                  </a>
+                </>
+              ) : (
+                <>
+                  <a
+                    href="https://app.grupodinamis.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => handleCtaClick("start_free_trial")}
+                    className="px-7 py-3.5 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff8b1e] hover:to-[#c24614] text-white font-bold text-sm sm:text-base shadow-[0_6px_24px_rgba(255,139,30,0.3)] hover:shadow-[0_8px_30px_rgba(218,85,29,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer"
+                  >
+                    <Sparkles className="w-5 h-5 text-[#ffdfc5] group-hover:rotate-12 transition-transform" />
+                    <span>Comenzar Prueba Gratuita</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+
+                  <a
+                    href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20Dinamis%20AI%20para%20mi%20empresa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => handleCtaClick("book_corporate_demo")}
+                    className="px-6 py-3.5 rounded-xl bg-white hover:bg-[#fff8f3] text-[#111111] border border-[#f1dfd3] hover:border-[#ff8b1e]/50 font-bold text-sm sm:text-base shadow-xs transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <Play className="w-4 h-4 text-[#ff8b1e] fill-[#ff8b1e]" />
+                    <span>Solicitar Demo Corporativa</span>
+                  </a>
+                </>
+              )}
+            </div>
+
+            {/* Trust Highlights */}
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-[#6b625b] pt-1">
+              {segment === "persona" ? (
+                <>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#ff8b1e]" />
+                    <span className="font-medium">100% Confidencial y seguro</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <Award className="w-4 h-4 text-[#da551d]" />
+                    <span className="font-medium">Metodología STAR validada</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4 text-[#ff8b1e]" />
+                    <span className="font-medium">Feedback instantáneo con IA</span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle2 className="w-4 h-4 text-[#ff8b1e]" />
+                    <span className="font-medium">Sin tarjeta requerida</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <Award className="w-4 h-4 text-[#da551d]" />
+                    <span className="font-medium">Metodología STAR (+200 empresas)</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <Users className="w-4 h-4 text-[#ff8b1e]" />
+                    <span className="font-medium">Confidencialidad garantizada</span>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
 
-          {/* Punchy SaaS Marketing H1 with smooth content adaptation */}
-          <div className="transition-all duration-300">
-            {segment === "persona" ? (
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111111] tracking-tight leading-[1.12] mb-6 animate-in fade-in duration-300">
-                Superá tus entrevistas laborales y da el{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-                  salto al trabajo que merecés
-                </span>{" "}
-                con Dinamis AI.
-              </h1>
-            ) : (
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111111] tracking-tight leading-[1.12] mb-6 animate-in fade-in duration-300">
-                Multiplica el talento de tu empresa con{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-                  simulación de entrevistas
-                </span>{" "}
-                y coaching de líderes.
-              </h1>
-            )}
-          </div>
-
-          {/* Subtitle */}
-          <div className="transition-all duration-300">
-            {segment === "persona" ? (
-              <p className="text-lg sm:text-xl text-[#4a423d] mb-8 leading-relaxed font-normal max-w-3xl mx-auto animate-in fade-in duration-300">
-                Vencé los nervios, aprendé a estructurar tus logros bajo el{" "}
-                <strong className="text-[#111111] font-semibold">método STAR</strong> y recibí feedback diagnóstico al instante antes de estar frente al reclutador real. Diseñado con los más de 15 años de criterio selectivo de{" "}
-                <span className="text-[#da551d] font-semibold">Grupo Dinamis</span>.
-              </p>
-            ) : (
-              <p className="text-lg sm:text-xl text-[#4a423d] mb-8 leading-relaxed font-normal max-w-3xl mx-auto animate-in fade-in duration-300">
-                Digitaliza más de 15 años de metodología experta en Recursos Humanos.{" "}
-                <strong className="text-[#111111] font-semibold">Dinamis AI</strong> evalúa competencias bajo modelo STAR con diagnósticos inmediatos y brinda a tus mandos medios un{" "}
-                <span className="text-[#da551d] font-semibold">coach ejecutivo 24/7</span> para entrenar conversaciones difíciles con total confianza.
-              </p>
-            )}
-          </div>
-
-          {/* Interactive Audience Segmenter (Entry Experience) */}
-          <AudienceSegmenter />
-
-          {/* Dynamic Dual Conversion CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            {segment === "persona" ? (
-              <>
-                <a
-                  href="https://app.grupodinamis.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => handleCtaClick("start_candidate_practice")}
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff8b1e] hover:to-[#c24614] text-white font-bold text-base shadow-[0_6px_24px_rgba(255,139,30,0.3)] hover:shadow-[0_8px_30px_rgba(218,85,29,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2.5 group cursor-pointer"
-                >
-                  <Rocket className="w-5 h-5 text-[#ffdfc5] group-hover:-translate-y-0.5 transition-transform" />
-                  <span>Entrenar Mi Entrevista Gratis</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-
-                <a
-                  href="#simulador"
-                  onClick={() => handleCtaClick("view_simulator_details")}
-                  className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-[#fff8f3] text-[#111111] border border-[#f1dfd3] hover:border-[#ff8b1e]/50 font-bold text-base shadow-[0_4px_16px_rgba(97,16,13,0.03)] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <Play className="w-4 h-4 text-[#ff8b1e] fill-[#ff8b1e]" />
-                  <span>Ver Cómo Funciona el Simulador</span>
-                </a>
-              </>
-            ) : (
-              <>
-                <a
-                  href="https://app.grupodinamis.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => handleCtaClick("start_free_trial")}
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff8b1e] hover:to-[#c24614] text-white font-bold text-base shadow-[0_6px_24px_rgba(255,139,30,0.3)] hover:shadow-[0_8px_30px_rgba(218,85,29,0.4)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2.5 group cursor-pointer"
-                >
-                  <Sparkles className="w-5 h-5 text-[#ffdfc5] group-hover:rotate-12 transition-transform" />
-                  <span>Comenzar Prueba Gratuita</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </a>
-
-                <a
-                  href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20Dinamis%20AI%20para%20mi%20empresa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => handleCtaClick("book_corporate_demo")}
-                  className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white hover:bg-[#fff8f3] text-[#111111] border border-[#f1dfd3] hover:border-[#ff8b1e]/50 font-bold text-base shadow-[0_4px_16px_rgba(97,16,13,0.03)] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <Play className="w-4 h-4 text-[#ff8b1e] fill-[#ff8b1e]" />
-                  <span>Solicitar Demo Corporativa</span>
-                </a>
-              </>
-            )}
-          </div>
-
-          {/* Trust Highlights */}
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-[#6b625b] mb-14">
-            {segment === "persona" ? (
-              <>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff8b1e]" />
-                  <span className="font-medium">100% Confidencial y seguro</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-[#da551d]" />
-                  <span className="font-medium">Metodología STAR validada</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#ff8b1e]" />
-                  <span className="font-medium">Feedback instantáneo con IA</span>
-                </div>
-              </>
-            ) : (
-              <>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#ff8b1e]" />
-                  <span className="font-medium">Sin tarjeta de crédito requerida</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-[#da551d]" />
-                  <span className="font-medium">Metodología STAR validada (+200 empresas)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-[#ff8b1e]" />
-                  <span className="font-medium">Confidencialidad empresarial garantizada</span>
-                </div>
-              </>
-            )}
+          {/* Right Column (5 cols): 3D Robot Companion */}
+          <div className="lg:col-span-5 flex justify-center">
+            <RobotCompanion
+              mode={segment}
+              onSwitchMode={(mode) => setSegment(mode)}
+            />
           </div>
         </div>
 

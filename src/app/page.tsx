@@ -10,14 +10,10 @@ import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
 import { Footer } from "@/components/footer";
 import { SegmentProvider } from "@/components/segment-context";
-import { FullscreenRobotGate } from "@/components/fullscreen-robot-gate";
 
 export default function Home() {
   return (
     <SegmentProvider>
-      {/* Fullscreen 3D Animated Robot Gate for entry segmentation */}
-      <FullscreenRobotGate />
-
       <div className="flex flex-col min-h-screen bg-[#fffbf9] text-[#171412] selection:bg-[#ff8b1e] selection:text-white">
       {/* Sticky Navigation Bar */}
       <Navbar />
