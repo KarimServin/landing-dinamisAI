@@ -51,23 +51,23 @@ export function LeadershipCoach() {
   ];
 
   return (
-    <section id="coaching" className="py-24 bg-[#0A0E1A] relative overflow-hidden">
+    <section id="coaching" className="py-24 bg-[#fff8f3] border-y border-[#f1dfd3] relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute bottom-10 right-0 w-[500px] h-[500px] glow-cyan pointer-events-none -z-10 blur-3xl opacity-20"></div>
+      <div className="absolute bottom-10 right-0 w-[500px] h-[500px] glow-orange pointer-events-none -z-10 blur-3xl opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-900/40 border border-cyan-700/50 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5]/60 border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
             Pilar 02 • Desarrollo de Líderes
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#171412] tracking-tight mb-4">
             AI Leadership Coach:{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#c22722]">
               Coaching Ejecutivo 24/7
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-300">
+          <p className="text-base sm:text-lg text-[#4a423d]">
             Los líderes no fallan por falta de capacidad técnica, sino por desafíos en conversaciones humanas complejas. Democratiza el entrenamiento de liderazgo para todos tus mandos medios.
           </p>
         </div>
@@ -76,36 +76,36 @@ export function LeadershipCoach() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Scenario Selectors */}
           <div className="lg:col-span-5 space-y-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 px-1 block mb-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#6b625b] px-1 block mb-2">
               Escenarios de Roleplay Disponibles:
             </span>
             {scenarios.map((sc, index) => (
               <button
                 key={index}
                 onClick={() => setActiveScenario(index)}
-                className={`w-full text-left p-4 rounded-xl border transition-all duration-200 ${
+                className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 ${
                   activeScenario === index
-                    ? "bg-[#111827] border-cyan-500/80 shadow-lg shadow-cyan-500/10"
-                    : "bg-[#0B0F19]/80 border-slate-800/80 hover:border-slate-700 text-slate-300"
+                    ? "bg-white border-2 border-[#ff8b1e] shadow-lg shadow-[#ff8b1e]/10"
+                    : "bg-white/70 border-[#f1dfd3] hover:border-[#ff8b1e]/50 text-[#4a423d]"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1.5">
                   <span
-                    className={`text-xs font-semibold px-2 py-0.5 rounded ${
+                    className={`text-xs font-bold px-2.5 py-0.5 rounded-md ${
                       activeScenario === index
-                        ? "bg-cyan-500/20 text-cyan-300"
-                        : "bg-slate-800 text-slate-400"
+                        ? "bg-[#ffdfc5] text-[#61100d]"
+                        : "bg-[#fff8f3] text-[#6b625b]"
                     }`}
                   >
                     {sc.tag}
                   </span>
-                  <span className="text-xs font-mono text-slate-500">
-                    Modo Roleplay #{index + 1}
+                  <span className="text-xs font-mono text-[#808285]">
+                    Modo #{index + 1}
                   </span>
                 </div>
                 <h3
                   className={`text-base font-bold ${
-                    activeScenario === index ? "text-white" : "text-slate-200"
+                    activeScenario === index ? "text-[#171412]" : "text-[#4a423d]"
                   }`}
                 >
                   {sc.title}
@@ -115,53 +115,51 @@ export function LeadershipCoach() {
           </div>
 
           {/* Right Column: Scenario Detail Card */}
-          <div className="lg:col-span-7 rounded-2xl bg-[#111827] border border-slate-700/80 p-6 sm:p-8 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
+          <div className="lg:col-span-7 rounded-2xl bg-white border border-[#f1dfd3] p-6 sm:p-8 shadow-xl relative overflow-hidden">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-cyan-600/20 border border-cyan-500/40 flex items-center justify-center">
-                <Brain className="w-6 h-6 text-cyan-400" />
+              <div className="w-12 h-12 rounded-xl bg-[#ffdfc5] border border-[#ff8b1e]/30 flex items-center justify-center">
+                <Brain className="w-6 h-6 text-[#da551d]" />
               </div>
               <div>
-                <span className="text-xs font-semibold text-cyan-400 uppercase tracking-wider block">
+                <span className="text-xs font-bold text-[#da551d] uppercase tracking-wider block">
                   Simulación Activa
                 </span>
-                <h4 className="text-xl sm:text-2xl font-bold text-white">
+                <h4 className="text-xl sm:text-2xl font-bold text-[#171412]">
                   {scenarios[activeScenario].title}
                 </h4>
               </div>
             </div>
 
-            <p className="text-slate-300 text-base leading-relaxed mb-6">
+            <p className="text-[#4a423d] text-base leading-relaxed mb-6">
               {scenarios[activeScenario].description}
             </p>
 
-            <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2 mb-6">
-              <div className="flex items-center gap-2 text-cyan-300 text-xs font-bold uppercase tracking-wider">
-                <Compass className="w-4 h-4 text-cyan-400" />
+            <div className="p-4 rounded-xl bg-[#fff8f3] border border-[#ffdfc5] space-y-2 mb-6">
+              <div className="flex items-center gap-2 text-[#61100d] text-xs font-bold uppercase tracking-wider">
+                <Compass className="w-4 h-4 text-[#ff8b1e]" />
                 <span>Metodología Grupo Dinamis incorporada:</span>
               </div>
-              <p className="text-sm text-slate-200 leading-relaxed">
+              <p className="text-sm text-[#171412] leading-relaxed">
                 {scenarios[activeScenario].aiTip}
               </p>
             </div>
 
             {/* Value checklist */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-slate-300">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-xs sm:text-sm text-[#4a423d]">
               <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-cyan-400 shrink-0" />
+                <Shield className="w-4 h-4 text-[#ff8b1e] shrink-0" />
                 <span>100% Confidencial y privado</span>
               </div>
               <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-cyan-400 shrink-0" />
+                <TrendingUp className="w-4 h-4 text-[#ff8b1e] shrink-0" />
                 <span>Métricas de evolución mensual</span>
               </div>
               <div className="flex items-center gap-2">
-                <Layers className="w-4 h-4 text-cyan-400 shrink-0" />
+                <Layers className="w-4 h-4 text-[#ff8b1e] shrink-0" />
                 <span>Alineado a la cultura de tu empresa</span>
               </div>
               <div className="flex items-center gap-2">
-                <MessageCircleQuestion className="w-4 h-4 text-cyan-400 shrink-0" />
+                <MessageCircleQuestion className="w-4 h-4 text-[#ff8b1e] shrink-0" />
                 <span>Feedback en lenguaje natural</span>
               </div>
             </div>
@@ -172,7 +170,7 @@ export function LeadershipCoach() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("leadership_start_sim")}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-semibold text-sm shadow-lg shadow-cyan-600/30 transition-all flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:brightness-105 text-white font-semibold text-sm shadow-lg shadow-[#ff8b1e]/25 transition-all flex items-center justify-center gap-2 group"
               >
                 <span>Entrenar este escenario en la App</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -182,7 +180,7 @@ export function LeadershipCoach() {
                 href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quisiera%20consultar%20por%20el%20programa%20de%20Coaching%20de%20Lideres%20con%20IA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs sm:text-sm text-slate-400 hover:text-cyan-300 transition-colors underline"
+                className="text-xs sm:text-sm text-[#6b625b] hover:text-[#da551d] transition-colors underline"
               >
                 Consultar por programas híbridos (IA + Consultores)
               </a>

@@ -7,32 +7,50 @@
 }
 
 :root {
-  --background: #0B0F19;
-  --foreground: #F8FAFC;
-  --card: #111827;
-  --card-border: #1F2937;
-  --primary: #2563EB;
-  --primary-hover: #1D4ED8;
-  --accent: #06B6D4;
+  /* Official Brand Palette - Dinamis AI & Grupo Dinamis */
+  --brand-bg: #fffbf9;
+  --brand-surface: #ffffff;
+  --brand-card-hover: #fff8f3;
+  --brand-primary: #ff8b1e;
+  --brand-light: #ffdfc5;
+  --brand-accent: #da551d;
+  --brand-error: #c22722;
+  --brand-text-dark: #61100d;
+  --brand-text-main: #171412;
+  --brand-text-muted: #6b625b;
+  --brand-border: #f1dfd3;
 }
 
 body {
-  background-color: #07090E;
-  color: #F1F5F9;
+  background-color: var(--brand-bg);
+  color: var(--brand-text-main);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
 }
 
-/* Custom glow and grid pattern utilities */
-.bg-grid-pattern {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+/* Custom warm glow and subtle dot grid patterns */
+.bg-warm-grid {
+  background-image: radial-gradient(rgba(218, 85, 29, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-.glow-blue {
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.18) 0%, rgba(37, 99, 235, 0) 70%);
+.glow-orange {
+  background: radial-gradient(circle, rgba(255, 139, 30, 0.18) 0%, rgba(255, 139, 30, 0) 70%);
 }
 
-.glow-cyan {
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0) 70%);
+.glow-terracotta {
+  background: radial-gradient(circle, rgba(218, 85, 29, 0.14) 0%, rgba(218, 85, 29, 0) 70%);
+}
+
+/* Brand Bento Card */
+.dinamis-card {
+  background-color: var(--brand-surface);
+  border: 1px solid var(--brand-border);
+  box-shadow: 0 4px 16px rgba(97, 16, 13, 0.04);
+  transition: all 0.25s ease;
+}
+
+.dinamis-card:hover {
+  border-color: rgba(255, 139, 30, 0.45);
+  box-shadow: 0 8px 24px rgba(255, 139, 30, 0.08);
 }

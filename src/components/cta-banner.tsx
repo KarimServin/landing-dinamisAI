@@ -5,15 +5,15 @@ import { trackEvent } from "@/components/analytics";
 
 export function CtaBanner() {
   return (
-    <section className="py-20 bg-[#07090E] relative overflow-hidden">
+    <section className="py-20 bg-[#fffbf9] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl bg-gradient-to-r from-blue-900/50 via-indigo-950/70 to-cyan-950/50 border border-blue-700/50 p-8 sm:p-14 text-center overflow-hidden shadow-2xl">
-          {/* Ambient light glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="relative rounded-3xl bg-gradient-to-r from-[#171412] via-[#26150e] to-[#171412] border border-[#ff8b1e]/30 p-8 sm:p-14 text-center overflow-hidden shadow-2xl shadow-[#61100d]/10">
+          {/* Ambient warm light glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#ff8b1e]/15 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-700/60 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5]/15 border border-[#ff8b1e]/40 text-[#ffdfc5] text-xs font-bold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-[#ff8b1e]" />
               <span>Comienza Hoy Mismo</span>
             </div>
 
@@ -31,7 +31,7 @@ export function CtaBanner() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("footer_banner_start_free")}
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white font-bold text-base shadow-xl shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-[#ff8b1e] via-[#f15808] to-[#da551d] text-white font-bold text-base shadow-xl shadow-[#ff8b1e]/30 hover:brightness-105 active:scale-[0.98] transition-all flex items-center justify-center gap-2 group"
               >
                 <span>Probar Dinamis AI Gratis</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -42,16 +42,16 @@ export function CtaBanner() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackEvent("footer_banner_demo_whatsapp")}
-                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-base transition-all flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white/10 hover:bg-white/15 text-white border border-white/20 font-semibold text-base transition-all flex items-center justify-center gap-2"
               >
-                <Play className="w-4 h-4 text-cyan-400 fill-cyan-400" />
+                <Play className="w-4 h-4 text-[#ff8b1e] fill-[#ff8b1e]" />
                 <span>Agendar Demostración B2B</span>
               </a>
             </div>
 
             <div className="pt-4 flex items-center justify-center gap-6 text-xs text-slate-400">
               <span className="flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-cyan-400" /> Alta instantánea en 30 segundos
+                <ShieldCheck className="w-4 h-4 text-[#ff8b1e]" /> Alta instantánea en 30 segundos
               </span>
               <span>•</span>
               <span>Acceso desde cualquier navegador web</span>

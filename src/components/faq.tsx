@@ -38,21 +38,21 @@ export function Faq() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-[#0A0E1A] relative overflow-hidden">
+    <section id="faq" className="py-24 bg-[#fff8f3] border-t border-[#f1dfd3] relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-700/50 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5]/60 border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Respuestas Clave</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#171412] tracking-tight mb-4">
             Preguntas Frecuentes sobre{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#c22722]">
               Dinamis AI
             </span>
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
+          <p className="text-[#4a423d] text-base sm:text-lg">
             Todo lo que necesitas saber sobre la tecnología, la metodología y la implementación en tu organización.
           </p>
         </div>
@@ -64,24 +64,24 @@ export function Faq() {
             return (
               <div
                 key={idx}
-                className="rounded-xl bg-[#0F1422] border border-slate-800 transition-all overflow-hidden"
+                className="rounded-2xl bg-white border border-[#f1dfd3] shadow-sm transition-all overflow-hidden"
               >
                 <button
                   onClick={() => toggleFaq(idx)}
                   className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-base sm:text-lg font-semibold text-white pr-4">
+                  <span className="text-base sm:text-lg font-bold text-[#171412] pr-4">
                     {faq.q}
                   </span>
                   <ChevronDown
-                    className={`w-5 h-5 text-cyan-400 shrink-0 transition-transform duration-200 ${
+                    className={`w-5 h-5 text-[#ff8b1e] shrink-0 transition-transform duration-200 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-slate-800/60 animate-in fade-in">
+                  <div className="px-6 pb-6 pt-1 text-[#4a423d] text-sm sm:text-base leading-relaxed border-t border-[#f1dfd3] animate-in fade-in">
                     {faq.a}
                   </div>
                 )}
@@ -91,12 +91,12 @@ export function Faq() {
         </div>
 
         {/* Support Callout */}
-        <div className="mt-12 text-center p-6 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 text-center p-6 rounded-2xl bg-white border border-[#f1dfd3] shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="text-left">
-            <p className="text-sm font-semibold text-white">
+            <p className="text-sm font-bold text-[#171412]">
               ¿Tienes una consulta específica para tu empresa?
             </p>
-            <p className="text-xs text-slate-400">
+            <p className="text-xs text-[#6b625b]">
               Nuestro equipo de consultoría en RRHH te responde en el día.
             </p>
           </div>
@@ -104,7 +104,7 @@ export function Faq() {
             href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20tengo%20una%20consulta%20sobre%20Dinamis%20AI"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs sm:text-sm flex items-center gap-2 shadow-md transition-colors"
+            className="px-5 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs sm:text-sm flex items-center gap-2 shadow-md transition-colors"
           >
             <MessageSquare className="w-4 h-4" />
             <span>Hablar por WhatsApp (+54 9 342 5200959)</span>

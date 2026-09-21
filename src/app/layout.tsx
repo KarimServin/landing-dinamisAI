@@ -170,12 +170,18 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <head>
+        <meta name="theme-color" content="#fffbf9" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://grupodinamis.com/wp-content/uploads/2026/02/cropped-Reduccion-06-32x32.png"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#07090E] text-slate-100 selection:bg-blue-600 selection:text-white">
+      <body className="min-h-full flex flex-col bg-[#fffbf9] text-[#171412] selection:bg-[#ff8b1e] selection:text-white">
         <Analytics />
         {children}
       </body>
