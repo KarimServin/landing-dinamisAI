@@ -1,45 +1,61 @@
 "use client";
 
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight, Sparkles, Play, ShieldCheck } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
 
 export function CtaBanner() {
   return (
-    <section className="py-20 bg-[#fffbf9] border-b border-[#f1dfd3]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="rounded-2xl bg-white border border-[#f1dfd3] p-8 sm:p-12 shadow-sm">
-          <span className="text-xs font-semibold text-[#da551d] uppercase tracking-wider block mb-2">
-            Comenzar la experiencia
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#171412] tracking-tight mb-4 max-w-2xl mx-auto">
-            Una herramienta práctica para acompañar a tus líderes y procesos de selección.
-          </h2>
-          <p className="text-sm sm:text-base text-[#4a423d] max-w-xl mx-auto mb-8 leading-relaxed">
-            Podés realizar una prueba inicial en la plataforma o contactarte con nuestro equipo de consultores para evaluar la modalidad más adecuada para tu organización.
-          </p>
+    <section className="py-20 bg-[#fffbf9] border-b border-[#f1dfd3] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-3xl bg-gradient-to-br from-[#61100d] via-[#a03417] via-[#da551d] to-[#ff8b1e] p-8 sm:p-14 text-center overflow-hidden shadow-[0_16px_50px_rgba(97,16,13,0.25)] text-white">
+          {/* Subtle light glow */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5">
-            <a
-              href="https://app.grupodinamis.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent("footer_banner_start_free")}
-              className="w-full sm:w-auto px-6 py-3 rounded-lg bg-[#da551d] hover:bg-[#c24614] text-white font-medium text-sm transition-colors flex items-center justify-center gap-2"
-            >
-              <span>Ingresar a la plataforma</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
+          <div className="relative z-10 max-w-3xl mx-auto space-y-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/15 border border-white/30 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-[#ffdfc5]" />
+              <span>Comienza la Experiencia</span>
+            </div>
 
-            <a
-              href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quisiera%20coordinar%20una%20demostraci%C3%B3n%20de%20Dinamis%20AI"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => trackEvent("footer_banner_demo_whatsapp")}
-              className="w-full sm:w-auto px-5 py-3 rounded-lg bg-white hover:bg-[#fff8f3] text-[#171412] border border-[#f1dfd3] font-medium text-sm transition-colors flex items-center justify-center gap-2"
-            >
-              <MessageSquare className="w-4 h-4 text-[#da551d]" />
-              <span>Coordinar una llamada</span>
-            </a>
+            <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+              Lleva la Selección y el Liderazgo de tu Empresa al Siguiente Nivel
+            </h2>
+
+            <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+              Simula entrevistas con precisión diagnóstica y brinda coaching continuo a tus líderes con la metodología probada de Grupo Dinamis.
+            </p>
+
+            <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="https://app.grupodinamis.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("footer_banner_start_free")}
+                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-[#61100d] hover:bg-[#fff8f3] font-extrabold text-base shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 group"
+              >
+                <span>Probar Dinamis AI Gratis</span>
+                <ArrowRight className="w-4 h-4 text-[#da551d] transition-transform group-hover:translate-x-1" />
+              </a>
+
+              <a
+                href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20agendar%20una%20demostraci%C3%B3n%20personalizada%20de%20Dinamis%20AI"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("footer_banner_demo_whatsapp")}
+                className="w-full sm:w-auto px-7 py-4 rounded-xl bg-black/25 hover:bg-black/35 text-white border border-white/30 font-bold text-base transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
+              >
+                <Play className="w-4 h-4 text-[#ffdfc5] fill-[#ffdfc5]" />
+                <span>Agendar Demostración B2B</span>
+              </a>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-6 text-xs text-white/80 font-medium">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-[#ffdfc5]" /> Alta instantánea en 30 segundos
+              </span>
+              <span>•</span>
+              <span>Acceso directo desde cualquier navegador web</span>
+            </div>
           </div>
         </div>
       </div>

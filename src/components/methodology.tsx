@@ -1,41 +1,45 @@
-import { BookOpenCheck, Users2, Lock, Award, ShieldCheck } from "lucide-react";
+import { BookOpenCheck, Users2, Lock, Award, ShieldCheck, Sparkles } from "lucide-react";
 
 export function Methodology() {
   const points = [
     {
       icon: BookOpenCheck,
-      title: "Criterio basado en evidencias (STAR)",
-      desc: "Estructura rigurosa orientada a identificar qué hizo concretamente la persona, en qué contexto y con qué resultados, evitando respuestas genéricas o discursos aprendidos.",
+      title: "Metodología STAR Rigurosa",
+      desc: "Nuestros algoritmos están calibrados para evaluar la consistencia entre lo que el candidato dice que hizo (Acción) y el impacto tangible (Resultado), evitando respuestas genéricas o discursos de manual.",
     },
     {
       icon: Users2,
-      title: "15 años de experiencia en el terreno",
-      desc: "La herramienta fue concebida a partir de procesos reales de selección, desarrollo de mandos medios y transformación cultural llevados adelante por Grupo Dinamis en más de 200 empresas.",
+      title: "15 Años de Experiencia en el Terreno",
+      desc: "No somos una empresa de software aislada. Dinamis AI nace dentro de Grupo Dinamis, consultora líder que ha transformado cientos de organizaciones y evaluado miles de talentos en el mundo real.",
     },
     {
       icon: Lock,
-      title: "Confidencialidad y rigor ético",
-      desc: "Tratamos las respuestas, grabaciones y evaluaciones con estricta reserva corporativa. La información es exclusiva de tu organización y no se comparte con terceros.",
+      title: "Seguridad y Confidencialidad Blindada",
+      desc: "La información de tus evaluaciones, candidatos y líderes es privada, encriptada y nunca se comparte ni se utiliza para entrenar modelos públicos de terceros.",
     },
     {
       icon: Award,
-      title: "Acompañamiento profesional",
-      desc: "Para búsquedas de mandos altos o programas profundos de transformación, la plataforma se complementa con la mirada y el diagnóstico presencial o remoto de nuestros consultores.",
+      title: "Acompañamiento Híbrido (IA + Consultores)",
+      desc: "Para desafíos estratégicos de alta dirección o reestructuraciones, cuentas con el equipo de consultores sénior de Grupo Dinamis para intervenir con una mirada humana profunda.",
     },
   ];
 
   return (
-    <section id="metodologia" className="py-20 bg-white border-b border-[#f1dfd3]">
+    <section id="metodologia" className="py-24 bg-white border-b border-[#f1dfd3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-semibold text-[#da551d] uppercase tracking-wider block mb-2">
-            Metodología y Criterio
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#171412] tracking-tight mb-4">
-            El respaldo profesional de Grupo Dinamis
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5] border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
+            <Sparkles className="w-3.5 h-3.5 text-[#ff8b1e]" />
+            <span>El Factor Diferencial</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
+            No es solo Inteligencia Artificial.{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
+              Es Metodología Humana en Escala.
+            </span>
           </h2>
-          <p className="text-base text-[#4a423d] leading-relaxed">
-            La tecnología es un medio para dar accesibilidad y escala. El criterio pedagógico, psicométrico y evaluativo proviene de la práctica directa de consultoría en gestión de personas.
+          <p className="text-[#4a423d] text-base sm:text-lg leading-relaxed">
+            Cualquiera puede abrir una ventana de chat; Dinamis AI incorpora la estructura psicométrica, la calibración de competencias y el rigor organizacional de Grupo Dinamis.
           </p>
         </div>
 
@@ -45,27 +49,30 @@ export function Methodology() {
             return (
               <div
                 key={idx}
-                className="p-7 rounded-xl bg-[#fffbf9] border border-[#f1dfd3] flex gap-4"
+                className="bento-card p-8 rounded-2xl flex gap-5"
               >
-                <div className="w-10 h-10 rounded-lg bg-white border border-[#f1dfd3] flex items-center justify-center shrink-0">
-                  <Icon className="w-5 h-5 text-[#da551d]" />
+                <div className="w-12 h-12 rounded-xl bg-[#fff8f3] border border-[#ffdfc5] flex items-center justify-center shrink-0">
+                  <Icon className="w-6 h-6 text-[#da551d]" />
                 </div>
-                <div className="space-y-1.5">
-                  <h3 className="text-base font-bold text-[#171412]">{p.title}</h3>
-                  <p className="text-xs sm:text-sm text-[#6b625b] leading-relaxed">{p.desc}</p>
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold text-[#111111]">{p.title}</h3>
+                  <p className="text-sm text-[#4a423d] leading-relaxed">{p.desc}</p>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Corporate Quote */}
-        <div className="mt-12 p-8 rounded-xl bg-[#fff8f3] border border-[#f1dfd3] text-center max-w-3xl mx-auto">
-          <blockquote className="text-base sm:text-lg text-[#171412] font-medium mb-2 italic">
+        {/* Corporate Quote Banner */}
+        <div className="mt-14 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-[#fff8f3] via-[#ffdfc5]/30 to-[#fff8f3] border border-[#ffdfc5] text-center max-w-4xl mx-auto shadow-[0_4px_16px_rgba(97,16,13,0.03)]">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white border border-[#ffdfc5] text-[#ff8b1e] mb-4 shadow-sm">
+            <ShieldCheck className="w-6 h-6 text-[#da551d]" />
+          </div>
+          <blockquote className="text-lg sm:text-xl italic text-[#111111] font-bold mb-3">
             &ldquo;Conectamos talento, cultura y estrategia para convertir el potencial de tu empresa en resultados sostenibles.&rdquo;
           </blockquote>
-          <p className="text-xs text-[#808285]">
-            Grupo Dinamis • Consultoría en RRHH y Desarrollo Organizacional
+          <p className="text-xs uppercase tracking-wider text-[#61100d] font-bold">
+            Filosofía Grupo Dinamis • Más de 15 años acompañando el desarrollo organizacional
           </p>
         </div>
       </div>

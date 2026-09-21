@@ -10,7 +10,7 @@ export function TrustBar() {
     {
       value: "+200",
       label: "Empresas acompañadas",
-      detail: "Procesos de selección y desarrollo en la región",
+      detail: "Procesos de selección y desarrollo en LATAM",
     },
     {
       value: "Metodología STAR",
@@ -18,32 +18,32 @@ export function TrustBar() {
       detail: "Evaluación objetiva basada en evidencias",
     },
     {
-      value: "100% Confidencial",
-      label: "Privacidad garantizada",
-      detail: "Espacio protegido para líderes y postulantes",
+      value: "100% Privado",
+      label: "Confidencialidad blindada",
+      detail: "Espacio seguro para líderes y postulantes",
     },
   ];
 
   const industries = [
-    { name: "Tecnología y Servicios", icon: Cpu },
-    { name: "Sector Financiero", icon: Landmark },
+    { name: "Tecnología y Software", icon: Cpu },
+    { name: "Fintech y Banca", icon: Landmark },
     { name: "Agro e Industria", icon: Building2 },
     { name: "Logística y Distribución", icon: Truck },
-    { name: "Salud", icon: ShieldCheck },
-    { name: "Consultoría y B2B", icon: HeartHandshake },
+    { name: "Salud y Farmacia", icon: ShieldCheck },
+    { name: "Servicios Corporativos B2B", icon: HeartHandshake },
   ];
 
   return (
-    <section className="py-12 bg-white border-b border-[#f1dfd3]">
+    <section className="py-14 bg-white border-b border-[#f1dfd3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Core Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-10 border-b border-[#f1dfd3]">
           {metrics.map((metric, index) => (
             <div key={index} className="text-left">
-              <span className="text-2xl sm:text-3xl font-bold text-[#da551d] block tracking-tight">
+              <span className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] to-[#da551d] block tracking-tight">
                 {metric.value}
               </span>
-              <span className="text-sm font-semibold text-[#171412] block mt-1">
+              <span className="text-sm font-bold text-[#111111] block mt-1">
                 {metric.label}
               </span>
               <span className="text-xs text-[#6b625b] mt-0.5 block">
@@ -54,20 +54,20 @@ export function TrustBar() {
         </div>
 
         {/* Sectors */}
-        <div className="pt-6">
-          <p className="text-xs uppercase tracking-wider text-[#808285] font-medium mb-4">
-            Metodología aplicada en organizaciones de diversos sectores
+        <div className="pt-7">
+          <p className="text-xs uppercase tracking-wider text-[#61100d] font-bold mb-4">
+            Metodología adoptada en organizaciones de diversos sectores
           </p>
-          <div className="flex flex-wrap items-center gap-3 text-[#4a423d]">
+          <div className="flex flex-wrap items-center gap-3.5 text-[#4a423d]">
             {industries.map((ind, i) => {
               const Icon = ind.icon;
               return (
                 <div
                   key={i}
-                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#fffbf9] border border-[#f1dfd3]"
+                  className="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[#fffbf9] border border-[#f1dfd3] shadow-[0_2px_8px_rgba(97,16,13,0.02)] hover:border-[#ff8b1e]/40 transition-colors"
                 >
-                  <Icon className="w-3.5 h-3.5 text-[#da551d]" />
-                  <span className="text-xs font-medium text-[#171412]">{ind.name}</span>
+                  <Icon className="w-4 h-4 text-[#ff8b1e]" />
+                  <span className="text-xs font-semibold text-[#111111]">{ind.name}</span>
                 </div>
               );
             })}

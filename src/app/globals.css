@@ -7,18 +7,20 @@
 }
 
 :root {
-  /* Official Brand Palette - Dinamis AI & Grupo Dinamis */
-  --brand-bg: #fffbf9;
-  --brand-surface: #ffffff;
-  --brand-card-hover: #fff8f3;
+  /* Exact Dinamis AI App Tokens */
   --brand-primary: #ff8b1e;
-  --brand-light: #ffdfc5;
   --brand-accent: #da551d;
-  --brand-error: #c22722;
+  --brand-light: #ffdfc5;
   --brand-text-dark: #61100d;
-  --brand-text-main: #171412;
-  --brand-text-muted: #6b625b;
+  --brand-bg: #fffbf9;
   --brand-border: #f1dfd3;
+  --brand-text-main: #111111;
+  --brand-error: #c22722;
+
+  /* Semantic Feedback */
+  --semantic-success: #10b981;
+  --semantic-teal: #0d9488;
+  --semantic-sim: rgba(168, 85, 247, 0.1);
 }
 
 body {
@@ -28,21 +30,44 @@ body {
   overflow-x: hidden;
 }
 
-/* Subtle pattern for texture without visual clutter */
-.bg-warm-texture {
-  background-image: radial-gradient(rgba(218, 85, 29, 0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
+/* 1. Official Signature Background Gradient (bg-brand-gradient) */
+.bg-brand-gradient {
+  background: linear-gradient(180deg, #fff8f3 0%, #ffdfc5 25%, #ff8b1e 55%, #da551d 78%, #a03417 90%, #61100d 100%);
 }
 
-/* Brand Bento Card */
-.dinamis-card {
-  background-color: var(--brand-surface);
-  border: 1px solid var(--brand-border);
+.bg-brand-hero-subtle {
+  background: linear-gradient(180deg, #fff8f3 0%, #fffbf9 40%, #ffdfc5 95%, #ffdfc5 100%);
+}
+
+.bg-brand-banner-gradient {
+  background: linear-gradient(135deg, #61100d 0%, #a03417 35%, #da551d 75%, #ff8b1e 100%);
+}
+
+/* 2. Bento Card (Exact app spec) */
+.bento-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(241, 223, 211, 0.85);
   box-shadow: 0 4px 16px rgba(97, 16, 13, 0.04);
   transition: all 0.25s ease;
 }
 
-.dinamis-card:hover {
-  border-color: rgba(255, 139, 30, 0.45);
-  box-shadow: 0 8px 24px rgba(255, 139, 30, 0.08);
+.bento-card:hover, .bento-card-active {
+  border-color: rgba(255, 139, 30, 0.6);
+  box-shadow: 0 8px 24px rgba(255, 139, 30, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Custom scrollbar matching the app */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fffbf9;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffdfc5;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8b1e;
 }
