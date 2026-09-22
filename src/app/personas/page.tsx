@@ -6,6 +6,7 @@ import { InterviewSimulator } from "@/components/interview-simulator";
 import { LeadershipCoach } from "@/components/leadership-coach";
 import { RoiCalculator } from "@/components/roi-calculator";
 import { Methodology } from "@/components/methodology";
+import { ComparisonTable } from "@/components/comparison-table";
 import { Pricing } from "@/components/pricing";
 import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
@@ -94,7 +95,7 @@ const jsonLdB2C = {
 
 export default function PersonasPage() {
   return (
-    <SegmentProvider>
+    <SegmentProvider initialSegment="persona">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdB2C) }}
@@ -120,6 +121,9 @@ export default function PersonasPage() {
 
           {/* Metodología de Selección Dinamis */}
           <Methodology />
+
+          {/* Tabla Comparativa: Dinamis AI vs IAs Generales */}
+          <ComparisonTable />
 
           {/* Planes Individuales (Prueba Gratuita & Profesional) */}
           <Pricing />

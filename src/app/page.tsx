@@ -5,6 +5,7 @@ import { InterviewSimulator } from "@/components/interview-simulator";
 import { LeadershipCoach } from "@/components/leadership-coach";
 import { RoiCalculator } from "@/components/roi-calculator";
 import { Methodology } from "@/components/methodology";
+import { ComparisonTable } from "@/components/comparison-table";
 import { Pricing } from "@/components/pricing";
 import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
@@ -15,42 +16,45 @@ export default function Home() {
   return (
     <SegmentProvider>
       <div className="flex flex-col min-h-screen bg-[#fffbf9] text-[#171412] selection:bg-[#ff8b1e] selection:text-white">
-      {/* Sticky Navigation Bar */}
-      <Navbar />
+        {/* Sticky Navigation Bar */}
+        <Navbar />
 
-      {/* Main Sections */}
-      <main className="flex-grow">
-        {/* 1. Hero with interactive preview */}
-        <Hero />
+        {/* Main Sections */}
+        <main className="flex-grow">
+          {/* 1. Hero with interactive preview */}
+          <Hero />
 
-        {/* 2. Quantitative social proof and industry badges */}
-        <TrustBar />
+          {/* 2. Quantitative social proof and industry badges */}
+          <TrustBar />
 
-        {/* 3. Core Pillar 01: Simulador de Entrevistas */}
-        <InterviewSimulator />
+          {/* 3. Core Pillar 01: Simulador de Entrevistas (Módulos + Scorecard) */}
+          <InterviewSimulator />
 
-        {/* 4. Core Pillar 02: AI Leadership Coach */}
-        <LeadershipCoach />
+          {/* 4. Core Pillar 02: AI Leadership Coach (Feedback, Negociación, Conflictos) */}
+          <LeadershipCoach />
 
-        {/* 5. Interactive ROI & impact calculator */}
-        <RoiCalculator />
+          {/* 5. Interactive ROI & impact calculator */}
+          <RoiCalculator />
 
-        {/* 6. The science and methodology of Grupo Dinamis */}
-        <Methodology />
+          {/* 6. The science and methodology of Grupo Dinamis */}
+          <Methodology />
 
-        {/* 7. Transparent B2B SaaS pricing */}
-        <Pricing />
+          {/* 7. Comparison Table: Dinamis AI vs IAs Generales (ChatGPT / Claude) */}
+          <ComparisonTable />
 
-        {/* 8. FAQ matching Schema.org FAQPage */}
-        <Faq />
+          {/* 8. Transparent SaaS pricing */}
+          <Pricing />
 
-        {/* 9. Final high-conversion CTA banner */}
-        <CtaBanner />
-      </main>
+          {/* 9. FAQ matching Schema.org FAQPage */}
+          <Faq />
 
-      {/* Corporate B2B Footer */}
-      <Footer />
-    </div>
+          {/* 10. Final high-conversion CTA banner */}
+          <CtaBanner />
+        </main>
+
+        {/* Corporate B2B Footer */}
+        <Footer />
+      </div>
     </SegmentProvider>
   );
 }

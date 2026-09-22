@@ -21,20 +21,23 @@ const SegmentContext = createContext<SegmentContextType>({
   closeGate: () => {},
 });
 
-function SegmentProviderInner({ children }: { children: React.ReactNode }) {
+interface SegmentProviderInnerProps {
+  children: React.ReactNode;
+  initialSegment?: AudienceSegment;
+}
+
+function SegmentProviderInner({ children, initialSegment = "empresa" }: SegmentProviderInnerProps) {
   const searchParams = useSearchParams();
-  const [segment, setSegment] = useState<AudienceSegment>("empresa");
+  const [segment, setSegment] = useState<AudienceSegment>(initialSegment);
   const [isGateOpen, setIsGateOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    // 1. Check URL parameters
+    // URL param overrides initialSegment (allows deep-linking to a specific segment)
     const urlSeg = searchParams.get("segment") || searchParams.get("publico");
     if (urlSeg === "persona" || urlSeg === "empleo" || urlSeg === "candidato") {
       setSegment("persona");
-      return;
     } else if (urlSeg === "empresa" || urlSeg === "liderazgo") {
       setSegment("empresa");
-      return;
     }
   }, [searchParams]);
 
@@ -71,10 +74,17 @@ function SegmentProviderInner({ children }: { children: React.ReactNode }) {
   );
 }
 
-export function SegmentProvider({ children }: { children: React.ReactNode }) {
+interface SegmentProviderProps {
+  children: React.ReactNode;
+  initialSegment?: AudienceSegment;
+}
+
+export function SegmentProvider({ children, initialSegment }: SegmentProviderProps) {
   return (
     <Suspense fallback={<>{children}</>}>
-      <SegmentProviderInner>{children}</SegmentProviderInner>
+      <SegmentProviderInner initialSegment={initialSegment}>
+        {children}
+      </SegmentProviderInner>
     </Suspense>
   );
 }

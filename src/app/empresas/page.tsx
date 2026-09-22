@@ -6,6 +6,7 @@ import { LeadershipCoach } from "@/components/leadership-coach";
 import { InterviewSimulator } from "@/components/interview-simulator";
 import { RoiCalculator } from "@/components/roi-calculator";
 import { Methodology } from "@/components/methodology";
+import { ComparisonTable } from "@/components/comparison-table";
 import { Pricing } from "@/components/pricing";
 import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
@@ -93,7 +94,7 @@ const jsonLdB2B = {
 
 export default function EmpresasPage() {
   return (
-    <SegmentProvider>
+    <SegmentProvider initialSegment="empresa">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdB2B) }}
@@ -119,6 +120,9 @@ export default function EmpresasPage() {
 
           {/* Metodología Científica Grupo Dinamis */}
           <Methodology />
+
+          {/* Tabla Comparativa: Dinamis AI vs IAs Generales */}
+          <ComparisonTable />
 
           {/* Planes B2B (Equipos & Enterprise) */}
           <Pricing />

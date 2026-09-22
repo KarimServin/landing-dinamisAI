@@ -120,6 +120,12 @@ export function Navbar() {
               Metodología
             </a>
             <a
+              href="#comparativa"
+              className="hover:text-[#ff8b1e] transition-colors py-1"
+            >
+              Diferencial
+            </a>
+            <a
               href="#precios"
               className="hover:text-[#ff8b1e] transition-colors py-1"
             >
@@ -252,6 +258,13 @@ export function Navbar() {
             className="block px-3 py-2 text-sm font-semibold text-[#111111] hover:text-[#ff8b1e] hover:bg-[#fff8f3] rounded-lg"
           >
             Metodología Dinamis
+          </a>
+          <a
+            href="#comparativa"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 text-sm font-semibold text-[#111111] hover:text-[#ff8b1e] hover:bg-[#fff8f3] rounded-lg"
+          >
+            Diferencial vs IAs Generales
           </a>
           <a
             href="#precios"
