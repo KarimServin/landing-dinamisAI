@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero";
 import { TrustBar } from "@/components/trust-bar";
 import { InterviewSimulator } from "@/components/interview-simulator";
 import { LeadershipCoach } from "@/components/leadership-coach";
-import { RoiCalculator } from "@/components/roi-calculator";
 import { Methodology } from "@/components/methodology";
 import { ComparisonTable } from "@/components/comparison-table";
 import { Pricing } from "@/components/pricing";
@@ -12,6 +11,7 @@ import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
 import { Footer } from "@/components/footer";
 import { SegmentProvider } from "@/components/segment-context";
+import { Apple3DSection } from "@/components/apple-3d-section";
 
 export const metadata: Metadata = {
   title: "Dinamis AI para Profesionales | Práctica de Entrevistas Laborales y Salto de Carrera",
@@ -105,34 +105,49 @@ export default function PersonasPage() {
 
         <main className="flex-grow">
           {/* Hero en modo Persona */}
-          <Hero />
+          <Apple3DSection isHero>
+            <Hero />
+          </Apple3DSection>
 
           {/* Social Proof */}
-          <TrustBar />
+          <Apple3DSection>
+            <TrustBar />
+          </Apple3DSection>
 
           {/* Pilar 1 para Candidatos: Simulador de Entrevistas STAR */}
-          <InterviewSimulator />
+          <Apple3DSection>
+            <InterviewSimulator />
+          </Apple3DSection>
 
           {/* Pilar 2 para Candidatos: Coach de Comunicación y Liderazgo */}
-          <LeadershipCoach />
-
-          {/* Estimador de Salto Profesional */}
-          <RoiCalculator />
+          <Apple3DSection>
+            <LeadershipCoach />
+          </Apple3DSection>
 
           {/* Metodología de Selección Dinamis */}
-          <Methodology />
+          <Apple3DSection>
+            <Methodology />
+          </Apple3DSection>
 
           {/* Tabla Comparativa: Dinamis AI vs IAs Generales */}
-          <ComparisonTable />
+          <Apple3DSection>
+            <ComparisonTable />
+          </Apple3DSection>
 
           {/* Planes Individuales (Prueba Gratuita & Profesional) */}
-          <Pricing />
+          <Apple3DSection>
+            <Pricing />
+          </Apple3DSection>
 
           {/* Preguntas Frecuentes para Postulantes */}
-          <Faq />
+          <Apple3DSection>
+            <Faq />
+          </Apple3DSection>
 
           {/* Banner de Conversión para Candidatos */}
-          <CtaBanner />
+          <Apple3DSection>
+            <CtaBanner />
+          </Apple3DSection>
         </main>
 
         <Footer />

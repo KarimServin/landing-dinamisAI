@@ -1,12 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Calculator, Clock, DollarSign, TrendingDown, ArrowRight, Sparkles } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
 
 export function RoiCalculator() {
   const [candidatesPerMonth, setCandidatesPerMonth] = useState<number>(30);
   const [leadersCount, setLeadersCount] = useState<number>(10);
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Approximate realistic metrics based on HR benchmarks in LATAM:
   // Initial interview screening: 45 min = 0.75 hrs. 70% time automated = ~0.52 hrs saved per candidate.
@@ -37,7 +42,7 @@ export function RoiCalculator() {
             ?
           </h2>
           <p className="text-[#4a423d] text-base sm:text-lg leading-relaxed">
-            Calcula las horas de trabajo operativas que tu equipo de selección recupera y el ahorro directo en consultoría y coaching tradicional.
+            Calcula el retorno de inversión al potenciar la efectividad de tus mandos medios y reducir el costo de consultoría y coaching ejecutivo tradicional.
           </p>
         </div>
 
@@ -116,7 +121,7 @@ export function RoiCalculator() {
                     Ahorro Anual Estimado
                   </span>
                   <span className="text-3xl sm:text-4xl font-extrabold text-white">
-                    ~${totalEstimatedSavingsUSD.toLocaleString()}{" "}
+                    ~${mounted ? totalEstimatedSavingsUSD.toLocaleString() : totalEstimatedSavingsUSD}{" "}
                     <span className="text-xs font-normal text-slate-400">USD / año</span>
                   </span>
                 </div>

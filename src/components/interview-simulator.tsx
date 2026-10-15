@@ -32,69 +32,69 @@ export function InterviewSimulator() {
     {
       icon: Briefcase,
       badge: "Cualquier Rubro & Rol",
-      title: "Entrevista Personalizada a Medida",
+      title: "Entrevistas a Medida por Rol y Empresa",
       description:
-        "Definí el puesto exacto (técnico, operativo, comercial, salud o directivo) y la empresa que querés simular. La IA investiga el perfil y genera una entrevista técnica y conductual a medida.",
-      highlight: "Preguntas técnicas y de encaje cultural según la empresa",
+        "Elegí el puesto y la empresa a la que te postulás. La plataforma adapta las preguntas técnicas y conductuales al perfil solicitado para que practiques respuestas concretas y realistas.",
+      highlight: "Preguntas técnicas y conductuales adaptadas al perfil",
     },
     {
       icon: GraduationCap,
       badge: "Exclusivo para Jóvenes",
       title: "Módulo Primer Empleo",
       description:
-        "Específicamente calibrado para jóvenes sin experiencia laboral formal. La IA tiene estrictamente prohibido exigir años de trayectoria corporativa: evalúa potencial, vocación, formación, adaptabilidad y proyectos personales.",
-      highlight: "Evaluación sin exigencias de experiencia previa",
+        "Diseñado para quienes buscan su primera oportunidad laboral. No exige experiencia corporativa previa: evalúa iniciativa, capacidad de aprendizaje, criterio práctico y motivación.",
+      highlight: "Evaluación sin requisitos de experiencia previa",
     },
     {
       icon: Layers,
       badge: "Gestión & Operaciones",
-      title: "Administrativos y Mandos Medios",
+      title: "Mandos Medios & Operativos",
       description:
-        "Escenarios diseñados para evaluar apego a procesos, atención al detalle, organización, liderazgo operativo y resolución de contingencias cotidianas de oficina y planta.",
-      highlight: "Enfoque en procesos, orden y gestión operativa",
+        "Pensado para roles con responsabilidad de equipo. Evalúa organización del trabajo, manejo de prioridades cruzadas, apego a procesos y resolución de imprevistos.",
+      highlight: "Práctica de organización, criterio y resolución cotidiana",
     },
     {
       icon: Sparkles,
       badge: "Mentor Pre-Simulación",
-      title: "Coach de Entrevista (STAR Previo)",
+      title: "Estructura de Respuestas (Método STAR)",
       description:
-        "Un mentor interactivo previo a la sesión para entrenar el método STAR (Situación, Tarea, Acción, Resultado), reducir la ansiedad escénica y aprender a estructurar respuestas de alto impacto.",
-      highlight: "Estructuración de logros antes de la entrevista real",
+        "Aprendé a ordenar tus respuestas en Situación, Tarea, Acción y Resultado para comunicar tus logros con claridad, sin divagar y respondiendo con precisión a lo que pregunta el selector.",
+      highlight: "Respuestas claras, ordenadas y fundamentadas en hechos",
     },
   ];
 
   const companyModules = [
     {
       icon: Target,
-      badge: "Filtro STAR Estandarizado",
-      title: "Evaluación por Competencias Consistente",
+      badge: "Gestión de Equipos",
+      title: "Feedback de Desempeño y Alineación",
       description:
-        "Estandariza los filtros iniciales. La IA formula preguntas situacionales y valida si el candidato responde con hechos demostrables (STAR) o con evasivas de manual.",
-      highlight: "Criterios unificados para todas las postulaciones",
+        "Práctica guiada para señalar desvíos de rendimiento o conductas desalineadas, con foco en describir hechos objetivos y construir acuerdos de mejora mutuos.",
+      highlight: "Conversaciones basadas en hechos observables y acuerdos claros",
     },
     {
       icon: Clock,
-      badge: "Eficiencia Operativa",
-      title: "-70% de tiempo en cribado inicial",
+      badge: "Mediación de Fricciones",
+      title: "Resolución de Conflictos Operativos",
       description:
-        "Los postulantes completan su primer turno de entrevista virtual con la IA. El equipo de RRHH recibe candidatos ya diagnosticados y con reporte comparativo.",
-      highlight: "Tu equipo entrevista solo a los perfiles pre-calificados",
+        "Escenarios prácticos para mediar en desacuerdos entre colaboradores o áreas, ayudando a los supervisores a encontrar soluciones de trabajo sostenibles sin desgastar el clima.",
+      highlight: "Mediación constructiva para restablecer la colaboración",
     },
     {
       icon: ShieldCheck,
-      badge: "Cero Sesgos Involuntarios",
-      title: "Auditoría de Habilidades Blandas",
+      badge: "SLA & Comunicación",
+      title: "Alineación y Coordinación Inter-Áreas",
       description:
-        "Evaluación objetiva basada en la matriz de competencias de Grupo Dinamis, garantizando igualdad de oportunidades, fit cultural y reducción de rotación temprana.",
-      highlight: "Evidencia medible antes de la oferta formal",
+        "Práctica para fundamentar pedidos a otras gerencias (Sistemas, Compras, Finanzas) y fijar prioridades de trabajo con claridad y respeto profesional.",
+      highlight: "Coordinación efectiva de prioridades entre distintas áreas",
     },
     {
       icon: BarChart3,
-      badge: "Inteligencia de Selección",
-      title: "Scorecards Comparativos por Vacante",
+      badge: "Auditoría de Desarrollo",
+      title: "Scorecards y Métricas de Avance",
       description:
-        "Ranking automático de candidatos con notas de 1 a 10, desglose de fortalezas por competencia y detección temprana de alertas conductuales.",
-      highlight: "Reporte ejecutivo directo al ATS o mail de RRHH",
+        "Seguimiento estructurado con métricas de 1 a 10 para que la gerencia de RRHH conozca la evolución de sus mandos medios y el ajuste metodológico de sus candidatos.",
+      highlight: "Reportes estructurados con métricas claras para RRHH",
     },
   ];
 
@@ -104,16 +104,29 @@ export function InterviewSimulator() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5] border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
-            Pilar 01 • Selección & Preparación
+            {segment === "persona" ? "Pilar 01 • Entrevistas & Preparación" : "Pilar 01 • Desarrollo de Mandos Medios"}
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
-            Simulación Hiper-Realista de{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-              Entrevistas de Trabajo
-            </span>
+            {segment === "persona" ? (
+              <>
+                Practicá tu próxima entrevista y{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
+                  descubrí qué podés mejorar.
+                </span>
+              </>
+            ) : (
+              <>
+                Entrená a tus líderes y{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
+                  evaluá talento con criterio objetivo.
+                </span>
+              </>
+            )}
           </h2>
           <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed">
-            Roleplay inmersivo de voz y texto con reclutadores virtuales. Diseñado para que las personas venzan el miedo antes del reclutador real, y las empresas identifiquen al mejor talento en una fracción de tiempo.
+            {segment === "persona"
+              ? "En una entrevista laboral tenés poco tiempo para demostrar tu potencial. Dinamis AI te permite ensayar por voz o texto las veces que quieras, ganar fluidez y llegar más seguro al encuentro con el selector."
+              : "Dinamis AI brinda un espacio para que tus mandos medios practiquen conversaciones cotidianas de conducción de equipos, y ayuda a RRHH a evaluar candidatos aplicando metodología STAR con reportes objetivos."}
           </p>
 
           {/* Toggle Button */}
@@ -126,7 +139,7 @@ export function InterviewSimulator() {
                   : "text-[#6b625b] hover:text-[#111111]"
               }`}
             >
-              Para Equipos de Selección & RRHH
+              Para Empresas (Coaching de Liderazgo)
             </button>
             <button
               onClick={() => setActiveAudience("candidatos")}
@@ -283,7 +296,7 @@ export function InterviewSimulator() {
         <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#fff8f3] via-[#ffdfc5]/40 to-[#fff8f3] border border-[#ffdfc5] p-7 sm:p-9 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_4px_20px_rgba(97,16,13,0.03)]">
           <div className="space-y-1.5 text-center md:text-left">
             <span className="text-xs font-bold text-[#61100d] uppercase tracking-wider">
-              Simulador de Vuelo Laboral
+              Práctica en Tiempo Real
             </span>
             <h4 className="text-xl font-bold text-[#111111]">
               ¿Querés vivir la experiencia de una entrevista con Dinamis AI?

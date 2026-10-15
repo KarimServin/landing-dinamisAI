@@ -1,12 +1,29 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Plus_Jakarta_Sans, Sora, Outfit } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@/components/analytics";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+// Tipografía para cuerpo, botones, badges e interfaz: legible, balanceada y moderna
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+// Tipografía para titulares (H1, H2, H3): Sora es ultra-moderna, geométrica, nítida y premium para IA/tech
+const sora = Sora({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+});
+
+// Tipografía geométrica premium de identidad corporativa para el logotipo DinamisAI (estilo tech vanguardista y limpio)
+const logoFont = Outfit({
+  variable: "--font-logo",
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -176,7 +193,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${poppins.variable} font-sans h-full antialiased scroll-smooth`}
+      className={`${jakarta.variable} ${sora.variable} ${logoFont.variable} font-sans h-full antialiased scroll-smooth`}
     >
       <head>
         <meta name="theme-color" content="#fffbf9" />

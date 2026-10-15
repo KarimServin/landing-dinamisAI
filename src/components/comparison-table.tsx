@@ -5,45 +5,45 @@ import { Check, X, Sparkles, Mic, Brain, ShieldAlert, Award, FileSpreadsheet, Bo
 export function ComparisonTable() {
   const comparisonItems = [
     {
-      feature: "Punto de partida",
-      generic: "Hoja en blanco; exige que el usuario sepa redactar un prompt técnico extenso.",
-      dinamis: "Entorno guiado llave en mano con perfiles, áreas y empresas autocalibradas.",
+      feature: "Configuración inicial",
+      generic: "Pantalla en blanco; exige redactar prompts extensos para obtener respuestas útiles.",
+      dinamis: "Entorno guiado con perfiles, áreas y empresas preconfigurados por especialistas.",
       icon: Sparkles,
     },
     {
-      feature: "Conducta del entrevistador",
-      generic: "Tiende a salirse del rol, responder con listas excesivas o hacer varias preguntas al mismo tiempo.",
-      dinamis: "Orquestación de turnos cerrada: 1 pregunta por turno, gestión de fases (apertura, desarrollo, cierre) y roleplay estricto.",
+      feature: "Dinámica de la conversación",
+      generic: "Tiende a responder con listas teóricas extensas y se sale del rol de entrevistador.",
+      dinamis: "Una pregunta por turno, respetando los tiempos y etapas de una entrevista real.",
       icon: Bot,
     },
     {
-      feature: "Tratamiento del Primer Empleo",
-      generic: "Exige años de experiencia previa por defecto a cualquier perfil.",
-      dinamis: "Reglas pedagógicas estrictas: prohíbe exigir experiencia a juniors y evalúa potencial, motivación y adaptabilidad.",
+      feature: "Enfoque en Primer Empleo",
+      generic: "Suele exigir experiencia laboral por defecto incluso a perfiles juniors.",
+      dinamis: "Criterio pedagógico adaptado: evalúa iniciativa, formación y potencial sin pedir experiencia previa.",
       icon: UserCheck,
     },
     {
       feature: "Cierre y Evaluación",
-      generic: "Termina cuando el usuario se cansa; rara vez brinda un scorecard cuantitativo consistente.",
-      dinamis: "Cierre automático controlado con reporte formal estructurado (calificación 1–10, fortalezas y puntos de mejora).",
+      generic: "Termina sin conclusiones estructuradas ni calificaciones objetivas.",
+      dinamis: "Reporte de desempeño estructurado (1 a 10), con fortalezas observadas y recomendaciones prácticas.",
       icon: FileSpreadsheet,
     },
     {
-      feature: "Tono de voz y autenticidad",
-      generic: "Español neutro genérico (\"Tú tienes\", \"Cuéntame\").",
-      dinamis: "Español rioplatense corporativo natural y cálido (\"Contame\", \"Arranquemos\"), con identidad y avatar de reclutador.",
+      feature: "Tono y Naturalidad",
+      generic: "Español neutro poco habitual en el ámbito laboral de la región.",
+      dinamis: "Español profesional rioplatense, natural y acorde al contexto cotidiano.",
       icon: Brain,
     },
     {
-      feature: "Persistencia e Historial",
-      generic: "Chats dispersos sin métricas ni trazabilidad.",
-      dinamis: "Historial aislado por usuario en base de datos segura, con seguimiento de progreso, métricas de XP y roles.",
+      feature: "Trazabilidad para Empresas",
+      generic: "Conversaciones individuales dispersas que no permiten seguimiento ni métricas.",
+      dinamis: "Panel para RRHH con reportes, métricas de avance y seguimiento de mandos medios.",
       icon: Award,
     },
     {
-      feature: "Entrenamiento de Oratoria",
-      generic: "Principalmente diseñado para lectura y tipeo de texto.",
-      dinamis: "Interacción bidireccional por voz (micrófono + audio) optimizada para simular una videollamada o entrevista telefónica real.",
+      feature: "Práctica por Voz",
+      generic: "Pensado casi exclusivamente para escribir y leer texto en pantalla.",
+      dinamis: "Práctica por voz en tiempo real para simular una videollamada o conversación presencial.",
       icon: Mic,
     },
   ];
@@ -61,16 +61,13 @@ export function ComparisonTable() {
             <span>Diferenciación de Producto</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
-            ¿Por qué Dinamis AI no es{" "}
+            ¿En qué se diferencia de un{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-              otra IA conversacional genérica?
+              chat de IA convencional?
             </span>
           </h2>
           <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed">
-            Dinamis AI no es un chatbot para responder preguntas en una pantalla en blanco:{" "}
-            <strong className="text-[#111111] font-semibold">
-              es un simulador de vuelo para conversaciones de alta presión.
-            </strong>
+            Un chat generalista responde con bloques de texto y no evalúa bajo criterios de selección. <strong className="text-[#111111] font-semibold">Dinamis AI está diseñado específicamente para recrear una entrevista real:</strong> turno por turno, evaluando la metodología STAR y generando un reporte estructurado de devolución.
           </p>
         </div>
 

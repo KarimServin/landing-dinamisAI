@@ -21,40 +21,40 @@ export function LeadershipCoach() {
 
   const scenarios = [
     {
-      title: "Coaching de Feedback Constructivo",
-      tag: "Desempeño & Asertividad",
+      title: "Feedback de Desempeño Constructivo",
+      tag: "Desempeño y Claridad",
       icon: MessageSquare,
       description:
-        "Entrena cómo formular retroalimentación constructiva a un colaborador con bajo rendimiento o desalineación, separando hechos observables de juicios de valor para acordar compromisos concretos.",
+        "Cómo abordar desvíos de rendimiento o conductas desalineadas describiendo hechos observables y construyendo acuerdos de mejora concretos.",
       methodologicalNote:
-        "La metodología de Grupo Dinamis enseña a describir conductas objetivas sin adjetivos calificativos, promoviendo preguntas que inviten al colaborador a reflexionar en lugar de ponerse a la defensiva.",
+        "La metodología de Grupo Dinamis ayuda a evitar juicios subjetivos, promoviendo preguntas que inviten al colaborador a reflexionar y asumir compromisos.",
     },
     {
-      title: "Resolución de Conflictos en Equipos",
-      tag: "Mediación & Acuerdos Ganar-Ganar",
+      title: "Mediación en Conflictos de Equipo",
+      tag: "Resolución de Desacuerdos",
       icon: Split,
       description:
-        "Simula una mediación entre dos miembros del equipo enfrentados por recursos, responsabilidades cruzadas o roces interpersonales, desactivando la tensión y restableciendo la sinergia operativa.",
+        "Intervención ante roces o diferencias operativas entre colaboradores, buscando acuerdos sostenibles sin polarizar al equipo.",
       methodologicalNote:
-        "Aprende a identificar intereses profundos por encima de posturas rígidas, canalizando la conversación hacia el impacto en los objetivos compartidos de la empresa.",
+        "Enfoca la conversación en el impacto operativo y los objetivos compartidos, desactivando posturas rígidas.",
     },
     {
-      title: "Negociación Estratégica (MAAN / BATNA)",
-      tag: "Acuerdos & Manejo de Objeciones",
+      title: "Coordinación y Acuerdos Inter-Áreas",
+      tag: "Gestión de Prioridades y SLA",
       icon: Handshake,
       description:
-        "Práctica intensiva para definir objetivos claros, anticipar objeciones difíciles y buscar alternativas viables (MAAN / BATNA) frente a clientes internos, proveedores o mandos superiores.",
+        "Práctica para fundamentar pedidos y acordar plazos de entrega con otras áreas (Sistemas, Compras, Finanzas) manteniendo una relación de trabajo fluida.",
       methodologicalNote:
-        "Entrena la capacidad de ceder sin perder valor, explorar variables de intercambio no monetarias y cerrar acuerdos sólidos y sostenibles en el tiempo.",
+        "Enseña a fundamentar con impacto de negocio y fijar límites profesionales con claridad y respeto mutuo.",
     },
     {
-      title: "Delegación Asertiva y Conducción en Crisis",
-      tag: "Liderazgo Situacional",
+      title: "Delegación y Seguimiento Operativo",
+      tag: "Liderazgo y Autonomía",
       icon: Scale,
       description:
-        "Supera el síndrome del 'lo hago yo más rápido'. Practica cómo transferir autonomía con checkpoints clave y comunicar cambios o momentos de incertidumbre con serenidad y convicción.",
+        "Práctica para transferir responsabilidades fijando objetivos claros y puntos de control, evitando tanto el micromanagement como la desatención.",
       methodologicalNote:
-        "Se evalúa si estableces el marco de autoridad exacto, si validas las emociones del equipo y si marcas el rumbo con claridad sin caer en micromanagement.",
+        "Evalúa cómo definir el alcance de la tarea, los criterios de éxito y los momentos de revisión con el colaborador.",
     },
   ];
 
@@ -64,16 +64,16 @@ export function LeadershipCoach() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5] border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
-            Pilar 02 • Desarrollo de Líderes
+            Pilar 02 • Desarrollo de Líderes y Mandos Medios
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
-            AI Leadership Coach:{" "}
+            Entrenamiento práctico en{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-              Coaching Ejecutivo 24/7
+              conversaciones clave de liderazgo.
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed">
-            Los líderes no fallan por falta de capacidad técnica, sino por desafíos en conversaciones humanas difíciles. Democratiza el entrenamiento de liderazgo para todos tus mandos medios con simulación inmersiva y privada.
+          <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed max-w-2xl mx-auto">
+            Conducir personas implica dar feedback oportuno, alinear expectativas y resolver desacuerdos. Dinamis AI ofrece un espacio confidencial para que tus mandos medios practiquen estas situaciones y desarrollen seguridad y criterio.
           </p>
         </div>
 

@@ -173,15 +173,33 @@ export function FullscreenRobotGate() {
                 transform: `rotateX(${botRotateX}deg) rotateY(${botRotateY}deg) translateZ(40px)`,
               }}
             >
-              <div className="w-full h-full animate-float-bot flex items-center justify-center">
+              <div className="w-full h-full animate-float-bot flex items-center justify-center relative">
+                {/* Cuerpo del Robot con Visor Impecable */}
                 <Image
-                  src="/images/dinamis-bot.png"
+                  src="/images/robot-body.png"
                   alt="Robot 3D Dinamis AI"
                   width={208}
                   height={208}
                   priority
                   className="object-contain filter drop-shadow-[0_16px_24px_rgba(218,85,29,0.35)] transition-transform hover:scale-105 duration-300"
                 />
+
+                {/* Los Mismos Ojos Originales del Robot que Siguen al Cursor */}
+                <div
+                  className="absolute inset-0 pointer-events-none transition-transform duration-75 ease-out"
+                  style={{
+                    transform: `translate(${mousePos.x * 8}px, ${mousePos.y * 6}px)`,
+                  }}
+                >
+                  <Image
+                    src="/images/robot-eyes.png"
+                    alt="Ojos Robot Dinamis"
+                    width={208}
+                    height={208}
+                    priority
+                    className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]"
+                  />
+                </div>
               </div>
             </div>
 

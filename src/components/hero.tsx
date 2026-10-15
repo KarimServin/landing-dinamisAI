@@ -14,7 +14,6 @@ import {
   Award,
   Rocket,
   ShieldCheck,
-  Building2,
   TrendingUp,
   Mic,
   Volume2,
@@ -39,7 +38,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-38 md:pb-28 overflow-hidden bg-gradient-to-b from-[#fff8f3] via-[#fffbf9] to-[#fffbf9] border-b border-[#f1dfd3]">
+    <section id="hero" className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-gradient-to-b from-[#fff8f3] via-[#fffbf9] to-[#fffbf9] border-b border-[#f1dfd3]">
       {/* Dot grid texture — subtle premium SaaS background */}
       <div
         className="absolute inset-0 pointer-events-none -z-10 opacity-[0.035]"
@@ -54,36 +53,6 @@ export function Hero() {
       <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[600px] h-[350px] md:w-[900px] md:h-[500px] bg-gradient-to-b from-[#ffdfc5]/50 via-[#ff8b1e]/12 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Audience Switcher */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex p-1 bg-white rounded-2xl border border-[#f1dfd3] shadow-sm">
-            <button
-              type="button"
-              onClick={() => setSegment("empresa")}
-              className={`px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-2 ${
-                segment === "empresa"
-                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-md"
-                  : "text-[#6b625b] hover:text-[#111111]"
-              }`}
-            >
-              <Building2 className="w-4 h-4" />
-              <span>Soy empresa</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setSegment("persona")}
-              className={`px-5 sm:px-7 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-2 ${
-                segment === "persona"
-                  ? "bg-gradient-to-r from-[#ff8b1e] to-[#da551d] text-white shadow-md"
-                  : "text-[#6b625b] hover:text-[#111111]"
-              }`}
-            >
-              <Rocket className="w-4 h-4" />
-              <span>Soy candidato/a</span>
-            </button>
-          </div>
-        </div>
-
         {/* 2-Column Split: Value Prop + 3D Robot Companion */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-20">
           {/* Left Column (7 cols): Copy, CTAs, Social Proof */}
@@ -93,64 +62,81 @@ export function Hero() {
               <span className="w-2 h-2 rounded-full bg-[#ff8b1e] animate-pulse" />
               <span>
                 {segment === "persona"
-                  ? "Simulador de Vuelo para Conversaciones Laborales de Alta Presión"
-                  : "Auditoría de Habilidades Blandas & Coaching 24/7 · Grupo Dinamis"}
+                  ? "Práctica de Entrevistas Laborales con Inteligencia Artificial"
+                  : "Entrenamiento de Liderazgo y Selección de Talento · Grupo Dinamis"}
               </span>
             </div>
 
-            {/* H1 — Emotionally charged, specific, fear-of-loss */}
+            {/* H1 — Claro, directo, sin exageraciones ni metáforas infladas */}
             <div>
               {segment === "persona" ? (
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111111] tracking-tighter leading-[1.08]">
-                  Entrená para una entrevista real y{" "}
+                  Prepará tu próxima entrevista y{" "}
                   <span className="relative inline-block">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#a03417]">
-                      descubrí qué podría hacerte perder
+                      recibí feedback real
                     </span>
                   </span>{" "}
-                  la oportunidad antes de sentarte frente al entrevistador.
+                  antes de sentarte frente al entrevistador.
                 </h1>
               ) : (
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111111] tracking-tighter leading-[1.08]">
-                  Tu equipo dedica horas a entrevistas que{" "}
+                  Entrená a tus líderes y{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#a03417]">
-                    podrían haberse filtrado en 10 minutos.
-                  </span>{" "}
-                  Eso ya no tiene por qué pasar.
+                    optimizá tus procesos de selección con IA.
+                  </span>
                 </h1>
               )}
             </div>
 
-            {/* Subtitle — mechanism-driven, implicit differentiation */}
+            {/* Subtitle — Sobrio, concreto y orientado a utilidad real */}
             <div>
               {segment === "persona" ? (
                 <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed max-w-xl">
-                  Conversaciones inmersivas por voz y texto con reclutadores virtuales que no rompen personaje. Entrená el puesto y la empresa que quieras —incluyendo nuestro{" "}
-                  <strong className="text-[#111111] font-semibold">Módulo Primer Empleo sin exigencias de experiencia previa</strong>— con feedback cuantitativo (1 al 10) bajo metodología STAR de{" "}
-                  <span className="text-[#da551d] font-semibold">Grupo Dinamis</span>.
+                  Practicá entrevistas por voz y texto para el puesto y la empresa que elijas —incluyendo un{" "}
+                  <strong className="text-[#111111] font-semibold">módulo para primer empleo sin experiencia previa</strong>. Recibí una devolución estructurada (1 al 10) con metodología de{" "}
+                  <span className="text-[#da551d] font-semibold">Grupo Dinamis</span> para saber qué responder y qué corregir.
                 </p>
               ) : (
                 <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed max-w-xl">
-                  <strong className="text-[#111111] font-semibold">Dinamis AI</strong> digitaliza más de 15 años de metodología experta. Estandariza filtros por competencias STAR, genera scorecards comparativos para selección y brinda a tus mandos medios un{" "}
-                  <span className="text-[#da551d] font-semibold">coach ejecutivo 24/7</span> para entrenar feedback, negociación y resolución de conflictos.
+                  <strong className="text-[#111111] font-semibold">Dinamis AI</strong> ayuda a tus supervisores y mandos medios a practicar conversaciones de feedback, resolución de conflictos y coordinación de equipos. Además, agiliza las primeras entrevistas de selección aplicando metodología STAR con criterios claros y objetivos.
                 </p>
               )}
             </div>
 
-            {/* Multimodal Feature Micro-Pill */}
-            <div className="flex flex-wrap items-center gap-3 text-xs font-semibold text-[#61100d]">
-              <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                <Mic className="w-3.5 h-3.5 text-[#ff8b1e]" />
-                Voz & Reconocimiento en tiempo real
-              </span>
-              <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                <Volume2 className="w-3.5 h-3.5 text-[#da551d]" />
-                Lectura natural con acento rioplatense
-              </span>
-              <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                <Target className="w-3.5 h-3.5 text-[#10b981]" />
-                1 pregunta por turno sin fatiga
-              </span>
+            {/* Multimodal Feature Micro-Pills */}
+            <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold text-[#61100d]">
+              {segment === "persona" ? (
+                <>
+                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
+                    <Mic className="w-3.5 h-3.5 text-[#ff8b1e]" />
+                    Práctica por voz en tiempo real
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
+                    <Volume2 className="w-3.5 h-3.5 text-[#da551d]" />
+                    Audio natural rioplatense
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
+                    <Target className="w-3.5 h-3.5 text-[#10b981]" />
+                    1 pregunta por turno, como en la vida real
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#da551d]" />
+                    Metodología STAR (+200 Empresas)
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
+                    <BarChart3 className="w-3.5 h-3.5 text-[#ff8b1e]" />
+                    Reportes estructurados para RRHH
+                  </span>
+                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
+                    <Brain className="w-3.5 h-3.5 text-[#10b981]" />
+                    Práctica 24/7 en entorno seguro
+                  </span>
+                </>
+              )}
             </div>
 
             {/* CTAs */}
@@ -188,19 +174,19 @@ export function Hero() {
                     className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff9a35] hover:to-[#c24614] text-white font-extrabold text-sm sm:text-base shadow-[0_8px_30px_rgba(255,139,30,0.38)] hover:shadow-[0_10px_38px_rgba(218,85,29,0.48)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer"
                   >
                     <Sparkles className="w-5 h-5 text-[#ffdfc5] group-hover:rotate-12 transition-transform" />
-                    <span>Probar Dinamis AI gratis</span>
+                    <span>Solicitar piloto para mi empresa</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </a>
 
                   <a
-                    href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20Dinamis%20AI%20para%20mi%20empresa"
+                    href="https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20agendar%20una%20demostraci%C3%B3n%20ejecutiva%20de%20Dinamis%20AI%20para%20mi%20empresa"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => handleCtaClick("book_corporate_demo")}
                     className="px-6 py-4 rounded-xl bg-white hover:bg-[#fff8f3] text-[#111111] border border-[#f1dfd3] hover:border-[#ff8b1e]/50 font-bold text-sm sm:text-base shadow-sm transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Play className="w-4 h-4 text-[#ff8b1e] fill-[#ff8b1e]" />
-                    <span>Agendar demo corporativa</span>
+                    <span>Agendar demo ejecutiva (15 min)</span>
                   </a>
                 </>
               )}
@@ -227,7 +213,7 @@ export function Hero() {
                 <>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0" />
-                    <span className="font-medium">Sin tarjeta requerida</span>
+                    <span className="font-medium">Piloto de 14 días sin costo de setup</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Users className="w-4 h-4 text-[#da551d] shrink-0" />
@@ -238,7 +224,7 @@ export function Hero() {
                   </div>
                   <div className="flex items-center gap-1.5">
                     <TrendingUp className="w-4 h-4 text-[#ff8b1e] shrink-0" />
-                    <span className="font-medium">Hasta 70% menos tiempo de cribado</span>
+                    <span className="font-medium">Reportes objetivos listos para Dirección</span>
                   </div>
                 </>
               )}

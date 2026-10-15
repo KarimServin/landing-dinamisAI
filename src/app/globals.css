@@ -26,8 +26,15 @@
 body {
   background-color: var(--brand-bg);
   color: var(--brand-text-main);
-  font-family: var(--font-poppins), "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans), "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  letter-spacing: -0.011em;
+}
+
+h1, h2, h3, .font-heading {
+  font-family: var(--font-heading), "Sora", sans-serif;
+  letter-spacing: -0.025em;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 /* 1. Official Signature Background Gradient (bg-brand-gradient) */
@@ -113,8 +120,66 @@ body {
   }
 }
 
+/* 3D Cinematic Robot Glide — Completely continuous, unbroken floating curve from side-depth to front */
+@keyframes robotFloatGlide {
+  0% {
+    opacity: 0;
+    transform: translate3d(240px, -30px, -900px) scale(0.2) rotateY(-25deg);
+    filter: blur(8px) drop-shadow(0 0 30px rgba(255, 139, 30, 0.7));
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale(1) rotateY(0deg);
+    filter: blur(0px) drop-shadow(0 16px 24px rgba(218, 85, 29, 0.3));
+  }
+}
+
+@keyframes speechBubbleFlyIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px) scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+
+/* Floor contact shadow — completely unbroken continuous glide matching the robot */
+@keyframes shadowFloatGlide {
+  0% {
+    opacity: 0;
+    transform: translate3d(240px, 0, 0) scale(0.2);
+    filter: blur(10px);
+  }
+  15% {
+    opacity: 0.35;
+  }
+  100% {
+    opacity: 0.35;
+    transform: translate3d(0px, 0, 0) scale(1);
+    filter: blur(6px);
+  }
+}
+
+.animate-robot-glide-in {
+  animation: robotFloatGlide 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shadow-glide {
+  animation: shadowFloatGlide 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-speech-fly-in {
+  animation: speechBubbleFlyIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 2.0s forwards;
+  opacity: 0;
+}
+
 .animate-float-bot {
-  animation: floatBot 4s ease-in-out infinite;
+  animation: floatBot 4s ease-in-out 2.2s infinite;
 }
 
 .animate-shadow-scale {
@@ -129,6 +194,11 @@ body {
   animation: pulseGlow 3s ease-in-out infinite;
 }
 
+.perspective-deep {
+  perspective: 1200px;
+  perspective-origin: center center;
+}
+
 .perspective-1000 {
   perspective: 1000px;
 }
@@ -136,4 +206,81 @@ body {
 .preserve-3d {
   transform-style: preserve-3d;
 }
+
+/* Animated subtle gradient shimmer for brand wordmark */
+@keyframes logoGradientShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-logo-gradient {
+  background-size: 240% 100%;
+  animation: logoGradientShimmer 6s ease-in-out infinite;
+}
+
+/* Apple & Framer 3D Spatial Canvas Utilities */
+.apple-3d-stage {
+  perspective: 1200px;
+  perspective-origin: center 50%;
+  transform-style: preserve-3d;
+}
+
+.will-change-transform {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Apple Luminous Top Edge Laser Sweep */
+@keyframes beamSweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+.animate-beam-sweep {
+  animation: beamSweep 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Robot Jet Propulsion Thruster Flare */
+@keyframes thrusterFire {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.2;
+    filter: blur(2px);
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.95;
+    filter: blur(6px) drop-shadow(0 0 16px rgba(255, 139, 30, 0.9));
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.4;
+    filter: blur(3px);
+  }
+}
+
+.animate-thruster-fire {
+  animation: thrusterFire 0.45s ease-out forwards;
+}
+
 

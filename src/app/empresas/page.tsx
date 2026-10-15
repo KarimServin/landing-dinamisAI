@@ -4,7 +4,6 @@ import { Hero } from "@/components/hero";
 import { TrustBar } from "@/components/trust-bar";
 import { LeadershipCoach } from "@/components/leadership-coach";
 import { InterviewSimulator } from "@/components/interview-simulator";
-import { RoiCalculator } from "@/components/roi-calculator";
 import { Methodology } from "@/components/methodology";
 import { ComparisonTable } from "@/components/comparison-table";
 import { Pricing } from "@/components/pricing";
@@ -12,6 +11,7 @@ import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
 import { Footer } from "@/components/footer";
 import { SegmentProvider } from "@/components/segment-context";
+import { Apple3DSection } from "@/components/apple-3d-section";
 
 export const metadata: Metadata = {
   title: "Dinamis AI para Empresas | Coaching de Líderes y Selección de Talento con IA",
@@ -104,34 +104,49 @@ export default function EmpresasPage() {
 
         <main className="flex-grow">
           {/* Hero en modo Empresa */}
-          <Hero />
+          <Apple3DSection isHero>
+            <Hero />
+          </Apple3DSection>
 
           {/* Social Proof Corporativo */}
-          <TrustBar />
+          <Apple3DSection>
+            <TrustBar />
+          </Apple3DSection>
 
           {/* Pilar 1 para Empresas: AI Leadership Coach */}
-          <LeadershipCoach />
+          <Apple3DSection>
+            <LeadershipCoach />
+          </Apple3DSection>
 
           {/* Pilar 2 para Empresas: Filtros STAR y Evaluación de Talento */}
-          <InterviewSimulator />
-
-          {/* Calculadora de ROI para Departamentos de RRHH */}
-          <RoiCalculator />
+          <Apple3DSection>
+            <InterviewSimulator />
+          </Apple3DSection>
 
           {/* Metodología Científica Grupo Dinamis */}
-          <Methodology />
+          <Apple3DSection>
+            <Methodology />
+          </Apple3DSection>
 
           {/* Tabla Comparativa: Dinamis AI vs IAs Generales */}
-          <ComparisonTable />
+          <Apple3DSection>
+            <ComparisonTable />
+          </Apple3DSection>
 
           {/* Planes B2B (Equipos & Enterprise) */}
-          <Pricing />
+          <Apple3DSection>
+            <Pricing />
+          </Apple3DSection>
 
           {/* Preguntas Frecuentes Corporativas */}
-          <Faq />
+          <Apple3DSection>
+            <Faq />
+          </Apple3DSection>
 
           {/* Banner de Conversión B2B */}
-          <CtaBanner />
+          <Apple3DSection>
+            <CtaBanner />
+          </Apple3DSection>
         </main>
 
         <Footer />

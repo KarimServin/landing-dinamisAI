@@ -4,26 +4,26 @@ const metrics = [
   {
     value: "+15",
     unit: "años",
-    label: "En gestión de personas",
-    detail: "Trayectoria de Grupo Dinamis en consultoría RRHH",
+    label: "Ciencia de talento",
+    detail: "Trayectoria de Grupo Dinamis en selección y desarrollo",
   },
   {
     value: "+200",
     unit: "empresas",
-    label: "Procesos acompañados",
-    detail: "Selección y desarrollo organizacional en LATAM",
+    label: "Organizaciones activas",
+    detail: "Equipos y mandos medios entrenados en LATAM",
+  },
+  {
+    value: "70%",
+    unit: "ahorro",
+    label: "Tiempo en screening y coaching",
+    detail: "Capacitación continua sin costo por hora de consultoría",
   },
   {
     value: "STAR",
-    unit: "metodología",
-    label: "Criterio estructurado",
-    detail: "Evaluación objetiva basada en evidencias reales",
-  },
-  {
-    value: "100%",
-    unit: "privado",
-    label: "Confidencialidad blindada",
-    detail: "Espacio seguro para líderes y postulantes",
+    unit: "predictivo",
+    label: "Scorecards auditables 1 al 10",
+    detail: "Métricas objetivas para Comités de Dirección y RRHH",
   },
 ];
 
@@ -59,7 +59,7 @@ const testimonials = [
 
 export function TrustBar() {
   return (
-    <section className="py-16 bg-white border-b border-[#f1dfd3]">
+    <section id="confianza" className="py-16 bg-white border-b border-[#f1dfd3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Core Metrics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 border-b border-[#f1dfd3]">
