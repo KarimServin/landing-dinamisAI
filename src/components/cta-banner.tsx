@@ -8,7 +8,7 @@ export function CtaBanner() {
   const { segment } = useSegment();
 
   return (
-    <section className="py-20 bg-[#fffbf9] border-b border-[#f1dfd3] relative overflow-hidden">
+    <section id="cta" className="py-20 bg-[#fffbf9] border-b border-[#f1dfd3] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl bg-gradient-to-br from-[#61100d] via-[#a03417] to-[#ff8b1e] p-8 sm:p-16 text-center overflow-hidden shadow-[0_20px_60px_rgba(97,16,13,0.30)] text-white">
           {/* Decorative glows */}
@@ -28,21 +28,21 @@ export function CtaBanner() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-[#ffdfc5]" />
               <span>
-                {segment === "persona" ? "El momento de actuar es ahora" : "Cada semana que demora cuesta"}
+                {segment === "persona" ? "Preparación Profesional" : "Optimización de Talento"}
               </span>
             </div>
 
-            {/* H2 — fear-of-loss, urgency-driven */}
+            {/* H2 — Claro, sobrio y enfocado en beneficio real */}
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tighter leading-[1.1]">
               {segment === "persona"
-                ? "¿Cuántas oportunidades más vas a dejar pasar por no estar preparado para ese momento?"
-                : "Cada semana que demora una posición clave es tiempo, costo y energía que tu equipo no recupera."}
+                ? "Llegá a tu próxima entrevista con mayor seguridad y preparación."
+                : "Hacé más eficientes tus procesos de selección y desarrollá a tus líderes."}
             </h2>
 
             <p className="text-base sm:text-lg text-white/88 max-w-2xl mx-auto leading-relaxed">
               {segment === "persona"
-                ? "Dinamis AI te da el diagnóstico real que necesitás: qué respondés bien, qué te delata, y cómo corregirlo antes de la entrevista que importa."
-                : "Dinamis AI automatiza el primer filtro con la misma profundidad con la que lo haría un selector experto de Grupo Dinamis. En minutos, no en jornadas."}
+                ? "Practicá en un espacio seguro, conocé qué aspectos podés mejorar antes del encuentro real y transmití tu experiencia con claridad y estructura."
+                : "Evaluá candidatos con metodología STAR y permití que tus mandos medios practiquen conversaciones de liderazgo de forma continua. Comenzá con un piloto corporativo de 14 días sin costo de setup."}
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -56,7 +56,7 @@ export function CtaBanner() {
                 <span>
                   {segment === "persona"
                     ? "Empezar mi diagnóstico gratis"
-                    : "Probar Dinamis AI gratis"}
+                    : "Solicitar piloto corporativo (14 días)"}
                 </span>
                 <ArrowRight className="w-4 h-4 text-[#da551d] transition-transform group-hover:translate-x-1" />
               </a>
@@ -65,7 +65,7 @@ export function CtaBanner() {
                 href={
                   segment === "persona"
                     ? "https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20conocer%20m%C3%A1s%20sobre%20c%C3%B3mo%20prepararme%20con%20Dinamis%20AI"
-                    : "https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20agendar%20una%20demostraci%C3%B3n%20de%20Dinamis%20AI%20para%20mi%20empresa"
+                    : "https://wa.me/5493425200959?text=Hola%20Grupo%20Dinamis%2C%20quiero%20agendar%20una%20demostraci%C3%B3n%20ejecutiva%20de%20Dinamis%20AI%20para%20mi%20empresa"
                 }
                 target="_blank"
                 rel="noopener noreferrer"
@@ -74,7 +74,7 @@ export function CtaBanner() {
               >
                 <Play className="w-4 h-4 text-[#ffdfc5] fill-[#ffdfc5]" />
                 <span>
-                  {segment === "persona" ? "Consultar por WhatsApp" : "Agendar demo corporativa"}
+                  {segment === "persona" ? "Consultar por WhatsApp" : "Agendar demo ejecutiva (15 min)"}
                 </span>
               </a>
             </div>
@@ -82,12 +82,12 @@ export function CtaBanner() {
             <div className="pt-1 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75 font-medium">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#ffdfc5]" />
-                Alta instantánea · sin tarjeta de crédito
+                {segment === "persona" ? "Alta instantánea · sin tarjeta de crédito" : "Piloto 100% asistido · onboarding en 24h"}
               </span>
               <span>·</span>
               <span className="flex items-center gap-1.5">
                 <Clock className="w-4 h-4 text-[#ffdfc5]" />
-                Primera sesión en menos de 2 minutos
+                {segment === "persona" ? "Primera sesión en menos de 2 minutos" : "Scorecards objetivos para RRHH y Dirección"}
               </span>
             </div>
           </div>

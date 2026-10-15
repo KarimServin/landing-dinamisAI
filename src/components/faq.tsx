@@ -9,7 +9,7 @@ export function Faq() {
   const faqs = [
     {
       q: "¿En qué se diferencia Dinamis AI de usar una IA genérica como ChatGPT o Claude?",
-      a: "ChatGPT y otras IAs generales son hojas en blanco que requieren redactar prompts complejos, tienden a salirse de personaje, responden con listas interminables y no evalúan objetivamente. Dinamis AI es un simulador de vuelo para conversaciones laborales: ofrece roleplay estricto (1 pregunta por turno sin explicaciones teóricas en el medio), evaluadores con identidad rioplatense real, interacción por voz y un Scorecard cuantitativo formal (1 al 10) al finalizar la sesión.",
+      a: "ChatGPT y otras IAs generales son hojas en blanco que requieren redactar prompts complejos, tienden a salirse de personaje, responden con listas interminables y no evalúan objetivamente. Dinamis AI es una plataforma especializada en conversaciones laborales: ofrece una dinámica estructurada (1 pregunta por turno sin explicaciones teóricas en el medio), evaluadores con tono rioplatense natural, interacción por voz y un reporte cuantitativo formal (1 al 10) al finalizar la sesión.",
     },
     {
       q: "¿Cómo funciona el Módulo Primer Empleo si no tengo experiencia laboral previa?",

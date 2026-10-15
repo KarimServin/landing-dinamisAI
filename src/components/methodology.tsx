@@ -4,23 +4,23 @@ export function Methodology() {
   const points = [
     {
       icon: BookOpenCheck,
-      title: "Metodología STAR Rigurosa",
-      desc: "Nuestros algoritmos están calibrados para evaluar la consistencia entre lo que el candidato dice que hizo (Acción) y el impacto tangible (Resultado), evitando respuestas genéricas o discursos de manual.",
+      title: "Evaluación Estructurada con Metodología STAR",
+      desc: "El sistema evalúa la coherencia entre lo que la persona afirma haber realizado (Acción) y el impacto concreto obtenido (Resultado), evitando respuestas genéricas o discursos aprendidos de memoria.",
     },
     {
       icon: Users2,
-      title: "15 Años de Experiencia en el Terreno",
-      desc: "No somos una empresa de software aislada. Dinamis AI nace dentro de Grupo Dinamis, consultora líder que ha transformado cientos de organizaciones y evaluado miles de talentos en el mundo real.",
+      title: "15 Años de Experiencia en Selección y Desarrollo",
+      desc: "Dinamis AI fue desarrollada a partir del conocimiento y la práctica de Grupo Dinamis en consultoría de personas, acompañando procesos en más de 200 empresas de América Latina.",
     },
     {
       icon: Lock,
-      title: "Seguridad y Confidencialidad Blindada",
-      desc: "La información de tus evaluaciones, candidatos y líderes es privada, encriptada y nunca se comparte ni se utiliza para entrenar modelos públicos de terceros.",
+      title: "Privacidad y Confidencialidad de los Datos",
+      desc: "La información de tus evaluaciones, candidatos y líderes es privada y confidencial. No se comparte con terceros ni se utiliza para entrenar modelos públicos de inteligencia artificial.",
     },
     {
       icon: Award,
-      title: "Acompañamiento Híbrido (IA + Consultores)",
-      desc: "Para desafíos estratégicos de alta dirección o reestructuraciones, cuentas con el equipo de consultores sénior de Grupo Dinamis para intervenir con una mirada humana profunda.",
+      title: "Acompañamiento Profesional de Consultores",
+      desc: "La plataforma agiliza la práctica y el diagnóstico; para desafíos estratégicos de desarrollo o búsquedas complejas, contás con el respaldo del equipo de consultores de Grupo Dinamis.",
     },
   ];
 
@@ -30,16 +30,16 @@ export function Methodology() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5] border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#ff8b1e]" />
-            <span>El Factor Diferencial</span>
+            <span>Metodología y Respaldo</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
-            No es solo Inteligencia Artificial.{" "}
+            Tecnología respaldada por{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-              Es Metodología Humana en Escala.
+              experiencia real en gestión de personas.
             </span>
           </h2>
           <p className="text-[#4a423d] text-base sm:text-lg leading-relaxed">
-            Cualquiera puede abrir una ventana de chat; Dinamis AI incorpora la estructura psicométrica, la calibración de competencias y el rigor organizacional de Grupo Dinamis.
+            Dinamis AI incorpora los criterios de evaluación, competencias laborales y rigor metodológico desarrollados por Grupo Dinamis a lo largo de más de 15 años en el mercado.
           </p>
         </div>
 

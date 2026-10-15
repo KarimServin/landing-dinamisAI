@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Sparkles, MapPin, Phone, ExternalLink } from "lucide-react";
+import { MapPin, Phone, ExternalLink } from "lucide-react";
+import { DinamisBrandLogo } from "@/components/dinamis-logo";
 
 export function Footer() {
   return (
@@ -8,15 +9,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Column 1: Brand & Overview */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#ff8b1e] via-[#da551d] to-[#61100d] p-[2px]">
-                <div className="w-full h-full bg-[#090807] rounded-[10px] flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-[#ff8b1e]" />
-                </div>
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">
-                Dinamis <span className="text-[#ff8b1e]">AI</span>
-              </span>
+            <Link href="/">
+              <DinamisBrandLogo isDark={true} />
             </Link>
 
             <p className="text-xs sm:text-sm text-[#a3998f] leading-relaxed max-w-sm">
@@ -66,11 +60,6 @@ export function Footer() {
               <li>
                 <a href="#coaching" className="hover:text-[#ff8b1e] transition-colors">
                   AI Leadership Coach
-                </a>
-              </li>
-              <li>
-                <a href="#calculadora" className="hover:text-[#ff8b1e] transition-colors">
-                  Calculadora de ROI
                 </a>
               </li>
               <li>
