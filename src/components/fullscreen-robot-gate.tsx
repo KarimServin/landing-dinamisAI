@@ -241,7 +241,7 @@ export function FullscreenRobotGate() {
                   Soy Empresa
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4a423d] leading-relaxed">
-                  Coaching de liderazgo para mandos medios y filtros de selección STAR para escalar tus búsquedas.
+                  Coaching de liderazgo para mandos medios, feedback efectivo y resolución de conflictos para tus equipos.
                 </p>
 
                 <div className="pt-3 flex flex-wrap gap-2">
@@ -249,7 +249,7 @@ export function FullscreenRobotGate() {
                     <CheckCircle2 className="w-3 h-3 text-[#ff8b1e]" /> Mandos Medios
                   </span>
                   <span className="inline-flex items-center gap-1 text-[11px] font-semibold bg-[#fff8f3] border border-[#ffdfc5] text-[#61100d] px-2.5 py-0.5 rounded-md">
-                    <CheckCircle2 className="w-3 h-3 text-[#ff8b1e]" /> Filtros STAR
+                    <CheckCircle2 className="w-3 h-3 text-[#ff8b1e]" /> Coaching 1-on-1
                   </span>
                 </div>
               </div>

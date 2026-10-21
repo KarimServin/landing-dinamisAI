@@ -28,7 +28,7 @@ export function CtaBanner() {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/30 text-white text-xs font-bold uppercase tracking-wider backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-[#ffdfc5]" />
               <span>
-                {segment === "persona" ? "Preparación Profesional" : "Optimización de Talento"}
+                {segment === "persona" ? "Preparación Profesional" : "Desarrollo de Liderazgo"}
               </span>
             </div>
 
@@ -36,13 +36,13 @@ export function CtaBanner() {
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tighter leading-[1.1]">
               {segment === "persona"
                 ? "Llegá a tu próxima entrevista con mayor seguridad y preparación."
-                : "Hacé más eficientes tus procesos de selección y desarrollá a tus líderes."}
+                : "Desarrollá a tus líderes y fortalecé la gestión de tus equipos."}
             </h2>
 
             <p className="text-base sm:text-lg text-white/88 max-w-2xl mx-auto leading-relaxed">
               {segment === "persona"
                 ? "Practicá en un espacio seguro, conocé qué aspectos podés mejorar antes del encuentro real y transmití tu experiencia con claridad y estructura."
-                : "Evaluá candidatos con metodología STAR y permití que tus mandos medios practiquen conversaciones de liderazgo de forma continua. Comenzá con un piloto corporativo de 14 días sin costo de setup."}
+                : "Permití que tus supervisores y mandos medios practiquen conversaciones de liderazgo, feedback y gestión de conflictos de forma continua y confidencial. Comenzá con un piloto corporativo de 14 días sin costo de setup."}
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">

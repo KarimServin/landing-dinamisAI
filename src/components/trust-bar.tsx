@@ -16,8 +16,8 @@ const metrics = [
   {
     value: "70%",
     unit: "ahorro",
-    label: "Tiempo en screening y coaching",
-    detail: "Capacitación continua sin costo por hora de consultoría",
+    label: "Tiempo y costo en coaching",
+    detail: "Capacitación continua sin costo por hora de consultoría tradicional",
   },
   {
     value: "STAR",
@@ -39,8 +39,8 @@ const industries = [
 const testimonials = [
   {
     quote:
-      "Antes de usar Dinamis AI nuestros candidatos llegaban sin estructura. Ahora llegan con el STAR trabajado y el proceso tarda la mitad.",
-    author: "Jefa de RRHH",
+      "Nuestros supervisores ganaron mucha seguridad para dar feedback a tiempo y resolver fricciones en la planta sin esperar a que el problema escale.",
+    author: "Gerente de Personas y Cultura",
     company: "Empresa industrial, Santa Fe",
   },
   {
@@ -51,7 +51,7 @@ const testimonials = [
   },
   {
     quote:
-      "El coaching de liderazgo me ayudó a manejar una situación con un colaborador que venía postergando hace meses. Concrete la conversación en 48 horas.",
+      "El coaching de liderazgo me ayudó a manejar una situación con un colaborador que venía postergando hace meses. Concreté la conversación en 48 horas.",
     author: "Gerente de Operaciones",
     company: "Empresa logística, Córdoba",
   },
@@ -106,7 +106,7 @@ export function TrustBar() {
         {/* Sectors */}
         <div className="pt-8">
           <p className="text-xs uppercase tracking-widest text-[#61100d] font-bold mb-5">
-            La misma metodología que usan estas industrias para seleccionar a sus mejores líderes
+            La misma metodología que usan estas industrias para desarrollar y potenciar a sus líderes
           </p>
           <div className="flex flex-wrap items-center gap-3 text-[#4a423d]">
             {industries.map((ind, i) => {

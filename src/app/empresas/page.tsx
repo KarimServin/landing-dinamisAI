@@ -6,7 +6,6 @@ import { LeadershipCoach } from "@/components/leadership-coach";
 import { InterviewSimulator } from "@/components/interview-simulator";
 import { Methodology } from "@/components/methodology";
 import { ComparisonTable } from "@/components/comparison-table";
-import { Pricing } from "@/components/pricing";
 import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
 import { Footer } from "@/components/footer";
@@ -14,25 +13,25 @@ import { SegmentProvider } from "@/components/segment-context";
 import { Apple3DSection } from "@/components/apple-3d-section";
 
 export const metadata: Metadata = {
-  title: "Dinamis AI para Empresas | Coaching de Líderes y Selección de Talento con IA",
+  title: "Dinamis AI para Empresas | Coaching de Líderes y Desarrollo de Equipos con IA",
   description:
-    "Automatiza los filtros de entrevistas por competencias STAR y capacita a tus mandos medios en conversaciones difíciles con la metodología experta de Grupo Dinamis.",
+    "Capacita a tus líderes, supervisores y mandos medios en conversaciones difíciles, feedback y resolución de conflictos con la metodología experta de Grupo Dinamis.",
   keywords: [
-    "software recursos humanos ia",
-    "evaluacion de talento rrhh",
     "coaching mandos medios ia",
-    "simulador entrevistas star empresas",
-    "pruebas de seleccion laboral ia",
-    "entrenamiento liderazgo corporativo",
-    "metodologia star rrhh",
+    "desarrollo de lideres corporativo",
+    "entrenamiento liderazgo con ia",
+    "feedback y resolucion de conflictos",
+    "software recursos humanos ia",
+    "entrenamiento liderazgo ejecutivo",
+    "capacitacion supervisores ia",
   ],
   alternates: {
     canonical: "https://ai.grupodinamis.com/empresas",
   },
   openGraph: {
-    title: "Dinamis AI para Empresas | Coaching de Líderes y Selección de Talento con IA",
+    title: "Dinamis AI para Empresas | Coaching de Líderes y Desarrollo de Equipos con IA",
     description:
-      "Plataforma B2B para capacitar líderes y evaluar candidatos con IA y más de 15 años de metodología en desarrollo organizacional de Grupo Dinamis.",
+      "Plataforma B2B para capacitar líderes y mandos medios con IA y más de 15 años de metodología en desarrollo organizacional de Grupo Dinamis.",
     url: "https://ai.grupodinamis.com/empresas",
   },
 };
@@ -47,12 +46,12 @@ const jsonLdB2B = {
       operatingSystem: "Web App",
       url: "https://ai.grupodinamis.com/empresas",
       description:
-        "SaaS B2B para simulación de entrevistas por competencias STAR y entrenamiento continuo en liderazgo para mandos medios.",
+        "SaaS B2B para entrenamiento continuo en liderazgo, feedback y desarrollo de mandos medios.",
       offers: {
         "@type": "Offer",
-        price: "79",
+        price: "0",
         priceCurrency: "USD",
-        description: "Plan Equipos & RRHH para selección y mandos medios.",
+        description: "Acceso gratuito y piloto sin costo para empresas.",
       },
       author: {
         "@type": "Organization",
@@ -65,10 +64,10 @@ const jsonLdB2B = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "¿Cómo reduce Dinamis AI los tiempos del equipo de selección?",
+          name: "¿Cómo ayuda Dinamis AI en el entrenamiento de líderes y mandos medios?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Los postulantes completan su primera entrevista por competencias con el evaluador de IA bajo modelo STAR. La plataforma genera un reporte comparativo objetivo, ahorrando hasta un 70% del tiempo de cribado inicial de RRHH.",
+            text: "Brinda un entorno simulado confidencial 24/7 donde líderes y mandos medios practican conversaciones complejas (feedback correctivo, 1-on-1s, delegación, resolución de conflictos) con retroalimentación objetiva basada en la metodología de Grupo Dinamis.",
           },
         },
         {
@@ -118,7 +117,7 @@ export default function EmpresasPage() {
             <LeadershipCoach />
           </Apple3DSection>
 
-          {/* Pilar 2 para Empresas: Filtros STAR y Evaluación de Talento */}
+          {/* Pilar 2 para Empresas: Simulador de Conversaciones de Gestión */}
           <Apple3DSection>
             <InterviewSimulator />
           </Apple3DSection>
@@ -131,11 +130,6 @@ export default function EmpresasPage() {
           {/* Tabla Comparativa: Dinamis AI vs IAs Generales */}
           <Apple3DSection>
             <ComparisonTable />
-          </Apple3DSection>
-
-          {/* Planes B2B (Equipos & Enterprise) */}
-          <Apple3DSection>
-            <Pricing />
           </Apple3DSection>
 
           {/* Preguntas Frecuentes Corporativas */}

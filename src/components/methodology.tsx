@@ -4,23 +4,23 @@ export function Methodology() {
   const points = [
     {
       icon: BookOpenCheck,
-      title: "Evaluación Estructurada con Metodología STAR",
-      desc: "El sistema evalúa la coherencia entre lo que la persona afirma haber realizado (Acción) y el impacto concreto obtenido (Resultado), evitando respuestas genéricas o discursos aprendidos de memoria.",
+      title: "Evidencias Reales (STAR) • Marcus Buckingham",
+      desc: "La IA audita la coherencia entre Acción y Resultado con base en First, Break All the Rules: las conductas pasadas reales predicen el desempeño futuro con mayor rigor que discursos teóricos o respuestas hipotéticas.",
     },
     {
       icon: Users2,
-      title: "15 Años de Experiencia en Selección y Desarrollo",
-      desc: "Dinamis AI fue desarrollada a partir del conocimiento y la práctica de Grupo Dinamis en consultoría de personas, acompañando procesos en más de 200 empresas de América Latina.",
-    },
-    {
-      icon: Lock,
-      title: "Privacidad y Confidencialidad de los Datos",
-      desc: "La información de tus evaluaciones, candidatos y líderes es privada y confidencial. No se comparte con terceros ni se utiliza para entrenar modelos públicos de inteligencia artificial.",
+      title: "Liderazgo y Feedback • Kim Scott & Ram Charan",
+      desc: "Simulaciones estructuradas sobre marcos reconocidos de gestión de personas: Radical Candor y método SBI (Scott, Stone & Heen) para feedback directo y empático, y The Leadership Pipeline (Charan) con Liderazgo Situacional para delegación.",
     },
     {
       icon: Award,
-      title: "Acompañamiento Profesional de Consultores",
-      desc: "La plataforma agiliza la práctica y el diagnóstico; para desafíos estratégicos de desarrollo o búsquedas complejas, contás con el respaldo del equipo de consultores de Grupo Dinamis.",
+      title: "Negociación y Conflictos • Fisher, Ury & Voss",
+      desc: "Marcos de resolución de desacuerdos basados en Crucial Conversations (Patterson & Grenny), el modelo de negociación de Harvard (Getting to Yes) y la empatía táctica de Chris Voss para separar hechos de juicios y alcanzar acuerdos ganar-ganar.",
+    },
+    {
+      icon: Sparkles,
+      title: "Growth Mindset en Primer Empleo • Carol Dweck",
+      desc: "Inspirado en la investigación de Mentalidad de Crecimiento de Carol Dweck: los módulos de iniciación laboral evalúan aprendibilidad, persistencia y motivación genuina antes que experiencia corporativa previa.",
     },
   ];
 
@@ -35,11 +35,11 @@ export function Methodology() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
             Tecnología respaldada por{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-              experiencia real en gestión de personas.
+              ciencia del comportamiento y autores líderes.
             </span>
           </h2>
           <p className="text-[#4a423d] text-base sm:text-lg leading-relaxed">
-            Dinamis AI incorpora los criterios de evaluación, competencias laborales y rigor metodológico desarrollados por Grupo Dinamis a lo largo de más de 15 años en el mercado.
+            Dinamis AI incorpora los criterios de evaluación, competencias laborales y rigor metodológico desarrollados por Grupo Dinamis a lo largo de más de 15 años, integrando los marcos teóricos de mayor impacto en desarrollo humano.
           </p>
         </div>
 
@@ -61,6 +61,36 @@ export function Methodology() {
               </div>
             );
           })}
+        </div>
+
+        {/* Author & Methodology Backing Ribbon */}
+        <div className="mt-10 p-6 rounded-2xl bg-[#fff8f3] border border-[#ffdfc5] text-center max-w-4xl mx-auto shadow-2xs">
+          <p className="text-xs uppercase tracking-wider text-[#61100d] font-bold mb-3">
+            Marcos Teóricos y Bibliografía en los que se Fundamenta la IA
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#ffdfc5] text-[#111111] font-semibold shadow-2xs">
+              Kim Scott <span className="text-[#80766e] font-normal">(Radical Candor)</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#ffdfc5] text-[#111111] font-semibold shadow-2xs">
+              Patterson & Grenny <span className="text-[#80766e] font-normal">(Crucial Conversations)</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#ffdfc5] text-[#111111] font-semibold shadow-2xs">
+              Fisher & Ury <span className="text-[#80766e] font-normal">(Getting to Yes)</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#ffdfc5] text-[#111111] font-semibold shadow-2xs">
+              Chris Voss <span className="text-[#80766e] font-normal">(Never Split the Difference)</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#ffdfc5] text-[#111111] font-semibold shadow-2xs">
+              Carol Dweck <span className="text-[#80766e] font-normal">(Mindset)</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#ffdfc5] text-[#111111] font-semibold shadow-2xs">
+              Ram Charan <span className="text-[#80766e] font-normal">(Leadership Pipeline)</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-white border border-[#ffdfc5] text-[#111111] font-semibold shadow-2xs">
+              Marcus Buckingham <span className="text-[#80766e] font-normal">(First, Break All the Rules)</span>
+            </span>
+          </div>
         </div>
 
         {/* Corporate Quote Banner */}

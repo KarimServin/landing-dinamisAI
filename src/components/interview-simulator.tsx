@@ -39,61 +39,61 @@ export function InterviewSimulator() {
     },
     {
       icon: GraduationCap,
-      badge: "Exclusivo para Jóvenes",
-      title: "Módulo Primer Empleo",
+      badge: "Growth Mindset",
+      title: "Módulo Primer Empleo (Carol Dweck)",
       description:
-        "Diseñado para quienes buscan su primera oportunidad laboral. No exige experiencia corporativa previa: evalúa iniciativa, capacidad de aprendizaje, criterio práctico y motivación.",
-      highlight: "Evaluación sin requisitos de experiencia previa",
+        "Diseñado para quienes buscan su primera oportunidad. Basado en Carol Dweck (Mindset): no exige experiencia corporativa previa; evalúa Growth Mindset, aprendibilidad, proactividad y tolerancia a la frustración.",
+      highlight: "Medición de aprendibilidad y Growth Mindset (Carol Dweck)",
     },
     {
       icon: Layers,
-      badge: "Gestión & Operaciones",
-      title: "Mandos Medios & Operativos",
+      badge: "Leadership Pipeline",
+      title: "Entrevistas de Liderazgo (Ram Charan)",
       description:
-        "Pensado para roles con responsabilidad de equipo. Evalúa organización del trabajo, manejo de prioridades cruzadas, apego a procesos y resolución de imprevistos.",
-      highlight: "Práctica de organización, criterio y resolución cotidiana",
+        "Basado en Ram Charan (The Leadership Pipeline) y Liderazgo Situacional (Hersey/Blanchard): evalúa si sabés delegar según la madurez del colaborador, soltar la tarea operativa y coordinar con criterio.",
+      highlight: "Delegación y liderazgo situacional (Charan / Blanchard)",
     },
     {
       icon: Sparkles,
-      badge: "Mentor Pre-Simulación",
-      title: "Estructura de Respuestas (Método STAR)",
+      badge: "Evidencias Reales",
+      title: "Método STAR y Evidencias (Buckingham)",
       description:
-        "Aprendé a ordenar tus respuestas en Situación, Tarea, Acción y Resultado para comunicar tus logros con claridad, sin divagar y respondiendo con precisión a lo que pregunta el selector.",
-      highlight: "Respuestas claras, ordenadas y fundamentadas en hechos",
+        "Inspirado en Marcus Buckingham (First, Break All the Rules): la conducta pasada real predice el éxito futuro. Aprendé a estructurar hechos comprobables (STAR) evitando respuestas teóricas o hipotéticas.",
+      highlight: "Respuestas basadas en hechos y evidencias reales (Buckingham)",
     },
   ];
 
   const companyModules = [
     {
       icon: Target,
-      badge: "Gestión de Equipos",
-      title: "Feedback de Desempeño y Alineación",
+      badge: "Radical Candor (Scott)",
+      title: "Feedback de Desempeño y Método SBI",
       description:
-        "Práctica guiada para señalar desvíos de rendimiento o conductas desalineadas, con foco en describir hechos objetivos y construir acuerdos de mejora mutuos.",
-      highlight: "Conversaciones basadas en hechos observables y acuerdos claros",
+        "Práctica guiada bajo el marco de Kim Scott y Stone & Heen: equilibra empatía y franqueza directa aplicando la técnica Situación-Comportamiento-Impacto para acordar mejoras concretas.",
+      highlight: "Matriz Empatía vs. Claridad y método SBI",
     },
     {
       icon: Clock,
-      badge: "Mediación de Fricciones",
+      badge: "Crucial Conversations",
       title: "Resolución de Conflictos Operativos",
       description:
-        "Escenarios prácticos para mediar en desacuerdos entre colaboradores o áreas, ayudando a los supervisores a encontrar soluciones de trabajo sostenibles sin desgastar el clima.",
-      highlight: "Mediación constructiva para restablecer la colaboración",
+        "Escenarios inspirados en Patterson & Grenny y Stone: entrena a separar hechos de interpretaciones, pasar de la culpa a mapear contribuciones y construir acuerdos de equipo sostenibles.",
+      highlight: "Hechos vs. interpretaciones y acuerdos colaborativos",
     },
     {
       icon: ShieldCheck,
-      badge: "SLA & Comunicación",
-      title: "Alineación y Coordinación Inter-Áreas",
+      badge: "Negociación Harvard",
+      title: "Negociación Inter-Áreas y MAAN",
       description:
-        "Práctica para fundamentar pedidos a otras gerencias (Sistemas, Compras, Finanzas) y fijar prioridades de trabajo con claridad y respeto profesional.",
-      highlight: "Coordinación efectiva de prioridades entre distintas áreas",
+        "Basado en Getting to Yes (Fisher & Ury) y Chris Voss: fundamentá prioridades y SLA con otras gerencias negociando sobre intereses reales con empatía táctica y preguntas calibradas.",
+      highlight: "Intereses vs. posiciones, MAAN/BATNA y empatía táctica",
     },
     {
       icon: BarChart3,
       badge: "Auditoría de Desarrollo",
       title: "Scorecards y Métricas de Avance",
       description:
-        "Seguimiento estructurado con métricas de 1 a 10 para que la gerencia de RRHH conozca la evolución de sus mandos medios y el ajuste metodológico de sus candidatos.",
+        "Seguimiento estructurado con métricas de 1 a 10 para que la gerencia de RRHH y Desarrollo conozca la evolución, madurez y criterio de delegación de sus líderes y mandos medios.",
       highlight: "Reportes estructurados con métricas claras para RRHH",
     },
   ];
@@ -104,7 +104,7 @@ export function InterviewSimulator() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#ffdfc5] border border-[#ff8b1e]/30 text-[#61100d] text-xs font-bold uppercase tracking-wider mb-4">
-            {segment === "persona" ? "Pilar 01 • Entrevistas & Preparación" : "Pilar 01 • Desarrollo de Mandos Medios"}
+            {segment === "persona" ? "Pilar 01 • Entrevistas & Preparación" : "Pilar 01 • Desarrollo y Coaching de Mandos Medios"}
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
             {segment === "persona" ? (
@@ -118,7 +118,7 @@ export function InterviewSimulator() {
               <>
                 Entrená a tus líderes y{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-                  evaluá talento con criterio objetivo.
+                  desarrollá equipos con criterio objetivo.
                 </span>
               </>
             )}
@@ -126,7 +126,7 @@ export function InterviewSimulator() {
           <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed">
             {segment === "persona"
               ? "En una entrevista laboral tenés poco tiempo para demostrar tu potencial. Dinamis AI te permite ensayar por voz o texto las veces que quieras, ganar fluidez y llegar más seguro al encuentro con el selector."
-              : "Dinamis AI brinda un espacio para que tus mandos medios practiquen conversaciones cotidianas de conducción de equipos, y ayuda a RRHH a evaluar candidatos aplicando metodología STAR con reportes objetivos."}
+              : "Dinamis AI brinda un espacio seguro para que tus supervisores, líderes y mandos medios practiquen conversaciones cotidianas de conducción de equipos, feedback y resolución de conflictos con reportes objetivos de progreso."}
           </p>
 
           {/* Toggle Button */}

@@ -1,65 +1,36 @@
 import React from "react";
+import Image from "next/image";
 
 interface DinamisBrandLogoProps {
   className?: string;
   isDark?: boolean;
+  priority?: boolean;
 }
 
-// Efecto de 3 rayas horizontales situadas estrictamente en la parte inferior del logo (el 68% superior es sólido)
-const STRIPED_MASK_STYLE: React.CSSProperties = {
-  WebkitMaskImage: `linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 68%,
-    transparent 68%,
-    transparent 71.5%,
-    #000 71.5%,
-    #000 79.5%,
-    transparent 79.5%,
-    transparent 83%,
-    #000 83%,
-    #000 91%,
-    transparent 91%,
-    transparent 94.5%,
-    #000 94.5%,
-    #000 100%
-  )`,
-  maskImage: `linear-gradient(
-    to bottom,
-    #000 0%,
-    #000 68%,
-    transparent 68%,
-    transparent 71.5%,
-    #000 71.5%,
-    #000 79.5%,
-    transparent 79.5%,
-    transparent 83%,
-    #000 83%,
-    #000 91%,
-    transparent 91%,
-    transparent 94.5%,
-    #000 94.5%,
-    #000 100%
-  )`,
-};
-
-export function DinamisBrandLogo({ className = "", isDark = false }: DinamisBrandLogoProps) {
+export function DinamisBrandLogo({
+  className = "",
+  isDark = false,
+  priority = false,
+}: DinamisBrandLogoProps) {
   return (
     <div
-      className={`inline-flex items-baseline select-none group cursor-pointer transition-transform duration-200 hover:scale-[1.02] ${className}`}
+      className={`inline-flex items-center select-none group cursor-pointer transition-transform duration-200 hover:opacity-90 ${className}`}
     >
-      {/* "DinamisAI" con tipografía Outfit y exactamente 3 rayas horizontales */}
-      <span
-        className={`text-[29px] sm:text-[34px] md:text-[38px] lg:text-[40px] font-black tracking-[-0.04em] leading-none transition-colors duration-200 inline-block ${
-          isDark ? "text-white" : "text-[#0a0a0a]"
-        }`}
-        style={{
-          fontFamily: "var(--font-logo), 'Outfit', sans-serif",
-          ...STRIPED_MASK_STYLE,
-        }}
-      >
-        DinamisAI
-      </span>
+      <Image
+        src={
+          isDark
+            ? "/images/grupo-dinamis-logo-pure-white.webp"
+            : "/images/grupo-dinamis-logo.webp"
+        }
+        alt="Grupo Dinamis"
+        width={isDark ? 991 : 1024}
+        height={isDark ? 151 : 195}
+        className="h-7 sm:h-8 md:h-9 w-auto object-contain"
+        style={{ width: "auto" }}
+        priority={priority}
+      />
     </div>
   );
 }
+
+export const GrupoDinamisLogo = DinamisBrandLogo;

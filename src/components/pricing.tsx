@@ -9,6 +9,11 @@ export function Pricing() {
   const { segment } = useSegment();
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("annual");
 
+  // Por ahora la herramienta para empresas es gratuita, no se muestran planes de cobro para empresas
+  if (segment === "empresa") {
+    return null;
+  }
+
   const plans = [
     {
       name: "Profesional",
@@ -23,28 +28,28 @@ export function Pricing() {
         "Acceso a escenarios clave de liderazgo",
         "Historial individual de sesiones y calificaciones",
       ],
-      ctaText: segment === "persona" ? "Comenzar Prueba Gratis" : "Comenzar Gratis",
+      ctaText: "Comenzar Prueba Gratis",
       ctaUrl: "https://app.grupodinamis.com",
-      isPopular: segment === "persona",
+      isPopular: true,
       popularBadge: "Recomendado para Profesionales",
     },
     {
-      name: "Equipos & RRHH",
-      subtitle: "Para departamentos de personas y desarrollo de mandos medios",
+      name: "Equipos & Mandos Medios",
+      subtitle: "Para departamentos de personas y desarrollo de líderes internos",
       priceMonthly: 99,
       priceAnnual: 79,
-      description: "Optimizá las primeras entrevistas de selección y brindale a tus supervisores herramientas prácticas para el día a día.",
+      description: "Entrená a tus supervisores y líderes en conversaciones difíciles de feedback, gestión de conflictos y liderazgo continuo.",
       features: [
-        "Hasta 80 entrevistas preliminares con IA al mes",
-        "Panel centralizado para el equipo de selección",
-        "Informes comparativos de candidatos en PDF",
+        "Simulaciones de coaching y feedback ilimitadas",
         "Coaching para hasta 10 líderes y mandos medios",
-        "Escenarios de liderazgo personalizables",
+        "Escenarios de liderazgo y 1-on-1s personalizables",
+        "Scorecards cuantitativos de evolución (1 a 10)",
+        "Panel centralizado para RRHH y Dirección",
         "Soporte prioritario por email y WhatsApp",
       ],
       ctaText: "Iniciar Piloto de 14 Días",
       ctaUrl: "https://app.grupodinamis.com",
-      isPopular: segment === "empresa",
+      isPopular: false,
       popularBadge: "Recomendado para Empresas",
     },
     {
@@ -54,9 +59,9 @@ export function Pricing() {
       priceAnnual: "A medida",
       description: "Configuración personalizada de perfiles y competencias, con el asesoramiento y consultoría de Grupo Dinamis.",
       features: [
-        "Candidatos y líderes ilimitados",
+        "Líderes y colaboradores ilimitados",
         "Modelado de competencias y cultura de tu empresa",
-        "Integración con ATS y sistemas internos (API)",
+        "Escenarios a medida para mandos medios y directivos",
         "Sesiones de consultoría híbrida con Grupo Dinamis",
         "Acuerdo de Nivel de Servicio (SLA) y DPA dedicado",
         "Account Manager dedicado",
@@ -77,26 +82,13 @@ export function Pricing() {
             Planes y Precios
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111111] tracking-tight mb-4">
-            {segment === "persona" ? (
-              <>
-                Planes accesibles para{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-                  preparar tus entrevistas.
-                </span>
-              </>
-            ) : (
-              <>
-                Planes flexibles para{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
-                  equipos de RRHH y líderes.
-                </span>
-              </>
-            )}
+            Planes accesibles para{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#61100d]">
+              preparar tus entrevistas.
+            </span>
           </h2>
           <p className="text-[#4a423d] text-base sm:text-lg leading-relaxed">
-            {segment === "persona"
-              ? "Comenzá con una prueba sin costo. Practicá con metodología de selección real y mejorá tus respuestas antes de la entrevista definitiva."
-              : "Iniciá un piloto sin costo para tu empresa y escalá a medida que sumás más postulantes o líderes a la plataforma."}
+            Comenzá con una prueba sin costo. Practicá con metodología de selección real y mejorá tus respuestas antes de la entrevista definitiva.
           </p>
 
           {/* Billing Switch */}

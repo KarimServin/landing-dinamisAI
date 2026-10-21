@@ -68,7 +68,7 @@ export function RobotCompanion({ mode, onSwitchMode, className = "" }: RobotComp
               <span>Dinamis Bot 3D</span>
             </span>
             <span className="text-[9px] px-2 py-0.5 rounded-full bg-[#ffdfc5]/60 text-[#61100d] font-bold">
-              {isEmpresa ? "Auditor B2B" : "Coach Personal"}
+              {isEmpresa ? "Coach B2B" : "Coach Personal"}
             </span>
           </div>
 
@@ -76,8 +76,8 @@ export function RobotCompanion({ mode, onSwitchMode, className = "" }: RobotComp
             <p className="text-xs sm:text-sm font-medium text-[#111111] leading-relaxed">
               {isEmpresa ? (
                 <>
-                  &ldquo;¡Hola! Como auditor de talento de{" "}
-                  <strong className="text-[#da551d] font-bold">Dinamis AI</strong>, entreno a tus mandos medios en conversaciones difíciles y filtro candidatos con metodología STAR.&rdquo;
+                  &ldquo;¡Hola! Como coach de liderazgo de{" "}
+                  <strong className="text-[#da551d] font-bold">Dinamis AI</strong>, entreno a tus líderes y mandos medios en conversaciones difíciles, feedback y resolución de conflictos.&rdquo;
                 </>
               ) : (
                 <>

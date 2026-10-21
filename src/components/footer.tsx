@@ -14,7 +14,7 @@ export function Footer() {
             </Link>
 
             <p className="text-xs sm:text-sm text-[#a3998f] leading-relaxed max-w-sm">
-              Plataforma SaaS que digitaliza más de 15 años de metodología en Recursos Humanos y Desarrollo Organizacional de Grupo Dinamis para entrenar líderes y evaluar talento con Inteligencia Artificial.
+              Plataforma SaaS que digitaliza más de 15 años de metodología en Recursos Humanos y Desarrollo Organizacional de Grupo Dinamis para entrenar líderes y preparar profesionales con Inteligencia Artificial.
             </p>
 
             <div className="pt-2 text-xs text-[#a3998f] space-y-1.5">

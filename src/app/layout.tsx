@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     url: "https://ai.grupodinamis.com",
     title: "Dinamis AI | Simulación de Entrevistas y Coaching de Líderes con IA",
     description:
-      "Entrena líderes y evalúa candidatos con IA avanzada y más de 15 años de metodología en desarrollo organizacional de Grupo Dinamis. Reduce tiempos de selección un 70%.",
+      "Entrena líderes corporativos y prepara profesionales para entrevistas laborales con IA avanzada y más de 15 años de metodología en desarrollo organizacional de Grupo Dinamis.",
     siteName: "Dinamis AI",
     images: [
       {
@@ -145,7 +145,7 @@ const jsonLdData = {
           name: "¿Qué es Dinamis AI y en qué se diferencia de un ChatGPT convencional?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Dinamis AI no es un modelo genérico sin contexto. Está entrenado y parametrizado con los más de 15 años de metodología en Recursos Humanos, evaluación por competencias (STAR) y desarrollo organizacional de Grupo Dinamis. Ofrece métricas cuantitativas, informes comparativos para selectores y simulaciones realistas de liderazgo corporativo.",
+            text: "Dinamis AI no es un modelo genérico sin contexto. Está entrenado y parametrizado con los más de 15 años de metodología en Recursos Humanos, técnica STAR y desarrollo organizacional de Grupo Dinamis. Ofrece métricas cuantitativas, scorecards objetivos y simulaciones realistas de liderazgo corporativo para equipos y profesionales.",
           },
         },
         {
@@ -177,7 +177,7 @@ const jsonLdData = {
           name: "¿Puedo integrar Dinamis AI con los procesos de RRHH de mi empresa?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Sí, Dinamis AI cuenta con planes corporativos que permiten configurar casos de estudio específicos de tu industria, panel de control multi-usuario para el equipo de selección y acompañamiento consultivo de los especialistas de Grupo Dinamis.",
+            text: "Sí, Dinamis AI cuenta con planes corporativos que permiten configurar casos de estudio específicos de tu industria, panel de control multi-usuario para RRHH y líderes, y acompañamiento consultivo de los especialistas de Grupo Dinamis.",
           },
         },
       ],

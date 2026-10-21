@@ -63,7 +63,7 @@ export function Hero() {
               <span>
                 {segment === "persona"
                   ? "Práctica de Entrevistas Laborales con Inteligencia Artificial"
-                  : "Entrenamiento de Liderazgo y Selección de Talento · Grupo Dinamis"}
+                  : "Entrenamiento de Liderazgo y Coaching para Equipos · Grupo Dinamis"}
               </span>
             </div>
 
@@ -83,7 +83,7 @@ export function Hero() {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111111] tracking-tighter leading-[1.08]">
                   Entrená a tus líderes y{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff8b1e] via-[#da551d] to-[#a03417]">
-                    optimizá tus procesos de selección con IA.
+                    desarrollá a tus equipos con IA.
                   </span>
                 </h1>
               )}
@@ -99,7 +99,7 @@ export function Hero() {
                 </p>
               ) : (
                 <p className="text-base sm:text-lg text-[#4a423d] leading-relaxed max-w-xl">
-                  <strong className="text-[#111111] font-semibold">Dinamis AI</strong> ayuda a tus supervisores y mandos medios a practicar conversaciones de feedback, resolución de conflictos y coordinación de equipos. Además, agiliza las primeras entrevistas de selección aplicando metodología STAR con criterios claros y objetivos.
+                  <strong className="text-[#111111] font-semibold">Dinamis AI</strong> ayuda a tus supervisores, líderes y mandos medios a practicar conversaciones difíciles de feedback, alineación de expectativas, resolución de conflictos y coaching de equipos en un entorno seguro y con feedback metodológico objetivo.
                 </p>
               )}
             </div>

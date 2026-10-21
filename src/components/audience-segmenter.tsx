@@ -63,11 +63,11 @@ export function AudienceSegmenter() {
               <h3 className="text-xl font-bold text-[#111111] group-hover:text-[#da551d] transition-colors flex items-center gap-2">
                 <span>Soy Empresa</span>
                 <span className="text-xs font-semibold text-[#808285] group-hover:text-[#ff8b1e] transition-colors">
-                  (Coaching & Filtros)
+                  (Coaching & Liderazgo)
                 </span>
               </h3>
               <p className="text-xs sm:text-sm text-[#4a423d] leading-relaxed">
-                Coaching de liderazgo para mandos medios y filtros masivos de entrevistas STAR para escalar tus procesos de selección.
+                Coaching de liderazgo para mandos medios, entrenamiento en feedback y alineación de equipos internos.
               </p>
 
               <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-[#61100d] font-semibold">
@@ -75,7 +75,7 @@ export function AudienceSegmenter() {
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#ff8b1e]" /> Entrenar líderes
                 </span>
                 <span className="flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#ff8b1e]" /> Optimizar selección
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#ff8b1e]" /> Desarrollar equipos
                 </span>
               </div>
             </div>

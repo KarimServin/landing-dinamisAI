@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight, Building2, Rocket } from "lucide-react";
 import { trackEvent } from "@/components/analytics";
 import { useSegment } from "@/components/segment-context";
@@ -21,7 +20,7 @@ const SECTIONS: Section[] = [
   { id: "coaching", labelEmpresa: "Coaching de Liderazgo", labelPersona: "Coaching Carrera" },
   { id: "metodologia", labelEmpresa: "Metodología", labelPersona: "Metodología" },
   { id: "comparativa", labelEmpresa: "Diferencial", labelPersona: "Diferencial" },
-  { id: "precios", labelEmpresa: "Planes", labelPersona: "Planes" },
+  { id: "precios", labelEmpresa: "", labelPersona: "Planes" },
   { id: "faq", labelEmpresa: "FAQ", labelPersona: "Preguntas" },
 ];
 
@@ -31,6 +30,8 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const isManualScrollRef = useRef(false);
   const manualScrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const visibleSections = SECTIONS.filter((s) => (segment === "empresa" ? s.labelEmpresa : s.labelPersona));
 
   useEffect(() => {
     let ticking = false;
@@ -51,16 +52,16 @@ export function Navbar() {
 
       // 2. Si está al final de la página, activa la última sección
       if (scrollY + windowHeight >= documentHeight - 60) {
-        setActiveSection(SECTIONS[SECTIONS.length - 1].id);
+        setActiveSection(visibleSections[visibleSections.length - 1].id);
         return;
       }
 
       // 3. Línea de lectura visual óptima (35% de la altura del viewport)
       const readingLine = windowHeight * 0.35;
-      let matchedSectionId = SECTIONS[0].id;
+      let matchedSectionId = visibleSections[0].id;
 
-      for (let i = 0; i < SECTIONS.length; i++) {
-        const sec = SECTIONS[i];
+      for (let i = 0; i < visibleSections.length; i++) {
+        const sec = visibleSections[i];
         const el = document.getElementById(sec.id);
         if (el) {
           const rect = el.getBoundingClientRect();
@@ -91,7 +92,7 @@ export function Navbar() {
         clearTimeout(manualScrollTimeoutRef.current);
       }
     };
-  }, []);
+  }, [segment]);
 
   const scrollToSection = (id: string) => {
     setActiveSection(id);
@@ -139,25 +140,16 @@ export function Navbar() {
               : "max-h-12 opacity-100 translate-y-0 py-1.5 border-b border-white/10"
           }`}
         >
-          <div className="max-w-7xl mx-auto flex items-baseline justify-center gap-2 text-xs sm:text-[13px] font-medium text-white">
-            <span className="tracking-normal select-none">
-              Impulsado por
-            </span>
+          <div className="max-w-7xl mx-auto flex items-center justify-center text-xs sm:text-[13px] font-medium text-white">
             <a
               href="https://grupodinamis.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline translate-y-[3.3px] hover:opacity-85 transition-opacity"
+              className="inline-flex items-center gap-1.5 hover:opacity-90 transition-opacity"
               title="Grupo Dinamis"
             >
-              <Image
-                src="/images/grupo-dinamis-logo-pure-white.webp"
-                alt="Grupo Dinamis"
-                width={90}
-                height={14}
-                className="h-[13px] sm:h-[13.5px] w-auto object-contain inline-block"
-                priority
-              />
+              <span className="font-semibold text-white">Grupo Dinamis</span>{" "}
+              <span className="text-white/90">presenta su nueva herramienta de IA</span>
             </a>
           </div>
         </div>
@@ -174,7 +166,7 @@ export function Navbar() {
             {/* Mobile Brand Logo (Izquierda en pantallas móviles) */}
             <div className="flex md:hidden items-center z-10">
               <Link href="/" className="shrink-0 flex items-center">
-                <DinamisBrandLogo />
+                <DinamisBrandLogo priority />
               </Link>
             </div>
 
@@ -206,10 +198,10 @@ export function Navbar() {
               </button>
             </div>
 
-            {/* Logo Marca Personalizado Dinamis AI (Desktop: Centro Geométrico Absoluto) */}
+            {/* Logo Marca Institucional Grupo Dinamis (Desktop: Centro Geométrico Absoluto) */}
             <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center justify-center pointer-events-auto">
               <Link href="/" className="shrink-0 flex items-center justify-center">
-                <DinamisBrandLogo />
+                <DinamisBrandLogo priority />
               </Link>
             </div>
 
@@ -244,7 +236,7 @@ export function Navbar() {
         aria-label="Navegación de documento"
         className="fixed right-6 sm:right-8 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col items-end gap-2.5 bg-transparent p-0 border-0 shadow-none pointer-events-auto"
       >
-        {SECTIONS.map((sec) => {
+        {visibleSections.map((sec) => {
           const isActive = activeSection === sec.id;
           const label = segment === "empresa" ? sec.labelEmpresa : sec.labelPersona;
 
@@ -285,7 +277,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#171412]/90 backdrop-blur-md text-white border border-white/20 shadow-xl text-xs font-medium">
           <span className="w-2 h-2 rounded-full bg-[#ff8b1e] animate-pulse" />
           <span>
-            {SECTIONS.find((s) => s.id === activeSection)?.[
+            {visibleSections.find((s) => s.id === activeSection)?.[
               segment === "empresa" ? "labelEmpresa" : "labelPersona"
             ] || "Sección"}
           </span>

@@ -21,40 +21,44 @@ export function LeadershipCoach() {
 
   const scenarios = [
     {
-      title: "Feedback de Desempeño Constructivo",
-      tag: "Desempeño y Claridad",
+      title: "Feedback de Desempeño y Radical Candor",
+      tag: "Claridad Directa & Empatía",
       icon: MessageSquare,
+      framework: "Kim Scott (Radical Candor) + Stone & Heen",
       description:
-        "Cómo abordar desvíos de rendimiento o conductas desalineadas describiendo hechos observables y construyendo acuerdos de mejora concretos.",
+        "Cómo abordar desvíos de rendimiento o conductas desalineadas equilibrando empatía genuina con franqueza directa, aplicando el método SBI (Situación-Comportamiento-Impacto).",
       methodologicalNote:
-        "La metodología de Grupo Dinamis ayuda a evitar juicios subjetivos, promoviendo preguntas que inviten al colaborador a reflexionar y asumir compromisos.",
+        "Matriz Empatía vs. Claridad directa (Kim Scott) y recepción constructiva (Stone & Heen): entrena al líder a evitar juicios subjetivos y a estructurar la devolución sobre hechos observables sin ambigüedades.",
     },
     {
-      title: "Mediación en Conflictos de Equipo",
-      tag: "Resolución de Desacuerdos",
+      title: "Resolución de Conflictos y Conversaciones Cruciales",
+      tag: "Desacuerdos Operativos",
       icon: Split,
+      framework: "Patterson & Grenny (Crucial Conversations) + Stone",
       description:
-        "Intervención ante roces o diferencias operativas entre colaboradores, buscando acuerdos sostenibles sin polarizar al equipo.",
+        "Intervención estratégica ante roces o diferencias operativas en el equipo: aprendé a desactivar la defensiva y transformar la confrontación en acuerdos sostenibles.",
       methodologicalNote:
-        "Enfoca la conversación en el impacto operativo y los objetivos compartidos, desactivando posturas rígidas.",
+        "Inspirado en Crucial Conversations y Difficult Conversations: enseña a separar hechos de interpretaciones personales y pasar de la búsqueda de culpables a un mapa de contribuciones compartidas.",
     },
     {
-      title: "Coordinación y Acuerdos Inter-Áreas",
-      tag: "Gestión de Prioridades y SLA",
+      title: "Negociación Estratégica y Acuerdos Inter-Áreas",
+      tag: "Intereses vs. Posiciones",
       icon: Handshake,
+      framework: "Fisher & Ury (Getting to Yes) + Chris Voss",
       description:
-        "Práctica para fundamentar pedidos y acordar plazos de entrega con otras áreas (Sistemas, Compras, Finanzas) manteniendo una relación de trabajo fluida.",
+        "Práctica para fundamentar pedidos, defender recursos y acordar plazos con otras áreas (Sistemas, Compras, Finanzas) manteniendo una colaboración sólida.",
       methodologicalNote:
-        "Enseña a fundamentar con impacto de negocio y fijar límites profesionales con claridad y respeto mutuo.",
+        "Combina el modelo de negociación de Harvard (MAAN/BATNA, intereses sobre posiciones) con la empatía táctica y preguntas calibradas de Chris Voss para generar acuerdos ganar-ganar.",
     },
     {
-      title: "Delegación y Seguimiento Operativo",
-      tag: "Liderazgo y Autonomía",
+      title: "Delegación y Liderazgo Situacional",
+      tag: "Madurez & Autonomía",
       icon: Scale,
+      framework: "Ram Charan (Leadership Pipeline) + Hersey/Blanchard",
       description:
-        "Práctica para transferir responsabilidades fijando objetivos claros y puntos de control, evitando tanto el micromanagement como la desatención.",
+        "Práctica para transferir responsabilidades y dejar de hacer la tarea operativa, graduando la autonomía y los puntos de control según la madurez del colaborador.",
       methodologicalNote:
-        "Evalúa cómo definir el alcance de la tarea, los criterios de éxito y los momentos de revisión con el colaborador.",
+        "Fundamentado en The Leadership Pipeline y Liderazgo Situacional: evalúa si el líder sabe soltar la microgestión y delegar adecuadamente según el nivel de competencia y compromiso del equipo.",
     },
   ];
 
@@ -143,10 +147,15 @@ export function LeadershipCoach() {
               {scenarios[activeScenario].description}
             </p>
 
-            <div className="p-4 sm:p-5 rounded-xl bg-[#fff8f3] border border-[#ffdfc5] space-y-1.5 mb-6">
-              <div className="flex items-center gap-2 text-[#61100d] text-xs font-bold uppercase tracking-wider">
-                <Compass className="w-4 h-4 text-[#ff8b1e]" />
-                <span>Metodología de Desarrollo Organizacional Grupo Dinamis:</span>
+            <div className="p-4 sm:p-5 rounded-xl bg-[#fff8f3] border border-[#ffdfc5] space-y-2 mb-6">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2 text-[#61100d] text-xs font-bold uppercase tracking-wider">
+                  <Compass className="w-4 h-4 text-[#ff8b1e]" />
+                  <span>Respaldo Metodológico & Teórico</span>
+                </div>
+                <span className="text-[11px] font-semibold text-[#da551d] bg-white px-2.5 py-0.5 rounded-md border border-[#ffdfc5]">
+                  {scenarios[activeScenario].framework}
+                </span>
               </div>
               <p className="text-xs sm:text-sm text-[#111111] leading-relaxed">
                 {scenarios[activeScenario].methodologicalNote}

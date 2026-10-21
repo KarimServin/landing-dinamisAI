@@ -21,7 +21,7 @@ const ACTIVE_SECTIONS: SectionDef[] = [
     side: "left",
     topVh: 28,
     badge: "Simulador STAR",
-    empresaMsg: "Mirá cómo evalúa respuestas por turno en vivo",
+    empresaMsg: "Mirá cómo entrena conversaciones por turno en vivo",
     personaMsg: "Practicá tu entrevista por voz o texto",
   },
   {
@@ -53,7 +53,7 @@ const ACTIVE_SECTIONS: SectionDef[] = [
     side: "left",
     topVh: 28,
     badge: "Planes Claros",
-    empresaMsg: "Escalable desde 1 puesto hasta toda tu empresa",
+    empresaMsg: "Escalable desde 1 líder hasta toda tu organización",
     personaMsg: "Diagnóstico inicial 100% gratuito",
   },
   {
