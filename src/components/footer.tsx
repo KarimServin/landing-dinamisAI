@@ -68,11 +68,6 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#precios" className="hover:text-[#ff8b1e] transition-colors">
-                  Planes & Precios
-                </a>
-              </li>
-              <li>
                 <a href="#faq" className="hover:text-[#ff8b1e] transition-colors">
                   Preguntas Frecuentes
                 </a>

@@ -10,14 +10,8 @@ const metrics = [
   {
     value: "+200",
     unit: "empresas",
-    label: "Organizaciones activas",
-    detail: "Equipos y mandos medios entrenados en LATAM",
-  },
-  {
-    value: "70%",
-    unit: "ahorro",
-    label: "Tiempo y costo en coaching",
-    detail: "Capacitación continua sin costo por hora de consultoría tradicional",
+    label: "Confiaron en Grupo Dinamis",
+    detail: "Grandes organizaciones de LATAM en consultoría de RRHH y desarrollo",
   },
   {
     value: "STAR",
@@ -62,7 +56,7 @@ export function TrustBar() {
     <section id="confianza" className="py-16 bg-white border-b border-[#f1dfd3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Core Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 border-b border-[#f1dfd3]">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pb-12 border-b border-[#f1dfd3]">
           {metrics.map((metric, index) => (
             <div
               key={index}

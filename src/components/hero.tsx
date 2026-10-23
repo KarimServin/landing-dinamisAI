@@ -10,11 +10,8 @@ import {
   MessageSquare,
   BarChart3,
   Users,
-  Target,
   Award,
   Rocket,
-  ShieldCheck,
-  TrendingUp,
   Mic,
   Volume2,
 } from "lucide-react";
@@ -104,54 +101,17 @@ export function Hero() {
               )}
             </div>
 
-            {/* Multimodal Feature Micro-Pills */}
-            <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold text-[#61100d]">
-              {segment === "persona" ? (
-                <>
-                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                    <Mic className="w-3.5 h-3.5 text-[#ff8b1e]" />
-                    Práctica por voz en tiempo real
-                  </span>
-                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                    <Volume2 className="w-3.5 h-3.5 text-[#da551d]" />
-                    Audio natural rioplatense
-                  </span>
-                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                    <Target className="w-3.5 h-3.5 text-[#10b981]" />
-                    1 pregunta por turno, como en la vida real
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-[#da551d]" />
-                    Metodología STAR (+200 Empresas)
-                  </span>
-                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                    <BarChart3 className="w-3.5 h-3.5 text-[#ff8b1e]" />
-                    Reportes estructurados para RRHH
-                  </span>
-                  <span className="px-3 py-1 rounded-lg bg-white border border-[#f1dfd3] shadow-2xs flex items-center gap-1.5">
-                    <Brain className="w-3.5 h-3.5 text-[#10b981]" />
-                    Práctica 24/7 en entorno seguro
-                  </span>
-                </>
-              )}
-            </div>
-
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               {segment === "persona" ? (
                 <>
                   <a
                     href="https://app.grupodinamis.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     onClick={() => handleCtaClick("start_candidate_practice")}
                     className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff9a35] hover:to-[#c24614] text-white font-extrabold text-sm sm:text-base shadow-[0_8px_30px_rgba(255,139,30,0.38)] hover:shadow-[0_10px_38px_rgba(218,85,29,0.48)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer"
                   >
                     <Rocket className="w-5 h-5 text-[#ffdfc5] group-hover:-translate-y-0.5 transition-transform" />
-                    <span>Empezar mi diagnóstico gratis</span>
+                    <span>Empezar mi diagnóstico</span>
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </a>
 
@@ -168,8 +128,6 @@ export function Hero() {
                 <>
                   <a
                     href="https://app.grupodinamis.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     onClick={() => handleCtaClick("start_free_trial")}
                     className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff9a35] hover:to-[#c24614] text-white font-extrabold text-sm sm:text-base shadow-[0_8px_30px_rgba(255,139,30,0.38)] hover:shadow-[0_10px_38px_rgba(218,85,29,0.48)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 group cursor-pointer"
                   >
@@ -193,38 +151,30 @@ export function Hero() {
             </div>
 
             {/* Trust micro-badges */}
-            <div className="flex flex-wrap items-center gap-5 text-xs text-[#6b625b] pt-0">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-[#6b625b]">
               {segment === "persona" ? (
                 <>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0" />
-                    <span className="font-medium">Sin tarjeta de crédito</span>
+                    <span className="font-medium">Puntaje del 1 al 10 al terminar cada sesión</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Award className="w-4 h-4 text-[#da551d] shrink-0" />
-                    <span className="font-medium">Metodología STAR · 15+ años de experiencia</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-[#ff8b1e] shrink-0" />
-                    <span className="font-medium">Scorecard 1 al 10 garantizado</span>
+                    <span className="font-medium">Metodología de Grupo Dinamis · 15+ años</span>
                   </div>
                 </>
               ) : (
                 <>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4 text-[#10b981] shrink-0" />
-                    <span className="font-medium">Piloto de 14 días sin costo de setup</span>
+                    <span className="font-medium">Piloto acompañado por especialistas de Grupo Dinamis</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Users className="w-4 h-4 text-[#da551d] shrink-0" />
                     <span>
                       <strong className="text-[#111111] font-bold">+200 empresas</strong>{" "}
-                      acompañadas en LATAM
+                      confiaron en Grupo Dinamis
                     </span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <TrendingUp className="w-4 h-4 text-[#ff8b1e] shrink-0" />
-                    <span className="font-medium">Reportes objetivos listos para Dirección</span>
                   </div>
                 </>
               )}

@@ -47,12 +47,6 @@ const jsonLdB2B = {
       url: "https://ai.grupodinamis.com/empresas",
       description:
         "SaaS B2B para entrenamiento continuo en liderazgo, feedback y desarrollo de mandos medios.",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        description: "Acceso gratuito y piloto sin costo para empresas.",
-      },
       author: {
         "@type": "Organization",
         name: "Grupo Dinamis",

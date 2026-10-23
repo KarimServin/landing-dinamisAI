@@ -42,7 +42,7 @@ export function CtaBanner() {
             <p className="text-base sm:text-lg text-white/88 max-w-2xl mx-auto leading-relaxed">
               {segment === "persona"
                 ? "Practicá en un espacio seguro, conocé qué aspectos podés mejorar antes del encuentro real y transmití tu experiencia con claridad y estructura."
-                : "Permití que tus supervisores y mandos medios practiquen conversaciones de liderazgo, feedback y gestión de conflictos de forma continua y confidencial. Comenzá con un piloto corporativo de 14 días sin costo de setup."}
+                : "Permití que tus supervisores y mandos medios practiquen conversaciones de liderazgo, feedback y gestión de conflictos de forma continua y confidencial. Comenzá con un piloto acompañado por nuestro equipo."}
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -55,8 +55,8 @@ export function CtaBanner() {
               >
                 <span>
                   {segment === "persona"
-                    ? "Empezar mi diagnóstico gratis"
-                    : "Solicitar piloto corporativo (14 días)"}
+                    ? "Empezar mi diagnóstico"
+                    : "Solicitar piloto para mi empresa"}
                 </span>
                 <ArrowRight className="w-4 h-4 text-[#da551d] transition-transform group-hover:translate-x-1" />
               </a>
@@ -82,7 +82,7 @@ export function CtaBanner() {
             <div className="pt-1 flex flex-wrap items-center justify-center gap-6 text-xs text-white/75 font-medium">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-[#ffdfc5]" />
-                {segment === "persona" ? "Alta instantánea · sin tarjeta de crédito" : "Piloto 100% asistido · onboarding en 24h"}
+                {segment === "persona" ? "Alta instantánea · sesiones confidenciales" : "Piloto 100% asistido · onboarding en 24h"}
               </span>
               <span>·</span>
               <span className="flex items-center gap-1.5">

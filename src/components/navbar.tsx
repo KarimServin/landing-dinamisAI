@@ -20,7 +20,6 @@ const SECTIONS: Section[] = [
   { id: "coaching", labelEmpresa: "Coaching de Liderazgo", labelPersona: "Coaching Carrera" },
   { id: "metodologia", labelEmpresa: "Metodología", labelPersona: "Metodología" },
   { id: "comparativa", labelEmpresa: "Diferencial", labelPersona: "Diferencial" },
-  { id: "precios", labelEmpresa: "", labelPersona: "Planes" },
   { id: "faq", labelEmpresa: "FAQ", labelPersona: "Preguntas" },
 ];
 
@@ -223,7 +222,7 @@ export function Navbar() {
                 onClick={() => handleCtaClick("doc_nav_free_trial")}
                 className="inline-flex items-center justify-center px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff8b1e] hover:to-[#c24614] text-white font-semibold text-xs shadow-xs hover:shadow-sm transition-all duration-200 gap-1 group shrink-0"
               >
-                <span>Probar gratis</span>
+                <span>Probar ahora</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>

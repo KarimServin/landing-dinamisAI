@@ -11,8 +11,6 @@ interface SegmentContextType {
   isGateOpen: boolean;
   openGate: () => void;
   closeGate: () => void;
-  isIntroFinished: boolean;
-  notifyIntroFinished: () => void;
 }
 
 const SegmentContext = createContext<SegmentContextType>({
@@ -21,8 +19,6 @@ const SegmentContext = createContext<SegmentContextType>({
   isGateOpen: false,
   openGate: () => {},
   closeGate: () => {},
-  isIntroFinished: false,
-  notifyIntroFinished: () => {},
 });
 
 interface SegmentProviderInnerProps {
@@ -34,7 +30,6 @@ function SegmentProviderInner({ children, initialSegment = "empresa" }: SegmentP
   const searchParams = useSearchParams();
   const [segment, setSegment] = useState<AudienceSegment>(initialSegment);
   const [isGateOpen, setIsGateOpen] = useState<boolean>(false);
-  const [isIntroFinished, setIsIntroFinished] = useState<boolean>(false);
 
   useEffect(() => {
     // URL param overrides initialSegment (allows deep-linking to a specific segment)
@@ -45,14 +40,6 @@ function SegmentProviderInner({ children, initialSegment = "empresa" }: SegmentP
       setSegment("empresa");
     }
   }, [searchParams]);
-
-  useEffect(() => {
-    // Safety fallback: ensure isIntroFinished becomes true even if intro unmounts or after 3.8s
-    const timer = setTimeout(() => {
-      setIsIntroFinished(true);
-    }, 3800);
-    return () => clearTimeout(timer);
-  }, []);
 
   const updateSegment = (newSeg: AudienceSegment) => {
     setSegment(newSeg);
@@ -72,8 +59,6 @@ function SegmentProviderInner({ children, initialSegment = "empresa" }: SegmentP
     }
   };
 
-  const notifyIntroFinished = () => setIsIntroFinished(true);
-
   return (
     <SegmentContext.Provider
       value={{
@@ -82,8 +67,6 @@ function SegmentProviderInner({ children, initialSegment = "empresa" }: SegmentP
         isGateOpen,
         openGate,
         closeGate,
-        isIntroFinished,
-        notifyIntroFinished,
       }}
     >
       {children}

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Brain, Building2, Rocket } from "lucide-react";
-import { AudienceSegment, useSegment } from "@/components/segment-context";
+import type { AudienceSegment } from "@/components/segment-context";
 
 interface RobotCompanionProps {
   mode: AudienceSegment;
@@ -12,7 +12,6 @@ interface RobotCompanionProps {
 }
 
 export function RobotCompanion({ mode, onSwitchMode, className = "" }: RobotCompanionProps) {
-  const { isIntroFinished } = useSegment();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -55,9 +54,7 @@ export function RobotCompanion({ mode, onSwitchMode, className = "" }: RobotComp
       <div className="relative w-full max-w-sm flex flex-col items-center perspective-1000">
         {/* Floating Speech Bubble with Entrance Animation */}
         <div
-          className={`mb-3 w-full max-w-[340px] preserve-3d transition-transform duration-200 ${
-            isIntroFinished ? "animate-speech-fly-in" : "opacity-0 pointer-events-none"
-          }`}
+          className={`mb-3 w-full max-w-[340px] preserve-3d transition-transform duration-200 animate-speech-fly-in`}
           style={{
             transform: `rotateX(${speechRotateX}deg) rotateY(${speechRotateY}deg) translateZ(20px)`,
           }}
@@ -101,9 +98,7 @@ export function RobotCompanion({ mode, onSwitchMode, className = "" }: RobotComp
 
           {/* 3D Floating Glide Arrival Wrapper - continuous glide from side-depth towards the camera */}
           <div
-            className={`relative w-40 h-40 sm:w-48 sm:h-48 preserve-3d transition-opacity duration-300 ${
-              isIntroFinished ? "animate-robot-glide-in" : "opacity-0 pointer-events-none"
-            }`}
+            className={`relative w-40 h-40 sm:w-48 sm:h-48 preserve-3d transition-opacity duration-300 animate-robot-glide-in`}
           >
             {/* 3D Tilting Robot Container */}
             <div
@@ -145,9 +140,7 @@ export function RobotCompanion({ mode, onSwitchMode, className = "" }: RobotComp
 
           {/* Dynamic Floor Shadow gliding smoothly along with the floating robot */}
           <div
-            className={`absolute -bottom-3 w-28 h-5 sm:w-32 sm:h-6 rounded-full bg-[#61100d] filter blur-md pointer-events-none ${
-              isIntroFinished ? "animate-shadow-glide" : "opacity-0"
-            }`}
+            className={`absolute -bottom-3 w-28 h-5 sm:w-32 sm:h-6 rounded-full bg-[#61100d] filter blur-md pointer-events-none animate-shadow-glide`}
           />
         </div>
 

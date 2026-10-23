@@ -109,13 +109,6 @@ const jsonLdData = {
       url: "https://ai.grupodinamis.com",
       description:
         "SaaS impulsado por inteligencia artificial para simulación realista de entrevistas laborales y coaching de líderes con metodología de Grupo Dinamis.",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        availability: "https://schema.org/InStock",
-        description: "Versión de prueba y simulación gratuita disponible.",
-      },
       author: {
         "@id": "https://grupodinamis.com/#organization",
       },

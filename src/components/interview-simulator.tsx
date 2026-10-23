@@ -302,7 +302,7 @@ export function InterviewSimulator() {
               ¿Querés vivir la experiencia de una entrevista con Dinamis AI?
             </h4>
             <p className="text-sm text-[#4a423d]">
-              Iniciá una simulación gratuita por voz o texto con tu puesto deseado ahora mismo.
+              Iniciá una simulación por voz o texto con tu puesto deseado ahora mismo.
             </p>
           </div>
           <a
@@ -312,7 +312,7 @@ export function InterviewSimulator() {
             onClick={() => trackEvent("simulator_callout_click")}
             className="shrink-0 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#ff8b1e] to-[#da551d] hover:from-[#ff8b1e] hover:to-[#c24614] text-white font-bold text-sm shadow-[0_4px_16px_rgba(255,139,30,0.25)] transition-all flex items-center gap-2 group cursor-pointer"
           >
-            <span>Iniciar Simulación Gratis</span>
+            <span>Iniciar simulación</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>

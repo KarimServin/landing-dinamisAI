@@ -6,7 +6,6 @@ import { InterviewSimulator } from "@/components/interview-simulator";
 import { LeadershipCoach } from "@/components/leadership-coach";
 import { Methodology } from "@/components/methodology";
 import { ComparisonTable } from "@/components/comparison-table";
-import { Pricing } from "@/components/pricing";
 import { Faq } from "@/components/faq";
 import { CtaBanner } from "@/components/cta-banner";
 import { Footer } from "@/components/footer";
@@ -16,10 +15,10 @@ import { Apple3DSection } from "@/components/apple-3d-section";
 export const metadata: Metadata = {
   title: "Dinamis AI para Profesionales | Práctica de Entrevistas Laborales y Salto de Carrera",
   description:
-    "Supera los nervios, aprende a responder bajo el método STAR y recibe feedback diagnóstico instantáneo antes de tu próxima entrevista laboral. Empieza gratis.",
+    "Supera los nervios, aprende a responder bajo el método STAR y recibe feedback diagnóstico instantáneo antes de tu próxima entrevista laboral.",
   keywords: [
     "practicar entrevistas laborales",
-    "simulador entrevistas de trabajo gratis",
+    "simulador de entrevistas de trabajo",
     "metodo star preguntas",
     "preparar entrevista de trabajo",
     "conseguir mejor empleo",
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dinamis AI para Profesionales | Práctica de Entrevistas Laborales con IA",
     description:
-      "Vence los nervios y da el salto al trabajo que mereces. Simulaciones ilimitadas con feedback bajo metodología STAR de Grupo Dinamis.",
+      "Vence los nervios y da el salto al trabajo que mereces. Simulaciones con feedback bajo metodología STAR de Grupo Dinamis.",
     url: "https://ai.grupodinamis.com/personas",
   },
 };
@@ -49,12 +48,6 @@ const jsonLdB2C = {
       url: "https://ai.grupodinamis.com/personas",
       description:
         "Plataforma de inteligencia artificial para simular entrevistas de trabajo, aprender el método STAR y ganar seguridad profesional.",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-        description: "Práctica gratuita y simulación inicial sin costo.",
-      },
       author: {
         "@type": "Organization",
         name: "Grupo Dinamis",
@@ -132,11 +125,6 @@ export default function PersonasPage() {
           {/* Tabla Comparativa: Dinamis AI vs IAs Generales */}
           <Apple3DSection>
             <ComparisonTable />
-          </Apple3DSection>
-
-          {/* Planes Individuales (Prueba Gratuita & Profesional) */}
-          <Apple3DSection>
-            <Pricing />
           </Apple3DSection>
 
           {/* Preguntas Frecuentes para Postulantes */}
